@@ -5,6 +5,6 @@ import kotlin.test.assertNotNull
 
 class AppTest {
     @Test fun testAppGreeting() {
-        assertNotNull(App().greeting, "Hello, Kotlin!")
+        assert( App().greeting.isNotEmpty() )
     }
 }
