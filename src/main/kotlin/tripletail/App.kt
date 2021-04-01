@@ -4,7 +4,7 @@ object App {
     fun greeting() = "Hello, Kotlin!"
 
     @JvmStatic fun main(args : Array<String>) {
-        println(args)
-        println(greeting())
+        args.forEach { arg -> println("Arg: ${arg}") }
+        println("Greeting: ${greeting()}")
     }
 }
