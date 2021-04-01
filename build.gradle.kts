@@ -1,6 +1,6 @@
 plugins {
+    kotlin("jvm") version "1.4.32"
     application
-    kotlin("jvm") version "1.5.0-M2"
 }
 
 group = "tripletail"
@@ -12,7 +12,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
 
 application {
