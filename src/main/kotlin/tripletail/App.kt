@@ -1,9 +1,10 @@
 package tripletail
 
-fun main() {
-    println(App().greeting)
-}
+object App {
+    fun greeting() = "Hello, Kotlin!"
 
-class App {
-    val greeting = "Hello, Kotlin!"
+    @JvmStatic fun main(args : Array<String>) {
+        println(args)
+        println(greeting())
+    }
 }
