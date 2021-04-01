@@ -13,7 +13,7 @@ repositories {
 dependencies {
     implementation(platform(kotlin("bom")))
     implementation(kotlin("stdlib-jdk8"))
-    implementation("io.arrow-kt:arrow-core:0.13.0")
+    implementation("io.arrow-kt:arrow-core:0.13.1")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit"))
