@@ -1,7 +1,7 @@
 package tripletail
 
 class App {
-    val greeting: String = "Hello, Kotlin!"
+    val greeting = "Hello, Kotlin!"
 }
 
 fun main() {
