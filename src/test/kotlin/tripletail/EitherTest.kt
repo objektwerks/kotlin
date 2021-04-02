@@ -14,7 +14,7 @@ class EitherTest {
             else    -> Right(integer)
         }
 
-    @Test fun option() {
+    @Test fun either() {
         val list = listOf("1", "2", "3", "four")
 
         val rights = list.map { toInt(it) }.filter { it.isRight() }
