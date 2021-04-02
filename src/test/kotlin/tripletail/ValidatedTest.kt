@@ -1,7 +1,6 @@
 package tripletail
 
 import arrow.core.*
-import arrow.typeclasses.*
 
 import org.junit.Test
 
@@ -21,10 +20,10 @@ object PersonValidator {
         if (this > 0) this.valid()
         else PersonError.InvalidAge(this).nel().invalid()
 
-    fun validate(person: Person): Validated<Nel<String>, Person> =
+    fun validate(person: Person): Validated<Nel<PersonError>, Person> =
         Validated
-            .applicative<Nel<PersonError>>(Nel.semigroup())
-            .map(person.name.validatedName(), person.age.validatedAge()) {
+            .applicative<Nel<PersonError>>(Nel.semigroup<PersonError>())
+            .map(person.name.validatedName(), person.age.validatedAge()) { it ->
                 Person(it.a, it.b)
             }.fix()
 }
