@@ -22,6 +22,7 @@ object PersonValidator {
         else PersonError.InvalidAge(this).nel().invalid()
 
     fun validate(person: Person): Validated<Nel<PersonError>, Person> =
+        // Arrow Validated is broken. Check back later!
         Validated
             .applicative<Nel<PersonError>>(Semigroup.nonEmptyList<PersonError>())
             .map(person.name.validatedName(), person.age.validatedAge()) { it ->
