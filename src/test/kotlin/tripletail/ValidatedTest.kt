@@ -1,6 +1,7 @@
 package tripletail
 
 import arrow.core.*
+import arrow.typeclasses.Semigroup
 
 import org.junit.Test
 
@@ -22,7 +23,7 @@ object PersonValidator {
 
     fun validate(person: Person): Validated<Nel<PersonError>, Person> =
         Validated
-            .applicative<Nel<PersonError>>(NonEmptyList.fromListUnsafe(listOf<PersonError>()))
+            .applicative<Nel<PersonError>>(Semigroup.nonEmptyList<PersonError>())
             .map(person.name.validatedName(), person.age.validatedAge()) { it ->
                 Person(it.a, it.b)
             }.fix()
