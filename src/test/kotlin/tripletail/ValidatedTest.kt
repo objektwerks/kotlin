@@ -1,7 +1,7 @@
 package tripletail
 
 import arrow.core.*
-import arrow.typeclasses.Semigroup
+import arrow.typeclasses.*
 
 import org.junit.Test
 
