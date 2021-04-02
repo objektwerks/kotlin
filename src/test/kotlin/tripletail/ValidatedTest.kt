@@ -1,16 +1,44 @@
 package tripletail
 
+import arrow.core.*
+import arrow.typeclasses.*
+
 import org.junit.Test
 
-class Person(name: String, age: Int)
+data class Person(val name: String, val age: Int)
 
 sealed class PersonError {
     data class InvalidName(val field: String) : PersonError()
     data class InvalidAge(val field: Int) : PersonError()
 }
 
-class ValidatedTest {
-    @Test fun validate() {
+object PersonValidator {
+    @JvmStatic fun String.validatedName(): Validated<Nel<PersonError>, String> =
+        if (this.isNotEmpty()) this.valid()
+        else PersonError.InvalidName(this).nel().invalid()
 
+    @JvmStatic fun Int.validatedAge(): Validated<Nel<PersonError>, Int> =
+        if (this > 0) this.valid()
+        else PersonError.InvalidAge(this).nel().invalid()
+
+    fun validate(person: Person): Validated<Nel<String>, Person> =
+        Validated
+            .applicative<Nel<PersonError>>(Nel.semigroup())
+            .map(person.name.validatedName(), person.age.validatedAge()) {
+                Person(it.a, it.b)
+            }.fix()
+}
+
+class ValidatedTest {
+    @Test fun valid() {
+        val person = Person("Fred Flintstone", 37)
+        val result = PersonValidator.validate(person)
+        assert(result.isValid)
+    }
+
+    @Test fun invalid() {
+        val person = Person("", 0)
+        val result = PersonValidator.validate(person)
+        assert(result.isInvalid)
     }
 }
