@@ -3,6 +3,8 @@ plugins {
     application
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> { kotlinOptions.jvmTarget = "1.8" }
+
 group = "tripletail"
 version = "0.1-SNAPSHOT"
 
