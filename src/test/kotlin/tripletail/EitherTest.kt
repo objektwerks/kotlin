@@ -11,7 +11,7 @@ class EitherTest {
     private fun toInt(value: String): Either<ToIntException, Int> =
         when ( val integer = value.toIntOrNull() ) {
             null -> Left(ToIntException(value))
-            else    -> Right(integer)
+            else -> Right(integer)
         }
 
     @Test fun either() {
