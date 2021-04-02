@@ -22,7 +22,7 @@ object PersonValidator {
 
     fun validate(person: Person): Validated<Nel<PersonError>, Person> =
         Validated
-            .applicative<Nel<PersonError>>(Nel.semigroup<PersonError>())
+            .applicative<Nel<PersonError>>(NonEmptyList.fromListUnsafe(listOf<PersonError>()))
             .map(person.name.validatedName(), person.age.validatedAge()) { it ->
                 Person(it.a, it.b)
             }.fix()
