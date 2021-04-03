@@ -1,15 +1,15 @@
 package tripletail
 
 import arrow.core.*
-import arrow.typeclasses.*
 
 import org.junit.Test
 
 data class Person(val name: String, val age: Int)
 
 sealed class PersonError {
-    data class InvalidName(val field: String) : PersonError()
-    data class InvalidAge(val field: Int) : PersonError()
+    data class InvalidName(val name: String) : PersonError()
+    data class InvalidAge(val age: Int) : PersonError()
+    data class InvalidPerson(val person: Person) : PersonError()
 }
 
 object PersonValidator {
@@ -21,19 +21,9 @@ object PersonValidator {
         if (this > 0) this.valid()
         else PersonError.InvalidAge(this).nel().invalid()
 
-    /*
-        Validated
-            .applicative<Nel<PersonError>>(Semigroup.nonEmptyList<PersonError>())
-            .map(person.name.validatedName(), person.age.validatedAge()) { it ->
-                Person(it.a, it.b)
-            }.fix()
-    */
-    fun validate(person: Person): Validated<Nel<PersonError>, Person> {
-        val name = person.name.validatedName()
-        val age = person.age.validatedAge()
-        val list = Semigroup.nonEmptyList<PersonError>()
-        return Validated<Nel<PersonError>, Person>().zip(list, name, age)
-    }
+    fun validate(person: Person): Validated<Nel<PersonError>, Person> =
+        if (person.name.validatedName().isValid && person.age.validatedAge().isValid) person.valid()
+        else PersonError.InvalidPerson(person).nel().invalid()
 }
 
 class ValidatedTest {
