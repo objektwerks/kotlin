@@ -32,9 +32,7 @@ object PersonValidator {
         val name = person.name.validatedName()
         val age = person.age.validatedAge()
         val list = Semigroup.nonEmptyList<PersonError>()
-        return Validated<Nel<PersonError>, Person>
-            .combineK(list, name)
-            .combineK(list, age)
+        return Validated<Nel<PersonError>, Person>().zip(list, name, age)
     }
 }
 
