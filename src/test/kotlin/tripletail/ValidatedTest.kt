@@ -13,21 +13,29 @@ sealed class PersonError {
 }
 
 object PersonValidator {
-    @JvmStatic fun String.validatedName(): Validated<Nel<PersonError>, String> =
+    private fun String.validatedName(): Validated<Nel<PersonError>, String> =
         if (this.isNotEmpty()) this.valid()
         else PersonError.InvalidName(this).nel().invalid()
 
-    @JvmStatic fun Int.validatedAge(): Validated<Nel<PersonError>, Int> =
+    private fun Int.validatedAge(): Validated<Nel<PersonError>, Int> =
         if (this > 0) this.valid()
         else PersonError.InvalidAge(this).nel().invalid()
 
-    fun validate(person: Person): Validated<Nel<PersonError>, Person> =
-        // Arrow Validated is broken. Check back later!
+    /*
         Validated
             .applicative<Nel<PersonError>>(Semigroup.nonEmptyList<PersonError>())
             .map(person.name.validatedName(), person.age.validatedAge()) { it ->
                 Person(it.a, it.b)
             }.fix()
+    */
+    fun validate(person: Person): Validated<Nel<PersonError>, Person> {
+        val name = person.name.validatedName()
+        val age = person.age.validatedAge()
+        val list = Semigroup.nonEmptyList<PersonError>()
+        return Validated<Nel<PersonError>, Person>
+            .combineK(list, name)
+            .combineK(list, age)
+    }
 }
 
 class ValidatedTest {
