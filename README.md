@@ -4,16 +4,13 @@ Kotlin
 
 Kotlin
 ------
->Kotlin focuses strongly on **2** critical concepts:
+>Kotlin strongly focuses on **2** concepts:
 1. nullability
 2. throwing exceptions
->In the FP space, these practices are both foreign and unacceptable.
+>In the FP space, these concepts are both foreign and unacceptable.
 
 Arrow
 -----
 >Arrow is the purported **goto** FP library in the Kotlin space.
->In a limited manner, it mirrors the Typelevel Cats library.
-
-Note
-----
->Due to the constant flux of Arrow, ValidatedTest is broken at a critical point in the test.
+>In a very limited manner, it mirrors the Typelevel Cats library.
+>Arrow is in constant flux, though. User beware!
