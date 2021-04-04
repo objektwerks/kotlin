@@ -12,6 +12,8 @@ class OptionTest {
 
         assert( list.map { toInt(it) } == listOf(Some(1), Some(2), Some(3), None) )
 
+        assert( list.flatMap { toInt(it).toList() } == listOf(1, 2, 3) )
+
         assert( list.map { toInt(it) }.flatMap { it.toList() } == listOf(1, 2, 3) )
 
         assert( list.map { toInt(it) }.filterOption() == listOf(1, 2, 3) )
