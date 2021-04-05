@@ -13,7 +13,14 @@ class ResultTest {
         assert(
             runCatching {
                 Instant.parse(validDateTime)
-            }.getOrDefault( Instant.now() ) == validInstant
+            }.getOrDefault { Instant.now() } == validInstant
+        )
+
+        assert(
+            runCatching {
+                Instant.parse(validDateTime)
+            }.map { it.toEpochMilli() }
+             .getOrDefault { } != Instant.now().toEpochMilli()
         )
 
         assert(
@@ -26,7 +33,7 @@ class ResultTest {
             runCatching {
                 Instant.parse(validDateTime)
             }.recover { Instant.now() }
-             .getOrDefault { { } } == validInstant
+             .getOrDefault { } == validInstant
         )
 
     }
