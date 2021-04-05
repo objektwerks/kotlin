@@ -22,5 +22,12 @@ class ResultTest {
             }.fold( { it }, { Instant.now() } ) == validInstant
         )
 
+        assert(
+            runCatching {
+                Instant.parse(validDateTime)
+            }.recover { Instant.now() }
+             .getOrDefault { { } } == validInstant
+        )
+
     }
 }
