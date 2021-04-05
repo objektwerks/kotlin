@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.4.32"
+    kotlin("plugin.serialization") version "1.4.32"
     application
 }
 
@@ -18,6 +19,7 @@ dependencies {
     implementation("io.arrow-kt:arrow-core:0.13.1")
     implementation("com.sksamuel.hoplite:hoplite-core:1.4.0")
     implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit"))
