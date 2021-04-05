@@ -18,6 +18,12 @@ class ResultTest {
 
         assert(
             runCatching {
+                Instant.parse("invalid date time")
+            }.getOrDefault { Instant.now() } != validInstant
+        )
+
+        assert(
+            runCatching {
                 Instant.parse(validDateTime)
             }.map { it.toEpochMilli() }
              .getOrDefault { } != Instant.now().toEpochMilli()
