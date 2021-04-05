@@ -1,6 +1,11 @@
 Kotlin
 ------
->Kotlin feature tests.
+>Kotlin feature tests, to include:
+1. Arrow
+2. Hoplite
+>and Kotlin:
+1. Json
+2. Test
 
 Kotlin
 ------
