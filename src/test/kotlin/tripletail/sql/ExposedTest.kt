@@ -15,8 +15,7 @@ object Todos : Table() {
 }
 
 class ExposedTest {
-    @Test
-    fun exposed() {
+    @Test fun exposed() {
         val config = ConfigLoader().loadConfigOrThrow<H2Config>("/exposed.yaml")
         Database.connect(
             url = config.url,
