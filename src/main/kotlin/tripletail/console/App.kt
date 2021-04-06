@@ -1,4 +1,4 @@
-package tripletail
+package tripletail.console
 
 object App {
     fun greeting() = "Hello, Kotlin!"
