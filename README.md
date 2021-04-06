@@ -16,6 +16,11 @@ Kotlin
 2. throwing exceptions
 >In the FP space, these concepts are both foreign and unacceptable.
 
+Collections
+-----------
+>Simply stated, Kotlin collections are weak - and don't even rmotely measure up to Scala collections.
+>Several Scala collection constructs don't even exist in Kotlin. This will shock **all** FP developers.
+
 Arrow
 -----
 >Arrow is the purported **goto** FP library in the Kotlin space.

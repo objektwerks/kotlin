@@ -8,6 +8,7 @@ class CollectionsTest {
         val list = listOf(1, 2, 3)
         assert( list.size == 3 )
         assert( list.map { it * it } == listOf(1, 4, 9) )
+        assert( listOf( listOf("kotlin")).flatten() == listOf("kotlin") )
         assert( list.filter { it % 2 == 0 } == listOf(2) )
         assert( list.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
     }
