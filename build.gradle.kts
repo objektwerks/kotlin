@@ -12,9 +12,6 @@ version = "0.1-SNAPSHOT"
 application {
     mainClass.set("tripletail.App")
 }
-application {
-    mainClass.set("tripletail.KtorApp")
-}
 
 repositories {
     mavenCentral()
