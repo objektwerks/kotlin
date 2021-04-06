@@ -1,4 +1,4 @@
-package tripletail
+package tripletail.arrow
 
 import arrow.core.*
 

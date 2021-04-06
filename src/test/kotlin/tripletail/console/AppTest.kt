@@ -1,6 +1,5 @@
-package tripletail
+package tripletail.console
 
-import tripletail.console.App
 import kotlin.test.Test
 
 class AppTest {

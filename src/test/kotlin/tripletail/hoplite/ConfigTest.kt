@@ -1,4 +1,4 @@
-package tripletail
+package tripletail.hoplite
 
 import com.sksamuel.hoplite.ConfigLoader
 
