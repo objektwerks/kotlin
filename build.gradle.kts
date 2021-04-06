@@ -34,6 +34,9 @@ dependencies {
     implementation("io.ktor:ktor-server-core:1.5.3")
     implementation("io.ktor:ktor-server-netty:1.5.3")
 
+    implementation("org.jetbrains.exposed:exposed:0.17.13")
+    implementation("com.h2database:h2:1.4.200")
+
     implementation("ch.qos.logback:logback-classic:1.2.3")
 
     testImplementation(kotlin("test"))
