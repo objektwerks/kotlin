@@ -1,4 +1,4 @@
-package tripletail
+package tripletail.stdlib
 
 import java.time.Instant
 

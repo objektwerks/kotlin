@@ -1,4 +1,4 @@
-package tripletail
+package tripletail.json
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
