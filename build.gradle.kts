@@ -9,6 +9,13 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> { kotlinOptions.
 group = "tripletail"
 version = "0.1-SNAPSHOT"
 
+application {
+    mainClass.set("tripletail.App")
+}
+application {
+    mainClass.set("tripletail.KtorApp")
+}
+
 repositories {
     mavenCentral()
 }
@@ -26,8 +33,4 @@ dependencies {
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit"))
-}
-
-application {
-    mainClass.set("tripletail.App")
 }
