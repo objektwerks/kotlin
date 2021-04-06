@@ -28,7 +28,7 @@ Kotlin
 
 Collections
 -----------
->Simply stated, Kotlin collections are weak - and don't even rmotely measure up to Scala collections.
+>Simply stated, Kotlin collections are weak - and don't even remotely measure up to Scala collections.
 >Several Scala collection constructs don't even exist in Kotlin. This will shock **all** FP developers.
 
 Arrow
