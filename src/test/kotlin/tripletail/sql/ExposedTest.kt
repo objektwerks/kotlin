@@ -50,7 +50,6 @@ class ExposedTest {
             assert( Todos.selectAll().count() == 0L )
 
             SchemaUtils.drop( Todos )
-
         }
     }
 }
