@@ -11,7 +11,6 @@ data class H2Config(val url: String, val driver: String, val user: String, val p
 object Todos : Table() {
     val id = integer("id").autoIncrement()
     val task = varchar("task", 128)
-
     override val primaryKey = PrimaryKey(id, name = "pk")
 }
 
@@ -33,6 +32,25 @@ class ExposedTest {
                 it[task] = "Wash the car."
             } get Todos.id
             assert( todosId > 0 )
+
+            assert(
+                Todos.select { Todos.id eq todosId }.single()[Todos.task] == "Wash the car."
+            )
+
+            Todos.update( { Todos.id eq todosId } ) {
+                it[task] = "Wash the car and drink beer!"
+            }
+
+            assert(
+                Todos.select { Todos.id eq todosId }.single()[Todos.task] == "Wash the car and drink beer!"
+            )
+
+            Todos.deleteWhere{ Todos.id eq todosId }
+
+            assert( Todos.selectAll().count() == 0L )
+
+            SchemaUtils.drop( Todos )
+
         }
     }
 }
