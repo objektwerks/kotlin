@@ -3,6 +3,7 @@ Kotlin
 >Kotlin feature tests, to include:
 1. Arrow
 2. Hoplite
+3. Ktor ( curl http://localhost:7979/ )
 >and Kotlin:
 1. Json
 2. Test
