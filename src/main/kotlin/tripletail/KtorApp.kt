@@ -9,14 +9,12 @@ import io.ktor.server.netty.*
 import java.time.Instant
 
 /** To test server: curl http://localhost:7979/ */
-object KtorApp {
-    @JvmStatic fun main(args : Array<String>) {
-        embeddedServer(Netty, port = 7979) {
-            routing {
-                get("/") {
-                    call.respondText("Ktor datetime is: ${Instant.now()}")
-                }
+fun main() {
+    embeddedServer(Netty, port = 7979) {
+        routing {
+            get("/") {
+                call.respondText("Ktor datetime is: ${Instant.now()}")
             }
-        }.start(wait = true)
-    }
+        }
+    }.start(wait = true)
 }
