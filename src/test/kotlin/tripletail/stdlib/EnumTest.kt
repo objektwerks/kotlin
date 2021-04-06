@@ -15,6 +15,7 @@ class EnumTest {
         assert( Ale.doubleIndianPaleAle.toString() == "doubleIndianPaleAle" )
 
         val beers = Ale.values()
+        assert( beers.size == 3 )
         beers.asList().forEach { beer -> assert( beers.contains( beer ) ) }
     }
 }
