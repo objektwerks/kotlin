@@ -11,9 +11,8 @@ Kotlin
 
 Warning
 -------
->The content herein might offend Java and Kotlin developers. And for that I apologize.
->It is not my intent to insult anyone. Yet subjectige assesments vis-a-vis another language
->may do so. IMHO, Kotlin is a better Java. Yet Kotlin doesn't even remotely compare to Scala.
+>The content herein might offend Java and Kotlin developers. That is not my intent.
+>IMHO, Kotlin is a better Java. Yet Kotlin doesn't even remotely compare to Scala.
 >And that's okay. I see it as a choice between:
 1. Java
 2. Kotlin
