@@ -5,7 +5,10 @@ import org.junit.Test
 class NullabilityTest {
     @Test
     fun nullability() {
-        val text: String? = null
+        var text: String? = null
         assert( text.isNullOrEmpty() )
+
+        text = "text"
+        assert( text.isNotEmpty() )
     }
 }
