@@ -3,6 +3,7 @@ package tripletail.stdlib
 import kotlin.test.assertNull
 
 import org.junit.Test
+import kotlin.test.assertFailsWith
 
 import kotlin.test.assertNotNull
 
@@ -13,13 +14,16 @@ class NullabilityTest {
         var text: String? = null
         assert(text.isNullOrEmpty())
         assert( text?.length ?: -1 == -1 )
+        assertFailsWith<NullPointerException> {
+            text!!.length
+        }
 
         text = "text"
-        assert(text.isNotEmpty())
+        assert( text.isNotEmpty() )
 
         val task = Task("Mow yard.")
-        assertNull(task.code)
-        assertNotNull(task.copy(code = "completed").code)
+        assertNull( task.code )
+        assertNotNull( task.copy(code = "completed").code )
 
         val numbers: List<Int?> = listOf(1, 2, 3, null)
         var squares = listOf<Int?>()
