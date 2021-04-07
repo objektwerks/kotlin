@@ -12,6 +12,7 @@ class NullabilityTest {
     @Test fun nullability() {
         var text: String? = null
         assert(text.isNullOrEmpty())
+        assert( text?.length ?: -1 == -1 )
 
         text = "text"
         assert(text.isNotEmpty())
