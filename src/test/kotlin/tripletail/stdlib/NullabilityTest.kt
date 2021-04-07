@@ -32,5 +32,6 @@ class NullabilityTest {
             ?.also{it -> println("number: $it") }
         }
         assert( squares == listOf( 1, 4, 9) )
+        assert( numbers.filterNotNull() == listOf( 1, 2, 3) )
     }
 }
