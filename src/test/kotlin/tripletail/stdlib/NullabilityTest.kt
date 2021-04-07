@@ -11,13 +11,20 @@ data class Task(val description: String, val code: String? = null)
 class NullabilityTest {
     @Test fun nullability() {
         var text: String? = null
-        assert( text.isNullOrEmpty() )
+        assert(text.isNullOrEmpty())
 
         text = "text"
-        assert( text.isNotEmpty() )
+        assert(text.isNotEmpty())
 
         val task = Task("Mow yard.")
-        assertNull( task.code )
-        assertNotNull( task.copy( code = "completed").code )
+        assertNull(task.code)
+        assertNotNull(task.copy(code = "completed").code)
+
+        val numbers: List<Int?> = listOf(1, 2, 3, null)
+        var squares = listOf<Int?>()
+        for (item in numbers) {
+            item?.let { squares = squares.plus(it * it) }
+        }
+        assert( squares == listOf( 1, 4, 9) )
     }
 }
