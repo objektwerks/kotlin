@@ -1,13 +1,13 @@
 Kotlin
 ------
->Kotlin feature tests, to include:
+>Kotlin feature tests, to also include:
 1. Arrow
 2. Hoplite
 3. Ktor
 4. Exposed
 >and Kotlin:
 1. Json
-2. Testy
+2. Test
 
 Design
 ------
@@ -23,4 +23,4 @@ Collections
 Arrow
 -----
 >Arrow is the **goto** FP library in the Kotlin space. In a limited way, it mirrors the
->Typelevel Cats library. Arrow is in constant flux, though, and should be used sparingly.
+>Typelevel Cats library. Arrow is in constant flux, though, and should be used wisely.
