@@ -12,7 +12,7 @@ data class Task(val description: String, val code: String? = null)
 class NullabilityTest {
     @Test fun nullability() {
         var text: String? = null
-        assert(text.isNullOrEmpty())
+        assert( text.isNullOrEmpty() )
         assert( text?.length ?: -1 == -1 )
         assertFailsWith<NullPointerException> {
             text!!.length
