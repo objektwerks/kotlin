@@ -23,7 +23,8 @@ class NullabilityTest {
         val numbers: List<Int?> = listOf(1, 2, 3, null)
         var squares = listOf<Int?>()
         for (item in numbers) {
-            item?.let { squares = squares.plus(it * it) }
+            item?.let { squares = squares.plus(it * it); it }
+            ?.also{it -> println("number: $it") }
         }
         assert( squares == listOf( 1, 4, 9) )
     }
