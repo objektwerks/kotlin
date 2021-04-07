@@ -9,30 +9,18 @@ Kotlin
 1. Json
 2. Testy
 
-Warning
--------
->The content herein might offend Java and Kotlin developers. That is not my intent.
->I think Kotlin is a better Java. Yet Kotlin doesn't even remotely compare to Scala.
->And that's okay. I see it as a choice between:
-1. Java
-2. Kotlin
-3. Scala
-4. All the other JVM languages, such as Clojure.
-
-Kotlin
+Design
 ------
 >Kotlin strongly focuses on **2** concepts:
 1. nullability
 2. throwing exceptions
->In the FP space, these concepts are both foreign and unacceptable.
+>In the FP space, both concepts are foreign.
 
 Collections
 -----------
->Simply stated, Kotlin collections are weak - and don't even remotely measure up to Scala collections.
->Several Scala collection constructs don't even exist in Kotlin. This will shock **all** FP developers.
+>Kotlin collections are **not** Scala collections. They appear to mimic Java collections.
 
 Arrow
 -----
->Arrow is the purported **goto** FP library in the Kotlin space.
->In a very limited manner, it mirrors the Typelevel Cats library.
->Arrow is in constant flux, though. User beware!
+>Arrow is the **goto** FP library in the Kotlin space. In a limited way, it mirrors the
+>Typelevel Cats library. Arrow is in constant flux, though, and should be used sparingly.
