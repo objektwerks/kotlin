@@ -1,6 +1,12 @@
 package tripletail.stdlib
 
+import kotlin.test.assertNull
+
 import org.junit.Test
+
+import kotlin.test.assertNotNull
+
+data class Task(val description: String, val code: String? = null)
 
 class NullabilityTest {
     @Test
@@ -10,5 +16,9 @@ class NullabilityTest {
 
         text = "text"
         assert( text.isNotEmpty() )
+
+        val task = Task("Mow yard.")
+        assertNull( task.code )
+        assertNotNull( task.copy( code = "completed").code )
     }
 }
