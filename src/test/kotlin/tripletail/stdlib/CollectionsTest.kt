@@ -1,6 +1,7 @@
 package tripletail.stdlib
 
 import arrow.core.zip
+
 import org.junit.Test
 
 class CollectionsTest {
@@ -8,10 +9,9 @@ class CollectionsTest {
         val list = listOf(1, 2, 3)
         assert( list.size == 3 )
         assert( list.map { it * it } == listOf(1, 4, 9) )
-        assert( listOf( listOf("kotlin")).flatten() == listOf("kotlin") )
-        // Not allowed! assert( listOf("kotlin").flatten() == listOf('k', 'o', 't', 'l', 'i', 'n') )
         assert( list.filter { it % 2 == 0 } == listOf(2) )
         assert( list.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
+        assert( listOf( listOf("kotlin")).flatten() == listOf("kotlin") )
     }
 
     @Test fun set() {
