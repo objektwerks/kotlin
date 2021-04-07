@@ -9,8 +9,7 @@ import kotlin.test.assertNotNull
 data class Task(val description: String, val code: String? = null)
 
 class NullabilityTest {
-    @Test
-    fun nullability() {
+    @Test fun nullability() {
         var text: String? = null
         assert( text.isNullOrEmpty() )
 
