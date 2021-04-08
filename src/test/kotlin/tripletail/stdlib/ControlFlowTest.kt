@@ -27,7 +27,7 @@ class ControlFlowTest {
             when (val any: Any = Random(10).nextInt().toString()) {
                 is String -> true
                 is Int -> false
-                else -> false
+                else -> any.hashCode() == 0
             }
         )
     }
