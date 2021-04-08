@@ -33,5 +33,17 @@ class ControlFlowTest {
 
         for (n in listOf(1, 2, 3)) { assert(n > 0) }
         for (n in 1..3) { assert(n > 0) }
+
+        var condition = 3
+        while (condition > 0) {
+            condition--
+        }
+        assert( condition == 0 )
+
+        condition = 3
+        do {
+            condition--
+        } while (condition > 0)
+        assert( condition == 0 )
     }
 }
