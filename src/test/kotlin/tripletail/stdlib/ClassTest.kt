@@ -26,5 +26,13 @@ class ClassTest {
         }
         assert( Sink(protocol = "file://", path = "home/temp").url.isNotEmpty() )
 
+        abstract class Shape {
+            abstract fun draw(): String
+        }
+
+        class Circle : Shape() {
+            override fun draw(): String = "circle"
+        }
+        assert( Circle().draw() == "circle" )
     }
 }
