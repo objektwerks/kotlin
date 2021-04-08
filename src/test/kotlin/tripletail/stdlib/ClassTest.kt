@@ -29,10 +29,20 @@ class ClassTest {
         abstract class Shape {
             abstract fun draw(): String
         }
-
         class Circle : Shape() {
             override fun draw(): String = "circle"
         }
         assert( Circle().draw() == "circle" )
+
+        open class Car {
+            open fun drive(): String = ""
+        }
+        class Porsche : Car() {
+            override fun drive(): String {
+                super.drive()
+                return "purrrr"
+            }
+        }
+        assert( Porsche().drive() == "purrrr" )
     }
 }
