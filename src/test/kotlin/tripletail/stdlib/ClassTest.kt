@@ -13,12 +13,18 @@ class ClassTest {
         class Property constructor(val value: String)
         assert( Property(value = "value").value == "value" )
 
-        class Source(protocol: String, path: String) {
+        class Source(val protocol: String, val path: String) {
             val url: String?
             init {
                 url = "$protocol$path"
             }
         }
         assert( !Source(protocol = "file://", path = "home/temp").url.isNullOrEmpty() )
+
+        class Sink(val url: String) {
+            constructor(protocol: String, path: String) : this("$protocol$path")
+        }
+        assert( Sink(protocol = "file://", path = "home/temp").url.isNotEmpty() )
+
     }
 }
