@@ -14,5 +14,13 @@ class ControlFlowTest {
                 else -> n
             } != 0
         )
+
+        assert(
+            when (val n = Random(10).nextInt()) {
+                0, 1, 2, 3 -> 4
+                in 4..7 -> 8
+                else -> n
+            } != 0
+        )
     }
 }
