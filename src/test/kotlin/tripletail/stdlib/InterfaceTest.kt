@@ -1,12 +1,17 @@
 package tripletail.stdlib
 
 import org.junit.Test
+import kotlin.test.assertTrue
 
 enum class ShapeType { circle }
 
 interface Shape {
     val typeOf: ShapeType
     fun draw(): String
+}
+
+fun interface IntPredicate {
+    fun accept(i: Int): Boolean
 }
 
 class InterfaceTest {
@@ -16,5 +21,8 @@ class InterfaceTest {
             override fun draw(): String = "circle"
         }
         assert( Circle().draw() == "circle" )
+
+        val isEven = IntPredicate { it % 2 == 0 }
+        assertTrue( isEven.accept(2) )
     }
 }
