@@ -22,5 +22,13 @@ class ControlFlowTest {
                 else -> n
             } != 0
         )
+
+        assert(
+            when (val any: Any = Random(10).nextInt().toString()) {
+                is String -> true
+                is Int -> false
+                else -> false
+            }
+        )
     }
 }
