@@ -1,7 +1,8 @@
 package tripletail.stdlib
 
+import kotlin.test.*
+
 import org.junit.Test
-import kotlin.test.assertNotEquals
 
 class ClassTest {
     @Test fun classes() {
@@ -49,6 +50,8 @@ class ClassTest {
         data class Data(val value: String)
         val data = Data("data")
         val copy = data.copy( value = "copy")
-        assertNotEquals(data, copy)
+        val ( destructuredValue ) = copy
+        assertEquals( copy.value, destructuredValue )
+        assertNotEquals( data, copy )
     }
 }
