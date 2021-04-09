@@ -23,5 +23,9 @@ class FunctionTest {
         fun <T> toSingleton(item: T): List<T> = listOf(item)
         assert( toSingleton(3) == listOf(3) )
 
+        tailrec fun factorial(n: Int, acc: Int = 1): Int =
+            if (n == 1) acc
+            else factorial(n - 1, acc * n)
+        assert( factorial(9) == 362880 )
     }
 }
