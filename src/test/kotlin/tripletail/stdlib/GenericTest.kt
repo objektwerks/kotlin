@@ -9,6 +9,13 @@ class GenericTest {
         }
         assert( Box(3).value == 3 )
 
+        class Producer<out T>(private val t: T) {
+            fun get(): T {
+                return t
+            }
+        }
+        assert( Producer(3).get() == 3 )
+
         fun <T> singletonList(item: T): List<T> = listOf(item)
         assert( singletonList(3) == listOf(3) )
     }
