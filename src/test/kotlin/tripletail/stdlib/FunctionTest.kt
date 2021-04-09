@@ -27,5 +27,10 @@ class FunctionTest {
             if (n == 1) acc
             else factorial(n - 1, acc * n)
         assert( factorial(9) == 362880 )
+
+        val sum = { x: Int, y: Int -> x + y }
+        val multiply = { x: Int, y: Int -> x * y }
+        assert( sum(3, 3) == 6 )
+        assert( multiply(3, 3) == 9 )
     }
 }
