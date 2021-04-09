@@ -38,5 +38,9 @@ class FunctionTest {
         val multiply = { x: Int, y: Int -> x * y }
         assert( sum(3, 3) == 6 )
         assert( multiply(3, 3) == 9 )
+
+        fun total(x:Int, y:Int, f: (Int, Int) -> Int): Int = f(x, y)
+        assert( total(3, 3, sum) == 6)
+        assert( total(3, 3, multiply) == 9)
     }
 }
