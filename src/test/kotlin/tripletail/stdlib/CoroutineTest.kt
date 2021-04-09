@@ -16,6 +16,6 @@ class CoroutineTest {
             GlobalScope.async { n }
         }
         suspend fun sumOf(deferred: List<Deferred<Int>>): Int = deferred.sumOf { it.await() }
-        assert( runBlocking { sumOf(deferred) } == 10 )
+        assert( runBlocking { sumOf(deferred) } == 55 )
     }
 }
