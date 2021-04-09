@@ -44,5 +44,12 @@ class ClassTest {
             }
         }
         assert( Porsche().drive() == "purrrr" )
+
+        val greeting = object {
+            val hello = "Hello"
+            val world = "Kotlin"
+            fun message() = "$hello, $world!"
+        }
+        assert( greeting.message() == "Hello, Kotlin!")
     }
 }
