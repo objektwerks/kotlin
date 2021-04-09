@@ -5,12 +5,8 @@ import kotlinx.coroutines.*
 import org.junit.Test
 
 class CoroutineTest {
-    @Test fun runBlocking(): Unit = runBlocking {
-        GlobalScope.launch {
-            delay(1000L)
-            println("World!")
-        }
-        println("Hello,")
-        delay(2000L)
+    @Test fun coroutine() {
+        fun sum(x: Int, y: Int): Int = runBlocking { x + y }
+        assert( sum(3, 3) == 6 )
     }
 }
