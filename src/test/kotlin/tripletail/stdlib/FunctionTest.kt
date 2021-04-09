@@ -19,5 +19,9 @@ class FunctionTest {
         }
         val numbers = Numbers()
         assert( numbers cube 3 == 27 )
+
+        fun <T> toSingleton(item: T): List<T> = listOf(item)
+        assert( toSingleton(3) == listOf(3) )
+
     }
 }
