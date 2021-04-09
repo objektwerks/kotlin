@@ -28,6 +28,12 @@ class FunctionTest {
             else factorial(n - 1, acc * n)
         assert( factorial(9) == 362880 )
 
+        var closure = 0
+        listOf(1, 2, 3).filter { it > 0 }.forEach {
+            closure += it
+        }
+        assert( closure == 6 )
+
         val sum = { x: Int, y: Int -> x + y }
         val multiply = { x: Int, y: Int -> x * y }
         assert( sum(3, 3) == 6 )
