@@ -1,9 +1,15 @@
 package tripletail.stdlib
 
 import org.junit.Test
+import kotlin.test.assertTrue
+
+typealias Name = String
 
 class ClassTest {
     @Test fun classes() {
+        val name: Name = "Fred Flintstone"
+        assertTrue( name.isNotEmpty() )
+
         class None
         assert( None().hashCode() > 0 )
 
