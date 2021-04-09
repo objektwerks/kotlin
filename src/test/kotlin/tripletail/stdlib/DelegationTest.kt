@@ -11,10 +11,7 @@ class DelegationTest {
         class Porsche : SportsCar {
             override fun race(): String = "prrrr"
         }
-
         class DerivedPorsche(derived: SportsCar) : SportsCar by derived
-
-        val porsche = Porsche()
-        assert( DerivedPorsche(porsche).race() == "prrrr" )
+        assert( DerivedPorsche( Porsche() ).race() == "prrrr" )
     }
 }
