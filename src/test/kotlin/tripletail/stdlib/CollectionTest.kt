@@ -4,7 +4,7 @@ import arrow.core.zip
 
 import org.junit.Test
 
-class CollectionsTest {
+class CollectionTest {
     @Test fun list() {
         val list = listOf(1, 2, 3)
         assert( list.size == 3 )
