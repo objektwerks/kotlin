@@ -11,10 +11,12 @@ Kotlin
 
 Build
 -----
+>Gradle is flakey. So you might have to use the Gradle UI Tasks.
 1. gradle clean build
 
 Test
 ----
+>Gradle is flakey. So you might have to use the Gradle UI Tasks.
 1. gradle clean build test
 
 Design
