@@ -21,7 +21,7 @@ dependencies {
     implementation(platform(kotlin("bom")))
     implementation(kotlin("stdlib-jdk8"))
 
-    implementation("io.arrow-kt:arrow-core:0.13.1")
+    implementation("io.arrow-kt:arrow-core:0.13.2")
 
     implementation("com.sksamuel.hoplite:hoplite-core:1.4.0")
     implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.0")
