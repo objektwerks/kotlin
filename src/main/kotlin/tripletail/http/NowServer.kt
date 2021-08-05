@@ -1,4 +1,4 @@
-package tripletail
+package tripletail.http
 
 import io.ktor.application.*
 import io.ktor.response.*
