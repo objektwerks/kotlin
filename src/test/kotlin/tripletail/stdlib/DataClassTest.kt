@@ -5,8 +5,7 @@ import kotlin.test.*
 import org.junit.Test
 
 class DataClassTest {
-    @Test
-    fun dataClass() {
+    @Test fun dataClass() {
         data class Data(val value: String)
         val data = Data("data")
         val copy = data.copy( value = "copy")

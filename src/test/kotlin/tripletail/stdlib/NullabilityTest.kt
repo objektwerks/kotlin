@@ -1,11 +1,10 @@
 package tripletail.stdlib
 
 import kotlin.test.assertNull
+import kotlin.test.assertFailsWith
+import kotlin.test.assertNotNull
 
 import org.junit.Test
-import kotlin.test.assertFailsWith
-
-import kotlin.test.assertNotNull
 
 data class Task(val description: String, val code: String? = null)
 
@@ -13,7 +12,7 @@ class NullabilityTest {
     @Test fun nullability() {
         var text: String? = null
         assert( text.isNullOrEmpty() )
-        assert( text?.length ?: -1 == -1 )
+        assert( (text?.length ?: -1) == -1)
         assertFailsWith<NullPointerException> {
             text!!.length
         }

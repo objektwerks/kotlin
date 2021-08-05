@@ -1,9 +1,9 @@
 package tripletail.sql
 
 import com.sksamuel.hoplite.ConfigLoader
+
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
-
 import org.junit.Test
 
 data class H2Config(val url: String, val driver: String, val user: String, val password: String)

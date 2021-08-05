@@ -8,7 +8,7 @@ import kotlin.test.Test
 class ToIntException(message: String) : Exception(message)
 
 class EitherTest {
-    private fun toInt(value: String): Either<ToIntException, Int> =
+    fun toInt(value: String): Either<ToIntException, Int> =
         when ( val integer = value.toIntOrNull() ) {
             null -> Left(ToIntException(value))
             else -> Right(integer)

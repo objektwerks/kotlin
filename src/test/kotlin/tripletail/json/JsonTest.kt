@@ -7,8 +7,7 @@ import kotlinx.serialization.json.Json
 
 import org.junit.Test
 
-@Serializable
-data class Car(val type: String, val model: String)
+@Serializable data class Car(val type: String, val model: String)
 
 class JsonTest {
     @Test

@@ -40,6 +40,5 @@ class ResultTest {
             }.recover { Instant.now() }
              .getOrDefault { } == validInstant
         )
-
     }
 }
