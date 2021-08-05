@@ -39,7 +39,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.32.1")
     implementation("com.h2database:h2:1.4.200")
 
-    implementation("ch.qos.logback:logback-classic:1.2.3")
+    implementation("ch.qos.logback:logback-classic:1.2.5")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit"))
