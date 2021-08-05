@@ -9,6 +9,10 @@ Kotlin
 1. Json
 2. Test
 
+Build
+-----
+1. gradle clean build
+
 Design
 ------
 >Kotlin focuses on **2** concepts:
