@@ -4,7 +4,13 @@ plugins {
     application
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> { kotlinOptions.jvmTarget = "1.8" }
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.withType<Test> {
+    useJUnit()
+}
 
 group = "tripletail"
 version = "0.1-SNAPSHOT"
@@ -41,6 +47,6 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:1.2.5")
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.30-M1")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.5.30-M1")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.30-M1")
 }
