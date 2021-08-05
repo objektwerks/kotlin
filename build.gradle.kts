@@ -26,7 +26,7 @@ dependencies {
     implementation("com.sksamuel.hoplite:hoplite-core:1.4.0")
     implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.0")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
 
     implementation("io.ktor:ktor-client-core:1.5.3")
     implementation("io.ktor:ktor-client-cio:1.5.3")
