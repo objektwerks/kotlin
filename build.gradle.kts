@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30-M1")
 
     implementation("io.arrow-kt:arrow-core:0.13.2")
 
@@ -41,6 +41,6 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:1.2.5")
 
-    testImplementation(kotlin("test"))
-    testImplementation(kotlin("test-junit"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.30-M1")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.30-M1")
 }
