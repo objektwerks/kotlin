@@ -13,6 +13,10 @@ Build
 -----
 1. gradle clean build
 
+Test
+----
+1. gradle clean build test
+
 Design
 ------
 >Kotlin focuses on **2** concepts:
