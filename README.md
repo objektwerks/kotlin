@@ -15,7 +15,7 @@ Build
 
 Test
 ----
->You might have to use IntelliJ Gradle Tasks.
+>***Note:*** You ***might*** have to use IntelliJ Gradle tasks.
 1. gradle clean build test
 
 Design
