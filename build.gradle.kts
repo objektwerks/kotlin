@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.5.30-RC"
-    kotlin("plugin.serialization") version "1.5.30-RC"
+    kotlin("jvm") version "1.5.30"
+    kotlin("plugin.serialization") version "1.5.30"
     application
 }
 
@@ -25,7 +25,7 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30-RC")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30")
 
     implementation("io.arrow-kt:arrow-core:0.13.2")
 
@@ -47,6 +47,6 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:1.2.5")
 
-    implementation("org.jetbrains.kotlin:kotlin-test:1.5.30-RC")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.30-RC")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.5.30")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.30")
 }
