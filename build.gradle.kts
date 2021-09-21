@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.5.30"
-    kotlin("plugin.serialization") version "1.5.30"
+    kotlin("jvm") version "1.5.31"
+    kotlin("plugin.serialization") version "1.5.31"
     application
 }
 
@@ -25,7 +25,7 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31")
 
     implementation("io.arrow-kt:arrow-core:0.13.2")
 
@@ -40,13 +40,13 @@ dependencies {
     implementation("io.ktor:ktor-server-core:1.6.3")
     implementation("io.ktor:ktor-server-netty:1.6.3")
 
-    implementation("org.jetbrains.exposed:exposed-core:0.34.1")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.34.1")
-    implementation("org.jetbrains.exposed:exposed-dao:0.34.1")
+    implementation("org.jetbrains.exposed:exposed-core:0.34.2")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.34.2")
+    implementation("org.jetbrains.exposed:exposed-dao:0.34.2")
     implementation("com.h2database:h2:1.4.200")
 
-    implementation("ch.qos.logback:logback-classic:1.2.5")
+    implementation("ch.qos.logback:logback-classic:1.2.6")
 
-    implementation("org.jetbrains.kotlin:kotlin-test:1.5.30")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.30")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.31")
 }
