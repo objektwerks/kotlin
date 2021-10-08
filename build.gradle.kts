@@ -29,10 +29,10 @@ dependencies {
 
     implementation("io.arrow-kt:arrow-core:1.0.0")
 
-    implementation("com.sksamuel.hoplite:hoplite-core:1.4.7")
-    implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.7")
+    implementation("com.sksamuel.hoplite:hoplite-core:1.4.9")
+    implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.9")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
 
     implementation("io.ktor:ktor-client-core:1.6.3")
     implementation("io.ktor:ktor-client-cio:1.6.3")
@@ -40,9 +40,9 @@ dependencies {
     implementation("io.ktor:ktor-server-core:1.6.3")
     implementation("io.ktor:ktor-server-netty:1.6.3")
 
-    implementation("org.jetbrains.exposed:exposed-core:0.34.2")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.34.2")
-    implementation("org.jetbrains.exposed:exposed-dao:0.34.2")
+    implementation("org.jetbrains.exposed:exposed-core:0.35.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.35.1")
+    implementation("org.jetbrains.exposed:exposed-dao:0.35.1")
     implementation("com.h2database:h2:1.4.200")
 
     implementation("ch.qos.logback:logback-classic:1.2.6")
