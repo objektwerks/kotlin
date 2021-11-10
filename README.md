@@ -8,6 +8,11 @@ Kotlin
 5. Json : kotlinx-serialization-json
 6. Test : kotlin-test / kotlin-test-junit
 
+Gradle
+------
+>To upgrade Gradle, edit the **version number** in this file:
+1. gradle/wrapper/gradle-wrapper.properties
+
 Build
 -----
 >You might have to use IntelliJ Gradle Tasks.
