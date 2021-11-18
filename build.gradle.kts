@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.5.31"
-    kotlin("plugin.serialization") version "1.5.31"
+    kotlin("jvm") version "1.6.0"
+    kotlin("plugin.serialization") version "1.6.0"
     application
 }
 
@@ -25,12 +25,12 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0")
 
     implementation("io.arrow-kt:arrow-core:1.0.1")
 
-    implementation("com.sksamuel.hoplite:hoplite-core:1.4.11")
-    implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.11")
+    implementation("com.sksamuel.hoplite:hoplite-core:1.4.14")
+    implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.14")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
 
@@ -45,8 +45,8 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.36.1")
     implementation("com.h2database:h2:1.4.200")
 
-    implementation("ch.qos.logback:logback-classic:1.2.6")
+    implementation("ch.qos.logback:logback-classic:1.2.7")
 
-    implementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.31")
 }
