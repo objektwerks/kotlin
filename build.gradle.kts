@@ -32,7 +32,7 @@ dependencies {
     implementation("com.sksamuel.hoplite:hoplite-core:1.4.14")
     implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.14")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
 
     implementation("io.ktor:ktor-client-core:1.6.4")
     implementation("io.ktor:ktor-client-cio:1.6.4")
@@ -48,5 +48,5 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.2.7")
 
     implementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.31")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.6.0")
 }
