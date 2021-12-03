@@ -29,8 +29,8 @@ dependencies {
 
     implementation("io.arrow-kt:arrow-core:1.0.1")
 
-    implementation("com.sksamuel.hoplite:hoplite-core:1.4.14")
-    implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.14")
+    implementation("com.sksamuel.hoplite:hoplite-core:1.4.15")
+    implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.15")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
 
@@ -38,7 +38,7 @@ dependencies {
     implementation("io.ktor:ktor-client-cio:1.6.4")
 
     implementation("io.ktor:ktor-server-core:1.6.4")
-    implementation("io.ktor:ktor-server-netty:1.6.4")
+    implementation("io.ktor:ktor-server-netty:1.6.6")
 
     implementation("org.jetbrains.exposed:exposed-core:0.36.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.36.1")
