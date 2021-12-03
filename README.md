@@ -4,7 +4,7 @@ Kotlin
 1. Arrow : arrow-kt.io
 2. Hoplite : github.com/sksamuel/hoplite
 3. Ktor : ktor.io
-4. Exposed : github.com/JetBrains/Exposed  ( currently broken !!! )
+4. Exposed : github.com/JetBrains/Exposed  ( currently broken due to exposed bug vis-a-vis h2 )
 5. Json : kotlinx-serialization-json
 6. Test : kotlin-test / kotlin-test-junit
 
