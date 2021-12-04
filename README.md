@@ -4,9 +4,13 @@ Kotlin
 1. Arrow : arrow-kt.io
 2. Hoplite : github.com/sksamuel/hoplite
 3. Ktor : ktor.io
-4. Exposed : github.com/JetBrains/Exposed  ( currently broken due to exposed bug vis-a-vis h2 )
+4. Exposed : github.com/JetBrains/Exposed **
 5. Json : kotlinx-serialization-json
 6. Test : kotlin-test / kotlin-test-junit
+
+** Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement
+"SELECT VALUE[*] FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME = 'MODE'"; expected "TOP,
+DISTINCT, ALL, ,, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement: ( See ExposedTest.kt, line 26 )
 
 Gradle
 ------
