@@ -10,7 +10,7 @@ Kotlin
 
 ** Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement
 "SELECT VALUE[*] FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME = 'MODE'"; expected "TOP,
-DISTINCT, ALL, ,, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement: ( See ExposedTest.kt, line 26 )
+DISTINCT, ALL, ,, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement: ( See ExposedTest.kt, line 28 )
 
 Gradle
 ------
