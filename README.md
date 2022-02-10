@@ -8,10 +8,6 @@ Kotlin
 5. Json : kotlinx-serialization-json
 6. Test : kotlin-test / kotlin-test-junit
 
-** Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement
-"SELECT VALUE[*] FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME = 'MODE'"; expected "TOP,
-DISTINCT, ALL, ,, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement: ( See ExposedTest.kt, line 28 )
-
 Gradle
 ------
 >To upgrade Gradle, edit the **version number** in this file:
