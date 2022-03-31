@@ -20,8 +20,9 @@ Build
 
 Test
 ----
->***Note:*** You ***might*** have to use IntelliJ Gradle tasks.
+>***Note:*** Use Intellij gradle to view test results.
 1. gradle clean build test
+>Or open ***build/reports/tests/test/index.html*** in a browser.
 
 Design
 ------
