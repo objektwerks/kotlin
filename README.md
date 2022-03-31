@@ -11,7 +11,7 @@ Kotlin
 Gradle
 ------
 >To upgrade Gradle, edit the **version number** in this file:
-1. gradle/wrapper/gradle-wrapper.properties
+* gradle/wrapper/gradle-wrapper.properties
 
 Build
 -----
