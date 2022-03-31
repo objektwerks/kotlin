@@ -30,11 +30,11 @@ Design
 >Kotlin focuses on **2** major concepts:
 1. nullability
 2. throwing exceptions
->In the FP space, both concepts are foreign.
+>In the FP space, both concepts are ***foreign***. Nonetheless, akin to Scala, Kotlin can be used as an OO-FP hybrid.
 
 Collections
 -----------
->Kotlin collections are **not** Scala collections. They mimic Java collections.
+>Kotlin collections are **not** like Scala collections. They mimic Java collections.
 
 Coroutines
 ----------
