@@ -15,30 +15,31 @@ Gradle
 
 Build
 -----
->You might have to use IntelliJ Gradle Tasks.
-1. gradle clean build
+1. Use Intellij gradle to clean and build.
+2. gradle clean build
 
 Test
 ----
-1. Use Intellij gradle to run and view tests.
+1. Use Intellij gradle to clean, build, run and view tests.
 2. gradle clean build test
      * view results courtesy of com.adarshr.test-logger plugin
      * optionally open ***build/reports/tests/test/index.html*** in a browser
 
 Design
 ------
->Kotlin focuses on **2** major concepts:
+>Kotlin focuses on **3** major areas:
 1. nullability
-2. throwing exceptions
->In the FP space, both concepts are ***foreign***. Nonetheless, akin to Scala, Kotlin can be used as an OO-FP hybrid.
+2. exceptions
+3. Java compatibility
+>In the FP space, 1 and 2 are ***foreign*** concepts. Nonetheless, akin to Scala, Kotlin can be used as an OO-FP hybrid.
 
 Collections
 -----------
->Kotlin collections are **not** like Scala collections. Instead, they tend to mimic Java collections.
+>Kotlin collections are ***not*** like Scala collections. Instead, they mimic Java collections.
 
 Coroutines
 ----------
->Kotlin coroutines are **complex** compared to a Scala Future.
+>Kotlin coroutines are **complex** compared to using a Scala Future.
 
 Arrow
 -----
