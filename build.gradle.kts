@@ -46,7 +46,7 @@ dependencies {
 
     implementation("com.h2database:h2:2.1.210")
 
-    implementation("ch.qos.logback:logback-classic:1.2.10")
+    implementation("ch.qos.logback:logback-classic:1.2.11")
 
     implementation("org.jetbrains.kotlin:kotlin-test:1.6.10")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.6.10")
