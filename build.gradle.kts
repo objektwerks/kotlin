@@ -30,8 +30,8 @@ dependencies {
 
     implementation("io.arrow-kt:arrow-core:1.0.1")
 
-    implementation("com.sksamuel.hoplite:hoplite-core:1.4.16")
-    implementation("com.sksamuel.hoplite:hoplite-yaml:1.4.16")
+    implementation("com.sksamuel.hoplite:hoplite-core:2.0.4")
+    implementation("com.sksamuel.hoplite:hoplite-yaml:2.0.4")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 
