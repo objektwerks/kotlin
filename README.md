@@ -22,7 +22,7 @@ Test
 ----
 >Use Intellij gradle to view test results. Or run from commandline:
 1. gradle clean build test
->Or open ***build/reports/tests/test/index.html*** in a browser.
+>And optionally open ***build/reports/tests/test/index.html*** in a browser.
 
 Design
 ------
