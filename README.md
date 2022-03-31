@@ -20,9 +20,10 @@ Build
 
 Test
 ----
->Use Intellij gradle to view test results. Or run from commandline:
-1. gradle clean build test
->And optionally open ***build/reports/tests/test/index.html*** in a browser.
+1. Use Intellij gradle to run and view tests.
+2. gradle clean build test
+     * view results courtesy of com.adarshr.test-logger plugin
+     * optionally open ***build/reports/tests/test/index.html*** in a browser
 
 Design
 ------
