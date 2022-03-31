@@ -34,7 +34,7 @@ Design
 
 Collections
 -----------
->Kotlin collections are **not** like Scala collections. They mimic Java collections.
+>Kotlin collections are **not** like Scala collections. Instead, they tend to mimic Java collections.
 
 Coroutines
 ----------
