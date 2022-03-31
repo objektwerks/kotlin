@@ -41,8 +41,8 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:1.6.8")
 
     implementation("org.jetbrains.exposed:exposed-core:0.37.3")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.36.1")
-    implementation("org.jetbrains.exposed:exposed-dao:0.36.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.37.3")
+    implementation("org.jetbrains.exposed:exposed-dao:0.37.3")
 
     implementation("com.h2database:h2:2.1.210")
 
