@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.6.10"
-    kotlin("plugin.serialization") version "1.6.10"
+    kotlin("jvm") version "1.6.20"
+    kotlin("plugin.serialization") version "1.6.20"
     application
     id("com.adarshr.test-logger") version "3.2.0"
 }
@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.20")
 
     implementation("io.arrow-kt:arrow-core:1.0.1")
 
@@ -49,6 +49,6 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:1.2.11")
 
-    implementation("org.jetbrains.kotlin:kotlin-test:1.6.10")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.6.10")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.6.20")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.6.20")
 }
