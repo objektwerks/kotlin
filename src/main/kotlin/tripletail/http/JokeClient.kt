@@ -9,6 +9,6 @@ suspend fun main() {
     val client = HttpClient(CIO)
     val response: HttpResponse = client.get("http://api.icndb.com/jokes/random/")
     println(response.status)
-    println(response.readText())
+    println(response.bodyAsText())
     client.close()
 }
