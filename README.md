@@ -25,6 +25,14 @@ Test
      * view results courtesy of com.adarshr.test-logger plugin
      * optionally open ***build/reports/tests/test/index.html*** in a browser
 
+Run
+---
+>The task: **gradle run** runs the 1st main(). Currently that is **tripletail.console.App**.
+>To selectively run an app:
+1. select
+2. right click
+3. select run '*Kt'
+
 Design
 ------
 >Kotlin focuses on **3** major areas:
