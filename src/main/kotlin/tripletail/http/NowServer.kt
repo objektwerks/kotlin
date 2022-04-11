@@ -8,7 +8,9 @@ import io.ktor.server.routing.*
 
 import java.time.Instant
 
-/** To test server: curl http://localhost:7979/now */
+/**
+ * To test server: curl http://localhost:7979/now
+ */
 fun main() {
     embeddedServer(Netty, port = 7979) {
         routing {
