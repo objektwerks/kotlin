@@ -17,7 +17,7 @@ group = "tripletail"
 version = "0.1-SNAPSHOT"
 
 application {
-    mainClass.set("tripletail.console.App")
+    mainClass.set("console.App")
 }
 
 repositories {

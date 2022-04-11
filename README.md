@@ -27,7 +27,7 @@ Test
 
 Run
 ---
->The task: **gradle run** runs the 1st main(). Currently that is **tripletail.console.App**.
+>The task: **gradle run** runs the 1st main(). Currently that is **console.App**.
 >To selectively run an app:
 1. select
 2. right click
