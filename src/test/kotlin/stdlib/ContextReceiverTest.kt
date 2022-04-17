@@ -21,11 +21,10 @@ class ContextReceiverTest {
     }
 
     @Test fun context() {
-        val logger = Logger("test")
-        val context = object: LoggerContext {
-            override val logger: Logger = logger
+        val loggerContext = object: LoggerContext {
+            override val logger: Logger = Logger("test")
         }
-        with(context) {
+        with(loggerContext) {
             val store = Store()
             assert(store.save(Random.nextInt().toString()))
             assert(store.save(Random.nextInt().toString()))
