@@ -1,6 +1,7 @@
 package stdlib
 
 import org.junit.Test
+import kotlin.random.Random
 
 class ContextReceiverTest {
     class Logger(private val name: String) {
@@ -20,7 +21,7 @@ class ContextReceiverTest {
     @Test fun context() {
         fun test(loggingContext: LoggerContext) {
             with(loggingContext) {
-                assert(store("test"))
+                assert(store(Random.nextInt().toString()))
             }
         }
     }
