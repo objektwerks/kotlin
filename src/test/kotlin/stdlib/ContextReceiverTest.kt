@@ -1,7 +1,8 @@
 package stdlib
 
-import org.junit.Test
 import kotlin.random.Random
+
+import org.junit.Test
 
 class ContextReceiverTest {
     class Logger(private val name: String) {
@@ -12,9 +13,11 @@ class ContextReceiverTest {
     }
 
     context(LoggerContext)
-    private fun store(value: String): Boolean {
-        logger.log("stored: $value")
-        return true
+    class Store {
+        fun save(value: String): Boolean {
+            logger.log("saved: $value")
+            return true
+        }
     }
 
     @Test fun context() {
@@ -23,9 +26,10 @@ class ContextReceiverTest {
             override val logger: Logger = logger
         }
         with(context) {
-            assert(store(Random.nextInt().toString()))
-            assert(store(Random.nextInt().toString()))
-            assert(store(Random.nextInt().toString()))
+            val store = Store()
+            assert(store.save(Random.nextInt().toString()))
+            assert(store.save(Random.nextInt().toString()))
+            assert(store.save(Random.nextInt().toString()))
         }
     }
 }
