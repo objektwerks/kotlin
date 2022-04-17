@@ -8,21 +8,24 @@ class ContextReceiverTest {
         fun log(message: String): Unit = println("$name: $message")
     }
     interface LoggerContext {
-        val log: Logger
+        val logger: Logger
     }
 
     context(LoggerContext)
     private fun store(value: String): Boolean {
-        val logger = Logger("test")
         logger.log("stored: $value")
         return true
     }
 
     @Test fun context() {
-        fun test(loggingContext: LoggerContext) {
-            with(loggingContext) {
-                assert(store(Random.nextInt().toString()))
-            }
+        val logger = Logger("test")
+        val context = object: LoggerContext {
+            override val logger: Logger = logger
+        }
+        with(context) {
+            assert(store(Random.nextInt().toString()))
+            assert(store(Random.nextInt().toString()))
+            assert(store(Random.nextInt().toString()))
         }
     }
 }
