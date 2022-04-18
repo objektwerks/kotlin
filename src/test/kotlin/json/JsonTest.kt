@@ -10,9 +10,7 @@ import org.junit.Test
 @Serializable data class Car(val type: String, val model: String)
 
 class JsonTest {
-    @Test
-    @kotlinx.serialization.ExperimentalSerializationApi
-    fun json() {
+    @Test fun json() {
         val porsche = Car("Porsche", "911")
         val json = Json.encodeToString(porsche)
         assert( Json.decodeFromString<Car>(json) == porsche )
