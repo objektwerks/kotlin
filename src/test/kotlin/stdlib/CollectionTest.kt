@@ -53,7 +53,6 @@ class CollectionTest {
         assert( set.map { it * it } == listOf(1, 4, 9) )
         assert( set.filter { it % 2 == 0 } == listOf(2) )
         assert( set.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
-        assert( setOf(3, 2, 1).sorted() == listOf(1, 2, 3) )
     }
 
     @Test fun mutableSet() {
@@ -86,6 +85,9 @@ class CollectionTest {
     @Test fun sorting() {
         assert( listOf(1, 2, 3).reversed() == listOf(3, 2, 1) )
         assert( listOf(3, 2, 1).sorted() == listOf(1, 2, 3) )
+
+        assert( setOf(1, 2, 3).reversed() == listOf(3, 2, 1) )
+        assert( setOf(3, 2, 1).sorted() == listOf(1, 2, 3) )
 
         assert( listOf("three", "four", "two").sorted() == listOf("four", "three", "two") )
         assert( listOf("three", "four", "two").sortedDescending() == listOf("two", "three", "four") )
