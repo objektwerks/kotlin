@@ -5,7 +5,7 @@ import java.util.*
 import org.junit.Test
 
 class ControlFlowTest {
-    @Test fun controlFlow() {
+    @Test fun foreach() {
         for (n in listOf(1, 2, 3)) { assert(n > 0) }
         for (n in 1..3) { assert(n > 0) }
     }
