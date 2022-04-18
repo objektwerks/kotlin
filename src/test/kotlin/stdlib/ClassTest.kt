@@ -21,16 +21,18 @@ class ClassTest {
             }
         }
         assert( !Source("file://", "home/temp").url.isNullOrEmpty() )
-
-        class Sink(val url: String) {
-            constructor(protocol: String, path: String) : this("$protocol$path")
-        }
-        assert( Sink("file://", "home/temp").url.isNotEmpty() )
     }
 
     @Test fun primaryConstructor() {
         class Property constructor(val value: String)
         assert( Property("value").value == "value" )
+    }
+
+    @Test fun secondaryConstructor() {
+        class Sink(val url: String) {
+            constructor(protocol: String, path: String) : this("$protocol$path")
+        }
+        assert( Sink("file://", "home/temp").url.isNotEmpty() )
     }
 
     @Test fun typeAlias() {
