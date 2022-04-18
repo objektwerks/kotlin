@@ -85,4 +85,9 @@ class CollectionTest {
         map.remove(4)
         assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3) )
     }
+
+    @Test fun sorting() {
+        val numbers = listOf("three", "four", "two")
+        assert( numbers.sortedBy { it.length } == listOf("two", "four", "three") )
+    }
 }
