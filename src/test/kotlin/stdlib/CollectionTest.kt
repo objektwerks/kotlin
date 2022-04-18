@@ -13,6 +13,7 @@ class CollectionTest {
         assert( list.filter { it % 2 == 0 } == listOf(2) )
         assert( list.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
         assert( listOf( listOf("kotlin") ).flatten() == listOf("kotlin") )
+        assert( list.drop(2) == listOf(3) )
     }
 
     @Test fun set() {
