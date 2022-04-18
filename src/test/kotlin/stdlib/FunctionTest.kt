@@ -22,12 +22,6 @@ class FunctionTest {
             else factorial(n - 1, acc * n)
         assert(factorial(9) == 362880)
 
-        var closure = 0
-        listOf(1, 2, 3).filter { it > 0 }.forEach {
-            closure += it
-        }
-        assert(closure == 6)
-
         val sum = { x: Int, y: Int -> x + y }
         val multiply = { x: Int, y: Int -> x * y }
         assert(sum(3, 3) == 6)
@@ -36,6 +30,14 @@ class FunctionTest {
         fun total(x: Int, y: Int, f: (Int, Int) -> Int): Int = f(x, y)
         assert(total(3, 3, sum) == 6)
         assert(total(3, 3, multiply) == 9)
+    }
+
+    @Test fun closure() {
+        var closure = 0
+        listOf(1, 2, 3).filter { it > 0 }.forEach {
+            closure += it
+        }
+        assert(closure == 6)
     }
 
     @Test fun varargs() {
@@ -47,7 +49,7 @@ class FunctionTest {
         assert(toList(1, 2, 3) == listOf(1, 2, 3))
     }
 
-        @Test fun extend() {
+    @Test fun extend() {
         fun String.addBang(): String = "$this!"
         assert("hello".addBang() == "hello!")
     }
