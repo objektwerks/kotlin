@@ -16,6 +16,7 @@ class CollectionTest {
         assert( list.drop(2) == listOf(3) )
         assert( list.take(1) == listOf(1) )
         assert( list.reversed() == listOf(3, 2, 1) )
+        assert( list.reversed().sorted() == listOf(1, 2, 3) )
     }
 
     @Test fun set() {
