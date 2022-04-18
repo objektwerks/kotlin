@@ -12,10 +12,7 @@ class ClassTest {
         assert( None().hashCode() > 0 )
 
         class Field(val name: String)
-        assert( Field(name = "field").name == "field" )
-
-        class Property constructor(val value: String)
-        assert( Property(value = "value").value == "value" )
+        assert( Field("field").name == "field" )
 
         class Source(val protocol: String, val path: String) {
             val url: String?
@@ -23,12 +20,17 @@ class ClassTest {
                 url = "$protocol$path"
             }
         }
-        assert( !Source(protocol = "file://", path = "home/temp").url.isNullOrEmpty() )
+        assert( !Source("file://", "home/temp").url.isNullOrEmpty() )
 
         class Sink(val url: String) {
             constructor(protocol: String, path: String) : this("$protocol$path")
         }
-        assert( Sink(protocol = "file://", path = "home/temp").url.isNotEmpty() )
+        assert( Sink("file://", "home/temp").url.isNotEmpty() )
+    }
+
+    @Test fun primaryConstructor() {
+        class Property constructor(val value: String)
+        assert( Property("value").value == "value" )
     }
 
     @Test fun typeAlias() {
