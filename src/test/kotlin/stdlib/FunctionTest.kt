@@ -3,6 +3,9 @@ package stdlib
 import org.junit.Test
 
 class FunctionTest {
+    val sum = { x: Int, y: Int -> x + y }
+    val multiply = { x: Int, y: Int -> x * y }
+
     @Test fun function() {
         fun square(n: Int): Int = n * n
         assert(square(2) == 4)
@@ -15,14 +18,14 @@ class FunctionTest {
             else factorial(n - 1, acc * n)
         assert(factorial(9) == 362880)
 
-        val sum = { x: Int, y: Int -> x + y }
-        val multiply = { x: Int, y: Int -> x * y }
-        assert(sum(3, 3) == 6)
-        assert(multiply(3, 3) == 9)
-
         fun total(x: Int, y: Int, f: (Int, Int) -> Int): Int = f(x, y)
         assert(total(3, 3, sum) == 6)
         assert(total(3, 3, multiply) == 9)
+    }
+
+    @Test fun anonymous() {
+        assert(sum(3, 3) == 6)
+        assert(multiply(3, 3) == 9)
     }
 
     @Test fun infix() {
