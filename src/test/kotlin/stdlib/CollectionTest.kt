@@ -9,6 +9,8 @@ class CollectionTest {
         val list = listOf(1, 2, 3)
         assert( list.size == 3 )
         assert( list[0] == 1)
+        assert( listOf(1, 2, 3, 4) == list + 4 )
+        assert( listOf(1, 2) == list - 3 )
         assert( list.map { it * it } == listOf(1, 4, 9) )
         assert( list.filter { it % 2 == 0 } == listOf(2) )
         assert( list.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
