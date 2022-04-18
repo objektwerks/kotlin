@@ -15,6 +15,7 @@ class CollectionTest {
         assert( listOf( listOf("kotlin") ).flatten() == listOf("kotlin") )
         assert( list.drop(2) == listOf(3) )
         assert( list.take(1) == listOf(1) )
+        assert( list.reversed() == listOf(3, 2, 1) )
     }
 
     @Test fun set() {
