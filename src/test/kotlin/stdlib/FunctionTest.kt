@@ -4,7 +4,7 @@ import org.junit.Test
 
 class FunctionTest {
     val sum = { x: Int, y: Int -> x + y }
-    val multiply = { x: Int, y: Int -> x * y }
+    val multiply: (Int, Int) -> Int = { x: Int, y: Int -> x * y }
 
     @Test fun function() {
         fun square(n: Int): Int = n * n
