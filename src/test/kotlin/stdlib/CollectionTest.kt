@@ -21,6 +21,14 @@ class CollectionTest {
         assert( list.reversed().sorted() == listOf(1, 2, 3) )
     }
 
+    @Test fun mutableList() {
+        val list = mutableListOf(1, 2, 3)
+        list.add(4)
+        assert( listOf(1, 2, 3, 4) == list )
+        list.remove(4)
+        assert( listOf(1, 2, 3) == list )
+    }
+
     @Test fun set() {
         val set = setOf(1, 2, 3)
         assert( set.size == 3 )
