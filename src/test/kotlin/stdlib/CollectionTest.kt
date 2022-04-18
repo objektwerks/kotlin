@@ -96,6 +96,11 @@ class CollectionTest {
         assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3) )
     }
 
+    @Test fun sortedMap() {
+        val map = sortedMapOf(3 to 3, 2 to 2, 1 to 1)
+        assert( map == mapOf(1 to 1, 2 to 2, 3 to 3) )
+    }
+
     @Test fun sorting() {
         assert( listOf(1, 2, 3).reversed() == listOf(3, 2, 1) )
         assert( listOf(3, 2, 1).sorted() == listOf(1, 2, 3) )
