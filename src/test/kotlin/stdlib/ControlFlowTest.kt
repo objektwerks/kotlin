@@ -36,13 +36,12 @@ class ControlFlowTest {
 
     @Test fun match() {
         when (val n = Random(10).nextInt().absoluteValue) {
-            0 -> fail("value equals zero!")
+            0 -> fail("number equals zero!")
             else -> assert( n > 10 )
         }
 
         val result = when (val n = Random(10).nextInt().absoluteValue) {
-            0, 1, 2, 3 -> fail("value equals 0, 1, 2 or 3!")
-            in 4..7 -> fail("value equals 4, 5, 6, or 7!")
+            in 0..10 -> fail("number is between 0 and 10!")
             else -> n
         }
         assert( result > 10 )
