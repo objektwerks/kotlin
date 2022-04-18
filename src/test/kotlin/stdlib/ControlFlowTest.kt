@@ -8,23 +8,25 @@ class ControlFlowTest {
     @Test fun controlFlow() {
         for (n in listOf(1, 2, 3)) { assert(n > 0) }
         for (n in 1..3) { assert(n > 0) }
-
-        var condition = 3
-        while (condition > 0) {
-            condition--
-        }
-        assert( condition == 0 )
-
-        condition = 3
-        do {
-            condition--
-        } while (condition > 0)
-        assert( condition == 0 )
     }
 
     @Test fun ifelse() {
         val result = if (Random(10).nextInt() > 5) 6 else 4
         assert( result > 3 )
+    }
+
+    @Test fun loop() {
+        var a = 3
+        while (a > 0) {
+            a--
+        }
+        assert( a == 0 )
+
+        var b = 3
+        do {
+            b--
+        } while (b > 0)
+        assert( b == 0 )
     }
 
     @Test fun match() {
