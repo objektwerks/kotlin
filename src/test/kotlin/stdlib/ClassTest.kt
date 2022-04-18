@@ -51,7 +51,9 @@ class ClassTest {
             }
         }
         assert( Porsche().drive() == "purrrr" )
+    }
 
+    @Test fun objectLiteral() {
         val greeting = object {
             val hello = "Hello"
             val world = "Kotlin"
