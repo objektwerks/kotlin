@@ -22,11 +22,11 @@ class ControlFlowTest {
         }
         assert( a == 0 )
 
-        var b = 3
+        var b = 0
         do {
-            b--
-        } while (b > 0)
-        assert( b == 0 )
+            b++
+        } while (b != 3)
+        assert( b == 3 )
     }
 
     @Test fun match() {
