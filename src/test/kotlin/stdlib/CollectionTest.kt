@@ -8,7 +8,7 @@ class CollectionTest {
     @Test fun list() {
         val list = listOf(1, 2, 3)
         assert( list.size == 3 )
-        assert( list[0] == 1)
+        assert( list[0] == 1 )
         assert( list.getOrElse(3) { _ -> 0 } == 0 )
 
         assert( listOf(1, 2, 3, 4) == list + 4 )
@@ -81,7 +81,7 @@ class CollectionTest {
     @Test fun mutableMap() {
         val map = mutableMapOf(1 to 1, 2 to 2, 3 to 3)
         map.put(4, 4)
-        assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3, 4 to 4))
+        assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3, 4 to 4) )
         map.remove(4)
         assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3) )
     }
