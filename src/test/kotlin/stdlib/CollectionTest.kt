@@ -29,9 +29,6 @@ class CollectionTest {
 
         assert( list.drop(2) == listOf(3) )
         assert( list.take(1) == listOf(1) )
-
-        assert( list.reversed() == listOf(3, 2, 1) )
-        assert( listOf(3, 2, 1).sorted() == listOf(1, 2, 3) )
     }
 
     @Test fun mutableList() {
@@ -87,6 +84,9 @@ class CollectionTest {
     }
 
     @Test fun sorting() {
+        assert( listOf(1, 2, 3).reversed() == listOf(3, 2, 1) )
+        assert( listOf(3, 2, 1).sorted() == listOf(1, 2, 3) )
+
         assert( listOf("three", "four", "two").sorted() == listOf("four", "three", "two") )
         assert( listOf("three", "four", "two").sortedDescending() == listOf("two", "three", "four") )
 
