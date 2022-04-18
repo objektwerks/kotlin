@@ -68,6 +68,11 @@ class CollectionTest {
         assert( setOf(1, 2, 3) == set )
     }
 
+    @Test fun sortedSet() {
+        val set = sortedSetOf(3, 2, 1)
+        assert( set.toList() == listOf(1, 2, 3) )
+    }
+
     @Test fun map() {
         val map = mapOf(1 to 1, 2 to 2, 3 to 3)
         assert( map[1] == 1 )
