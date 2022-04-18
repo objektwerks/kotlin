@@ -20,7 +20,7 @@ class FunctionTest {
         assert(total(3, 3, multiply) == 9)
     }
 
-    @Test fun anonymous() {
+    @Test fun lambda() {
         assert(sum(3, 3) == 6)
         assert(multiply(3, 3) == 9)
     }
