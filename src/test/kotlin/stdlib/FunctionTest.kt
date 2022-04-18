@@ -46,6 +46,12 @@ class FunctionTest {
         assert(closure == 6)
     }
 
+    @Test fun defaultValue() {
+        fun divide(x: Int, y: Int = 1): Int = x / y
+        assert(divide(4) == 4)
+        assert(divide(4, 2) == 2)
+    }
+
     @Test fun varargs() {
         fun <T> toList(vararg ts: T): List<T> {
             val result = ArrayList<T>()
