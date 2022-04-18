@@ -55,6 +55,9 @@ class CollectionTest {
         assert( set.map { it * it } == listOf(1, 4, 9) )
         assert( set.filter { it % 2 == 0 } == listOf(2) )
         assert( set.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
+
+        assert( set union setOf(4, 5, 6) == setOf(1, 2, 3, 4, 5, 6) )
+        assert( setOf(2, 4, 6) intersect setOf(4, 6, 8) == setOf(4, 6) )
     }
 
     @Test fun mutableSet() {
