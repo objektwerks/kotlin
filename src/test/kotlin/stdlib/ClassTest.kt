@@ -28,7 +28,7 @@ class ClassTest {
     }
 
     @Test fun init() {
-        class Source(val protocol: String, val path: String) {
+        class Source(protocol: String, path: String) {
             val url: String?
             init {
                 url = "$protocol$path"
