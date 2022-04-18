@@ -5,7 +5,7 @@ import arrow.core.*
 import kotlin.test.Test
 
 class OptionTest {
-    fun toInt(value: String): Option<Int> = Option.fromNullable(value.toIntOrNull())
+    private fun toInt(value: String): Option<Int> = Option.fromNullable(value.toIntOrNull())
 
     @Test fun option() {
         val list = listOf("1", "2", "3", "four")
