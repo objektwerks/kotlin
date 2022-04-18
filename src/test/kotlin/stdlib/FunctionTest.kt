@@ -7,13 +7,6 @@ class FunctionTest {
         fun square(n: Int): Int = n * n
         assert(square(2) == 4)
 
-        class Numbers {
-            infix fun cube(n: Int): Int = n * n * n
-        }
-
-        val numbers = Numbers()
-        assert(numbers cube 3 == 27)
-
         fun <T> toSingleton(item: T): List<T> = listOf(item)
         assert(toSingleton(3) == listOf(3))
 
@@ -30,6 +23,14 @@ class FunctionTest {
         fun total(x: Int, y: Int, f: (Int, Int) -> Int): Int = f(x, y)
         assert(total(3, 3, sum) == 6)
         assert(total(3, 3, multiply) == 9)
+    }
+
+    @Test fun infix() {
+        class Numbers {
+            infix fun cube(n: Int): Int = n * n * n
+        }
+        val numbers = Numbers()
+        assert(numbers cube 3 == 27)
     }
 
     @Test fun closure() {
