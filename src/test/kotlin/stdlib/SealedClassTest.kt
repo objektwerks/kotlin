@@ -7,10 +7,10 @@ class Const(val value: Int) : Expr()
 class Sum(val left: Expr, val right: Expr) : Expr()
 object NotANumber : Expr()
 
-fun eval(e: Expr): Int =
-    when (e) {
-        is Const -> e.value
-        is Sum -> eval(e.right) + eval(e.left)
+fun eval(expr: Expr): Int =
+    when (expr) {
+        is Const -> expr.value
+        is Sum -> eval(expr.right) + eval(expr.left)
         NotANumber -> Double.NaN.toInt()
     }
 
