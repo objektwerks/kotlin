@@ -13,11 +13,11 @@ sealed class PersonError {
 }
 
 object PersonValidator {
-    fun String.validatedName(): Validated<Nel<PersonError>, String> =
+    private fun String.validatedName(): Validated<Nel<PersonError>, String> =
         if (this.isNotEmpty()) this.valid()
         else PersonError.InvalidName(this).nel().invalid()
 
-    fun Int.validatedAge(): Validated<Nel<PersonError>, Int> =
+    private fun Int.validatedAge(): Validated<Nel<PersonError>, Int> =
         if (this > 0) this.valid()
         else PersonError.InvalidAge(this).nel().invalid()
 
