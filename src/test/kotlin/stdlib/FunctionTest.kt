@@ -17,7 +17,9 @@ class FunctionTest {
             if (n == 1) acc
             else factorial(n - 1, acc * n)
         assert(factorial(9) == 362880)
+    }
 
+    @Test fun higerOrder() {
         fun total(x: Int, y: Int, f: (Int, Int) -> Int): Int = f(x, y)
         assert(total(3, 3, sum) == 6)
         assert(total(3, 3, multiply) == 9)
