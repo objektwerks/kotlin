@@ -14,7 +14,7 @@ class FunctionTest {
         assert(asList(3) == listOf(3))
     }
 
-    @Test fun higerOrder() {
+    @Test fun higherOrder() {
         fun total(x: Int, y: Int, f: (Int, Int) -> Int): Int = f(x, y)
         assert(total(3, 3, sum) == 6)
         assert(total(3, 3, multiply) == 9)
@@ -31,6 +31,11 @@ class FunctionTest {
         }
         val numbers = Numbers()
         assert(numbers cube 3 == 27)
+    }
+
+    @Test fun operator() {
+        operator fun Int.times(value: String) = value.repeat(this)
+        assert(2 * "m" == "mm")
     }
 
     @Test fun closure() {
