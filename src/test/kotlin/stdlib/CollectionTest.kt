@@ -87,6 +87,7 @@ class CollectionTest {
     }
 
     @Test fun sorting() {
+        assert( listOf("three", "four", "two").sorted() == listOf("four", "three", "two") )
         assert( listOf("three", "four", "two").sortedBy { it.length } == listOf("two", "four", "three") )
         assert( listOf("two", "four", "three").sortedByDescending { it.length } == listOf("three", "four", "two") )
     }
