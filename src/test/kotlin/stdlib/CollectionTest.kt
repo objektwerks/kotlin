@@ -29,6 +29,7 @@ class CollectionTest {
 
         assert( list.drop(2) == listOf(3) )
         assert( list.take(1) == listOf(1) )
+        assert( list.slice(2..2) == listOf(3) )
     }
 
     @Test fun mutableList() {
