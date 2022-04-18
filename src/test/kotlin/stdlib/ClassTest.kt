@@ -58,10 +58,7 @@ class ClassTest {
             open fun drive(): String = ""
         }
         class Porsche : Car() {
-            override fun drive(): String {
-                super.drive()
-                return "purrrr"
-            }
+            override fun drive(): String = "purrrr"
         }
         assert( Porsche().drive() == "purrrr" )
     }
