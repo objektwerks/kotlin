@@ -40,7 +40,9 @@ class ClassTest {
             override fun draw(): String = "circle"
         }
         assert( Circle().draw() == "circle" )
+    }
 
+    @Test fun open() {
         open class Car {
             open fun drive(): String = ""
         }
