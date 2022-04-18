@@ -72,6 +72,7 @@ class CollectionTest {
         val map = mapOf(1 to 1, 2 to 2, 3 to 3)
         assert( map[1] == 1 )
         assert( map.size == 3 )
+        assert( map.getOrElse(4) { 0 } == 0 )
 
         assert( mapOf(1 to 1, 2 to 2) == mapOf(1 to 1 ) + (2 to 2) )
         assert( mapOf(1 to 1) == mapOf(1 to 1, 2 to 2) - 2 )
