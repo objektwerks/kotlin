@@ -8,9 +8,6 @@ typealias Name = String
 
 class ClassTest {
     @Test fun classes() {
-        val name: Name = "Fred Flintstone"
-        assertTrue( name.isNotEmpty() )
-
         class None
         assert( None().hashCode() > 0 )
 
@@ -32,6 +29,11 @@ class ClassTest {
             constructor(protocol: String, path: String) : this("$protocol$path")
         }
         assert( Sink(protocol = "file://", path = "home/temp").url.isNotEmpty() )
+    }
+
+    @Test fun typeAlias() {
+        val name: Name = "Fred Flintstone"
+        assertTrue( name.isNotEmpty() )
     }
 
     @Test fun abstract() {
