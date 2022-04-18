@@ -32,7 +32,9 @@ class ClassTest {
             constructor(protocol: String, path: String) : this("$protocol$path")
         }
         assert( Sink(protocol = "file://", path = "home/temp").url.isNotEmpty() )
+    }
 
+    @Test fun abstract() {
         abstract class Shape {
             abstract fun draw(): String
         }
