@@ -14,6 +14,7 @@ class CollectionTest {
         assert( list.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
         assert( listOf( listOf("kotlin") ).flatten() == listOf("kotlin") )
         assert( list.drop(2) == listOf(3) )
+        assert( list.take(1) == listOf(1) )
     }
 
     @Test fun set() {
