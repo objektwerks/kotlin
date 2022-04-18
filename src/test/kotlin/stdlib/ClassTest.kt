@@ -55,11 +55,12 @@ class ClassTest {
 
     @Test fun open() {
         open class Car {
-            open fun drive(): String = ""
+            open fun drive(): String = "chugchugchug"
         }
         class Porsche : Car() {
             override fun drive(): String = "purrrr"
         }
+        assert( Car().drive() == "chugchugchug" )
         assert( Porsche().drive() == "purrrr" )
     }
 
