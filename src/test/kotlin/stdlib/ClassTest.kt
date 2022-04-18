@@ -13,14 +13,6 @@ class ClassTest {
 
         class Field(val name: String)
         assert( Field("field").name == "field" )
-
-        class Source(val protocol: String, val path: String) {
-            val url: String?
-            init {
-                url = "$protocol$path"
-            }
-        }
-        assert( !Source("file://", "home/temp").url.isNullOrEmpty() )
     }
 
     @Test fun primaryConstructor() {
@@ -33,6 +25,16 @@ class ClassTest {
             constructor(protocol: String, path: String) : this("$protocol$path")
         }
         assert( Sink("file://", "home/temp").url.isNotEmpty() )
+    }
+
+    @Test fun init() {
+        class Source(val protocol: String, val path: String) {
+            val url: String?
+            init {
+                url = "$protocol$path"
+            }
+        }
+        assert( !Source("file://", "home/temp").url.isNullOrEmpty() )
     }
 
     @Test fun typeAlias() {
