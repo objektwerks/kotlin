@@ -26,6 +26,7 @@ class CollectionTest {
 
     @Test fun map() {
         val map = mapOf(1 to 1, 2 to 2, 3 to 3)
+        assert( map[1] == 1 )
         assert( map.size == 3 )
         assert( map.map { it.value * it.value } == listOf(1, 4, 9) )
         assert( map.filter { it.value % 2 == 0 } == mapOf(2 to 2) )
