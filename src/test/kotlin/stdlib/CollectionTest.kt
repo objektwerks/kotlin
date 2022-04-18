@@ -7,8 +7,8 @@ import org.junit.Test
 class CollectionTest {
     @Test fun list() {
         val list = listOf(1, 2, 3)
-        assert( list[0] == 1)
         assert( list.size == 3 )
+        assert( list[0] == 1)
         assert( list.map { it * it } == listOf(1, 4, 9) )
         assert( list.filter { it % 2 == 0 } == listOf(2) )
         assert( list.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
@@ -18,6 +18,7 @@ class CollectionTest {
     @Test fun set() {
         val set = setOf(1, 2, 3)
         assert( set.size == 3 )
+        assert( set.contains(1) )
         assert( set.map { it * it } == listOf(1, 4, 9) )
         assert( set.filter { it % 2 == 0 } == listOf(2) )
         assert( set.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
