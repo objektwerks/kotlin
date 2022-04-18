@@ -15,6 +15,7 @@ class CollectionTest {
 
         assert( list.average() == 2.0 )
         assert( list.sum() == 6 )
+        assert( list.sumOf { it * it } == 14 )
 
         assert( list.map { it * it } == listOf(1, 4, 9) )
         assert( list.filter { it % 2 == 0 } == listOf(2) )
