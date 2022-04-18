@@ -1,7 +1,8 @@
 package stdlib
 
-import org.junit.Test
 import kotlin.test.assertTrue
+
+import org.junit.Test
 
 typealias Name = String
 
