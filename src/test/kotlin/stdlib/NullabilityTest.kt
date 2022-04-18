@@ -19,7 +19,7 @@ class NullabilityTest {
         assert(value.isNotEmpty())
     }
 
-    @Test fun letNullable() {
+    @Test fun nullableList() {
         val numbers = listOf<Int?>(1, 2, 3, null)
         val squares = mutableListOf<Int?>()
         for (number in numbers) {
