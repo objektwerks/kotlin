@@ -10,15 +10,15 @@ data class Task(val description: String, val code: String? = null)
 
 class NullabilityTest {
     @Test fun nullability() {
-        var text: String? = null
+        val text: String? = null
         assert( text.isNullOrEmpty() )
         assert( (text?.length ?: -1) == -1)
         assertFailsWith<NullPointerException> {
             text!!.length
         }
 
-        text = "text"
-        assert( text.isNotEmpty() )
+        val value = "value"
+        assert( value.isNotEmpty() )
 
         val task = Task("Mow yard.")
         assertNull( task.code )
@@ -28,7 +28,7 @@ class NullabilityTest {
         var squares = listOf<Int?>()
         for (item in numbers) {
             item?.let { squares = squares.plus(it * it); it }
-            ?.also{it -> println("number: $it") }
+            ?.also { println("number: $it") }
         }
         assert( squares == listOf( 1, 4, 9) )
         assert( numbers.filterNotNull() == listOf( 1, 2, 3) )
