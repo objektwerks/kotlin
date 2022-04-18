@@ -3,6 +3,8 @@ package stdlib
 import java.util.*
 
 import org.junit.Test
+import kotlin.math.absoluteValue
+import kotlin.test.fail
 
 class ControlFlowTest {
     @Test fun ifelse() {
@@ -33,26 +35,16 @@ class ControlFlowTest {
     }
 
     @Test fun match() {
-        assert(
-            when (val n = Random(10).nextInt()) {
-                0 -> 5
-                else -> n
-            } != 0
-        )
+        when (val n = Random(10).nextInt().absoluteValue) {
+            0 -> fail("value equals zero!")
+            else -> assert( n > 10 )
+        }
 
-        assert(
-            when (val n = Random(10).nextInt()) {
-                0, 1, 2, 3 -> 4
-                in 4..7 -> 8
-                else -> n
-            } != 0
-        )
-
-        assert(
-            when (val any: Any = Random(10).nextInt().toString()) {
-                is String -> true
-                else -> any.hashCode() == 0
-            }
-        )
+        val result = when (val n = Random(10).nextInt().absoluteValue) {
+            0, 1, 2, 3 -> fail("value equals 0, 1, 2 or 3!")
+            in 4..7 -> fail("value equals 4, 5, 6, or 7!")
+            else -> n
+        }
+        assert( result > 10 )
     }
 }
