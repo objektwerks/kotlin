@@ -33,6 +33,8 @@ class CollectionTest {
         val set = setOf(1, 2, 3)
         assert( set.size == 3 )
         assert( set.contains(1) )
+        assert( setOf(1, 2, 3, 4) == set + 4 )
+        assert( setOf(1, 2) == set - 3 )
         assert( set.map { it * it } == listOf(1, 4, 9) )
         assert( set.filter { it % 2 == 0 } == listOf(2) )
         assert( set.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
