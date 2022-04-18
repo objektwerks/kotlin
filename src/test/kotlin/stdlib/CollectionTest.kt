@@ -59,4 +59,12 @@ class CollectionTest {
         assert( map.filter { it.value % 2 == 0 } == mapOf(2 to 2) )
         assert( map.zip( mapOf(1 to 4, 2 to 5, 3 to 6) ) == mapOf(1 to Pair(1, 4), 2 to Pair(2, 5), 3 to Pair(3, 6)) )
     }
+
+    @Test fun mutableMap() {
+        val map = mutableMapOf(1 to 1, 2 to 2, 3 to 3)
+        map.put(4, 4)
+        assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3, 4 to 4))
+        map.remove(4)
+        assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3) )
+    }
 }
