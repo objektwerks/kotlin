@@ -2,6 +2,8 @@ package stdlib
 
 import arrow.core.zip
 
+import junit.framework.TestCase.assertFalse
+
 import org.junit.Test
 
 class CollectionTest {
@@ -116,5 +118,12 @@ class CollectionTest {
         assert( listOf("two", "four", "three").sortedByDescending { it.length } == listOf("three", "four", "two") )
 
         assert( listOf("aaa", "bb", "c").sortedWith( compareBy { it.length } ) == listOf("c", "bb", "aaa") )
+    }
+
+    @Test fun equality() {
+        val authors = setOf("Shakespeare", "Hemingway", "Twain")
+        val writers = setOf("Twain", "Shakespeare", "Hemingway")
+        assert(authors == writers)
+        assertFalse(authors === writers)
     }
 }
