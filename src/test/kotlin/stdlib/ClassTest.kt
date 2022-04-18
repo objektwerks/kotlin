@@ -54,14 +54,20 @@ class ClassTest {
     }
 
     @Test fun open() {
-        open class Car {
+        open class Car(val model: String) {
             open fun drive(): String = "chugchugchug"
         }
-        class Porsche : Car() {
+        class Porsche(model: String) : Car(model) {
             override fun drive(): String = "purrrr"
         }
-        assert( Car().drive() == "chugchugchug" )
-        assert( Porsche().drive() == "purrrr" )
+
+        val car = Car("Yugo")
+        assert( car.model == "Yugo" )
+        assert( car.drive() == "chugchugchug" )
+
+        val porsche = Porsche("Boxster")
+        assert( porsche.model == "Boxster" )
+        assert( porsche.drive() == "purrrr" )
     }
 
     @Test fun objectLiteral() {
