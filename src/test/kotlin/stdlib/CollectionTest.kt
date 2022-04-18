@@ -9,14 +9,19 @@ class CollectionTest {
         val list = listOf(1, 2, 3)
         assert( list.size == 3 )
         assert( list[0] == 1)
+
         assert( listOf(1, 2, 3, 4) == list + 4 )
         assert( listOf(1, 2) == list - 3 )
+
         assert( list.map { it * it } == listOf(1, 4, 9) )
         assert( list.filter { it % 2 == 0 } == listOf(2) )
         assert( list.zip( listOf(4, 5, 6) ) == listOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
+
         assert( listOf( listOf("kotlin") ).flatten() == listOf("kotlin") )
+
         assert( list.drop(2) == listOf(3) )
         assert( list.take(1) == listOf(1) )
+
         assert( list.reversed() == listOf(3, 2, 1) )
         assert( list.reversed().sorted() == listOf(1, 2, 3) )
     }
