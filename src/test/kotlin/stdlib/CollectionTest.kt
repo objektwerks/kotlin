@@ -9,6 +9,7 @@ class CollectionTest {
         val list = listOf(1, 2, 3)
         assert( list.size == 3 )
         assert( list[0] == 1)
+        assert( list.getOrElse(3) { _ -> 0 } == 0 )
 
         assert( listOf(1, 2, 3, 4) == list + 4 )
         assert( listOf(1, 2) == list - 3 )
