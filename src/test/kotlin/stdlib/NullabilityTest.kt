@@ -20,13 +20,12 @@ class NullabilityTest {
     }
 
     @Test fun letNullable() {
-        val numbers: List<Int?> = listOf(1, 2, 3, null)
-        var squares = listOf<Int?>()
+        val numbers = listOf<Int?>(1, 2, 3, null)
+        val squares = mutableListOf<Int?>()
         for (number in numbers) {
-            number?.let { squares = squares.plus(it * it); it }
-            ?.also { println(it) }
+            number?.let { squares.add(it * it) }
         }
-        assert( squares == listOf( 1, 4, 9) )
         assert( numbers.filterNotNull() == listOf( 1, 2, 3) )
+        assert( squares == listOf( 1, 4, 9) )
     }
 }
