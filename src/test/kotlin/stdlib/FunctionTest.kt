@@ -10,8 +10,8 @@ class FunctionTest {
         fun square(n: Int): Int = n * n
         assert(square(2) == 4)
 
-        fun <T> asList(item: T): List<T> = listOf(item)
-        assert(asList(3) == listOf(3))
+        fun <T> asSingletonList(item: T): List<T> = listOf(item)
+        assert(asSingletonList(3) == listOf(3))
     }
 
     @Test fun higherOrder() {
