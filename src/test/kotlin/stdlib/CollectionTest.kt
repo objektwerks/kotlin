@@ -98,5 +98,7 @@ class CollectionTest {
 
         assert( listOf("three", "four", "two").sortedBy { it.length } == listOf("two", "four", "three") )
         assert( listOf("two", "four", "three").sortedByDescending { it.length } == listOf("three", "four", "two") )
+
+        assert( listOf("aaa", "bb", "c").sortedWith( compareBy { it.length } ) == listOf("c", "bb", "aaa") )
     }
 }
