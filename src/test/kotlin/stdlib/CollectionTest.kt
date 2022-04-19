@@ -21,6 +21,7 @@ class CollectionTest {
 
         assert( list.any { it == 1 } )
         assert( list.all { it > 0 } )
+        assert( list.none { it < 0 } )
 
         assert( list.average() == 2.0 )
         assert( list.sum() == 6 )
