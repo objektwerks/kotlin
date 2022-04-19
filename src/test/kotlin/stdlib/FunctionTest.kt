@@ -72,4 +72,9 @@ class FunctionTest {
             else factorial(n - 1, acc * n)
         assert(factorial(9) == 362880)
     }
+
+    @Test fun letScope() {
+        val list = listOf(1, 2, 3)
+        list.map { it * it }.filter { it > 4 }.let { assert( it == listOf(9) ) }
+    }
 }
