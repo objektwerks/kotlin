@@ -89,6 +89,8 @@ class CollectionTest {
         assert( mapOf(1 to 1, 2 to 2) == mapOf(1 to 1 ) + (2 to 2) )
         assert( mapOf(1 to 1) == mapOf(1 to 1, 2 to 2) - 2 )
 
+        map.forEach { (k, v) -> assert( k == v ) }
+
         assert( map.map { it.value * it.value } == listOf(1, 4, 9) )
         assert( map.filter { it.value % 2 == 0 } == mapOf(2 to 2) )
         assert( map.zip( mapOf(1 to 4, 2 to 5, 3 to 6) ) == mapOf(1 to Pair(1, 4), 2 to Pair(2, 5), 3 to Pair(3, 6)) )
