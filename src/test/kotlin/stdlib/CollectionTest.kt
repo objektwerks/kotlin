@@ -50,6 +50,10 @@ class CollectionTest {
         assert( list.take(1) == listOf(1) )
         assert( list.slice(2..2) == listOf(3) )
 
+        val (evens, odds) = list.partition { it % 2 == 0 }
+        assert( evens.toList() == listOf(2) )
+        assert( odds.toList() == listOf(1, 3) )
+
         data class Person(val name: String, val city: String = "tampa", val state: String = "fl")
         val persons = listOf( Person("fred"), Person("barney") )
         val groupByCity = persons.groupBy { it.city }
