@@ -6,6 +6,7 @@ import org.junit.Test
 
 class InterfaceTest {
     enum class ShapeType { circle }
+
     interface Shape {
         val typeOf: ShapeType
         fun draw(): String
