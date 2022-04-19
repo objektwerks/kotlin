@@ -5,6 +5,8 @@ import arrow.core.zip
 import junit.framework.TestCase.assertFalse
 
 import org.junit.Test
+import kotlin.math.absoluteValue
+import kotlin.random.Random
 
 class CollectionTest {
     @Test fun list() {
@@ -125,5 +127,13 @@ class CollectionTest {
         val writers = setOf("Twain", "Shakespeare", "Hemingway")
         assert(authors == writers)
         assertFalse(authors === writers)
+    }
+
+    @Test fun takeIfUnless() {
+        val number = Random.nextInt(10).absoluteValue
+        val evenOrNull = number.takeIf { it % 2 == 0 } ?: 0
+        assert( evenOrNull >= 0 )
+        val oddOrNull = number.takeUnless { it % 2 == 0 } ?: 0
+        assert( oddOrNull >= 0 )
     }
 }
