@@ -125,7 +125,7 @@ class ClassTest {
         }
 
     @Test fun sealed() {
-        assert( eval( Sum( Const(1), Const(2) ) ) == 3)
+        assert( eval( Sum( Const(1), Const(2) ) ) == 3 )
     }
 
     interface Car {
