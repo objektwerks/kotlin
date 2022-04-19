@@ -4,6 +4,9 @@ import arrow.core.curried
 
 import org.junit.Test
 
+data class Values(val items: List<String>)
+val Values.delimitted: String get() = items.joinToString()
+
 class FunctionTest {
     val sum = { x: Int, y: Int -> x + y }
     val multiply: (Int, Int) -> Int = { x: Int, y: Int -> x * y }
@@ -19,6 +22,11 @@ class FunctionTest {
     @Test fun functionExtension() {
         fun String.addBang(): String = "$this!"
         assert("hello".addBang() == "hello!")
+    }
+
+    @Test fun propertyExtension() {
+        val values = Values( listOf("a", "b", "c") )
+        assert( values.delimitted == "a, b, c")
     }
 
     @Test fun higherOrder() {
