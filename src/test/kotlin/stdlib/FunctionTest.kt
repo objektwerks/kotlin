@@ -73,12 +73,23 @@ class FunctionTest {
         assert(factorial(9) == 362880)
     }
 
-    @Test fun letScope() {
+    @Test fun letScope() { // it scope
         val list = listOf(1, 2, 3)
         list.map { it * it }.filter { it > 4 }.let { assert( it == listOf(9) ) }
     }
 
-    @Test fun withScope() {
+    @Test fun alsoScope() { // it scope
+        val list = mutableListOf(1, 2, 3)
+        list.also {
+            it.add(4)
+            assert( it == listOf(1, 2, 3, 4) )
+        }.also {
+            it.remove(4)
+            assert( it == listOf(1, 2, 3) )
+        }
+    }
+
+    @Test fun withScope() { // this scope
         val list = mutableListOf(1, 2, 3)
         with(list) {
             add(4)
@@ -86,7 +97,7 @@ class FunctionTest {
         }
     }
 
-    @Test fun runScope() {
+    @Test fun runScope() { // this scope
         class Service(val host: String, val port: Int) {
             fun query(): String = "hello!"
         }
@@ -98,7 +109,7 @@ class FunctionTest {
         }
     }
 
-    @Test fun applyScope() {
+    @Test fun applyScope() { // this scope
         class Dog(var kind: String, var age: Int = 1, var name: String = "")
         val dog = Dog(kind = "Bulldog").apply {
             age = 1
@@ -108,17 +119,6 @@ class FunctionTest {
             assert( kind == "Bulldog")
             assert( age == 1 )
             assert( name == "Trouble" )
-        }
-    }
-
-    @Test fun alsoScope() {
-        val list = mutableListOf(1, 2, 3)
-        list.also {
-            it.add(4)
-            assert( it == listOf(1, 2, 3, 4) )
-        }.also {
-            it.remove(4)
-            assert( it == listOf(1, 2, 3) )
         }
     }
 }
