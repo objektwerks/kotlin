@@ -133,17 +133,20 @@ class ClassTest {
         val typeOf: ShapeType
         fun draw(): String
     }
-    fun interface IntPredicate {
-        fun accept(i: Int): Boolean
-    }
 
-    @Test fun interfaces() {
+    @Test fun byInterface() {
         class Circle : Shape {
             override val typeOf = ShapeType.circle
             override fun draw(): String = "circle"
         }
-        assert( Circle().draw() == "circle" )
+        assert(Circle().draw() == "circle")
+    }
 
+    fun interface IntPredicate {
+        fun accept(i: Int): Boolean
+    }
+
+    @Test fun byInterfaceFunction() {
         val isEven = IntPredicate { it % 2 == 0 }
         assertTrue( isEven.accept(2) )
     }
