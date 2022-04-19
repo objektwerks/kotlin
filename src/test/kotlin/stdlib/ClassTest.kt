@@ -146,7 +146,7 @@ class ClassTest {
         fun accept(i: Int): Boolean
     }
 
-    @Test fun byInterfaceFunction() {
+    @Test fun functionInterface() {
         val isEven = IntPredicate { it % 2 == 0 }
         assertTrue( isEven.accept(2) )
     }
