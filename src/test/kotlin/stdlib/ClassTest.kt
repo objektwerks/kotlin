@@ -91,7 +91,7 @@ class ClassTest {
             NotANumber -> Double.NaN.toInt()
         }
 
-    @Test fun sealedClass() {
+    @Test fun sealed() {
         assert( eval( Sum( Const(1), Const(2) ) ) == 3)
     }
 }
