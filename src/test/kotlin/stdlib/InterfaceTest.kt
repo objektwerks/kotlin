@@ -4,18 +4,18 @@ import kotlin.test.assertTrue
 
 import org.junit.Test
 
-enum class ShapeType { circle }
-
-interface Shape {
-    val typeOf: ShapeType
-    fun draw(): String
-}
-
-fun interface IntPredicate {
-    fun accept(i: Int): Boolean
-}
-
 class InterfaceTest {
+    enum class ShapeType { circle }
+
+    interface Shape {
+        val typeOf: ShapeType
+        fun draw(): String
+    }
+
+    fun interface IntPredicate {
+        fun accept(i: Int): Boolean
+    }
+
     @Test fun interfaces() {
         class Circle : Shape {
             override val typeOf = ShapeType.circle
