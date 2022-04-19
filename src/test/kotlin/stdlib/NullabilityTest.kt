@@ -4,6 +4,7 @@ import kotlin.test.assertFailsWith
 
 import org.junit.Test
 
+@Suppress("KotlinConstantConditions")
 class NullabilityTest {
     @Test fun nullable() {
         val text: String? = null
@@ -20,7 +21,7 @@ class NullabilityTest {
     }
 
     @Test fun nullableList() {
-        val numbers = listOf<Int?>(1, 2, 3, null)
+        val numbers = listOf(1, 2, 3, null)
         val squares = mutableListOf<Int?>()
         for (number in numbers) {
             number?.let { squares.add(it * it) }
