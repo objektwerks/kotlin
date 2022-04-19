@@ -127,4 +127,16 @@ class ClassTest {
     @Test fun sealed() {
         assert( eval( Sum( Const(1), Const(2) ) ) == 3)
     }
+
+    interface Car {
+        fun race(): String
+    }
+    class SportsCar : Car {
+        override fun race(): String = "prrrr"
+    }
+    class Porsche : Car by SportsCar()
+
+    @Test fun delegation() {
+        assert( Porsche().race() == "prrrr" )
+    }
 }
