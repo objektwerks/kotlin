@@ -87,11 +87,13 @@ class FunctionTest {
     }
 
     @Test fun runScope() {
-        class Service(host: String, port: Int) {
+        class Service(val host: String, val port: Int) {
             fun query(): String = "hello!"
         }
         val service = Service("github.com", 80)
         service.run {
+            assert( host == "github.com" )
+            assert( port == 80 )
             assert( query() == "hello!" )
         }
     }
