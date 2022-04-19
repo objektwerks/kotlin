@@ -38,12 +38,12 @@ class FunctionTest {
         assert(2 * "m" == "mm")
     }
 
-    @Test fun closure() {
-        var closure = 0
+    @Test fun closeOver() {
+        var closeOverValue = 0
         listOf(1, 2, 3).filter { it > 0 }.forEach {
-            closure += it
+            closeOverValue += it
         }
-        assert(closure == 6)
+        assert(closeOverValue == 6)
     }
 
     @Test fun defaultValue() {
