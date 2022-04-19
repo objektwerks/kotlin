@@ -1,12 +1,18 @@
 package stdlib
 
-import kotlin.test.assertTrue
+import java.time.Instant
 
-import org.junit.Test
+import kotlin.test.assertTrue
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
+import org.junit.Test
+
 typealias Name = String
+
+object DateTime {
+    fun now(): String = Instant.now().toString()
+}
 
 class ClassTest {
     @Test fun classes() {
@@ -88,6 +94,10 @@ class ClassTest {
             fun message() = "$hello, $world!"
         }
         assert( greeting.message() == "Hello, Kotlin!")
+    }
+
+    @Test fun objectSingleton() {
+        assert( DateTime.now().isNotEmpty() )
     }
 
     sealed class Expr
