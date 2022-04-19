@@ -16,6 +16,11 @@ class FunctionTest {
         assert(asSingletonList(3) == listOf(3))
     }
 
+    @Test fun extend() {
+        fun String.addBang(): String = "$this!"
+        assert("hello".addBang() == "hello!")
+    }
+
     @Test fun higherOrder() {
         fun total(x: Int, y: Int, f: (Int, Int) -> Int): Int = f(x, y)
         assert(total(3, 3, sum) == 6)
@@ -71,11 +76,6 @@ class FunctionTest {
             return result
         }
         assert(toList(1, 2, 3) == listOf(1, 2, 3))
-    }
-
-    @Test fun extend() {
-        fun String.addBang(): String = "$this!"
-        assert("hello".addBang() == "hello!")
     }
 
     @Test fun tailrec() {
