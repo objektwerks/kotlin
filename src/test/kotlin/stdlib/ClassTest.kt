@@ -3,6 +3,8 @@ package stdlib
 import kotlin.test.assertTrue
 
 import org.junit.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 
 typealias Name = String
 
@@ -68,6 +70,15 @@ class ClassTest {
         val porsche = Porsche("Boxster")
         assert( porsche.model == "Boxster" )
         assert( porsche.drive() == "purrrr" )
+    }
+
+    @Test fun data() {
+        data class Data(val value: String)
+        val data = Data("data")
+        val copy = data.copy(value = "copy")
+        val ( destructuredValue ) = copy
+        assertEquals( copy.value, destructuredValue )
+        assertNotEquals( data, copy )
     }
 
     @Test fun objectLiteral() {
