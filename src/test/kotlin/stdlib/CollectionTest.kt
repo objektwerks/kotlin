@@ -19,6 +19,8 @@ class CollectionTest {
         assert( listOf(1, 2, 3, 4) == list + 4 )
         assert( listOf(1, 2) == list - 3 )
 
+        assert( list.first() == 1 )
+
         assert( list.any { it == 1 } )
         assert( list.all { it > 0 } )
         assert( list.none { it < 0 } )
