@@ -77,4 +77,11 @@ class FunctionTest {
         val list = listOf(1, 2, 3)
         list.map { it * it }.filter { it > 4 }.let { assert( it == listOf(9) ) }
     }
+
+    @Test fun withScope() {
+        val list = listOf(1, 2, 3)
+        with(list) {
+            assert( this == listOf(1, 2, 3) )
+        }
+    }
 }
