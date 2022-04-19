@@ -85,4 +85,14 @@ class FunctionTest {
             assert( this == listOf(1, 2, 3, 4) )
         }
     }
+
+    @Test fun runScope() {
+        class Service(host: String, port: Int) {
+            fun query(): String = "hello!"
+        }
+        val service = Service("github.com", 80)
+        service.run {
+            assert( query() == "hello!" )
+        }
+    }
 }
