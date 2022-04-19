@@ -4,9 +4,10 @@ import arrow.core.zip
 
 import junit.framework.TestCase.assertFalse
 
-import org.junit.Test
 import kotlin.math.absoluteValue
 import kotlin.random.Random
+
+import org.junit.Test
 
 class CollectionTest {
     @Test fun list() {
