@@ -19,7 +19,8 @@ class CollectionTest {
         assert( listOf(1, 2, 3, 4) == list + 4 )
         assert( listOf(1, 2) == list - 3 )
 
-        assert( list.any { it > 0 } )
+        assert( list.any { it == 1 } )
+        assert( list.all { it > 0 } )
 
         assert( list.average() == 2.0 )
         assert( list.sum() == 6 )
