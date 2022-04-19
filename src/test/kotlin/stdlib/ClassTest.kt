@@ -5,6 +5,8 @@ import java.time.Instant
 import kotlin.test.assertTrue
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
+import kotlin.math.absoluteValue
+import kotlin.random.Random
 
 import org.junit.Test
 
@@ -12,6 +14,12 @@ typealias Name = String
 
 object DateTime {
     fun now(): String = Instant.now().toString()
+}
+
+class RandomIntGenerator {
+    companion object {
+        fun int(): Int = Random(10).nextInt().absoluteValue
+    }
 }
 
 class ClassTest {
@@ -98,6 +106,10 @@ class ClassTest {
 
     @Test fun objectSingleton() {
         assert( DateTime.now().isNotEmpty() )
+    }
+
+    @Test fun objectCompanion() {
+        assert( RandomIntGenerator.int() > 0 )
     }
 
     sealed class Expr
