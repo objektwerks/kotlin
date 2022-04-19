@@ -97,4 +97,17 @@ class FunctionTest {
             assert( query() == "hello!" )
         }
     }
+
+    @Test fun applyScope() {
+        class Dog(var kind: String, var age: Int = 1, var name: String = "")
+        val dog = Dog(kind = "Bulldog").apply {
+            age = 1
+            name = "Trouble"
+        }
+        dog.run {
+            assert( kind == "Bulldog")
+            assert( age == 1 )
+            assert( name == "Trouble" )
+        }
+    }
 }
