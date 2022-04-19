@@ -20,6 +20,7 @@ class CollectionTest {
         assert( listOf(1, 2) == list - 3 )
 
         assert( list.first() == 1 )
+        assert( list.last() == 3 )
 
         assert( list.any { it == 1 } )
         assert( list.all { it > 0 } )
