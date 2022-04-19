@@ -110,4 +110,15 @@ class FunctionTest {
             assert( name == "Trouble" )
         }
     }
+
+    @Test fun alsoScope() {
+        val list = mutableListOf(1, 2, 3)
+        list.also {
+            it.add(4)
+            assert( it == listOf(1, 2, 3, 4) )
+        }.also {
+            it.remove(4)
+            assert( it == listOf(1, 2, 3) )
+        }
+    }
 }
