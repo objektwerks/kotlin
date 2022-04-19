@@ -79,9 +79,10 @@ class FunctionTest {
     }
 
     @Test fun withScope() {
-        val list = listOf(1, 2, 3)
+        val list = mutableListOf(1, 2, 3)
         with(list) {
-            assert( this == listOf(1, 2, 3) )
+            add(4)
+            assert( this == listOf(1, 2, 3, 4) )
         }
     }
 }
