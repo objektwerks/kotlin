@@ -16,7 +16,7 @@ class FunctionTest {
         assert(asSingletonList(3) == listOf(3))
     }
 
-    @Test fun extend() {
+    @Test fun functionExtension() {
         fun String.addBang(): String = "$this!"
         assert("hello".addBang() == "hello!")
     }
