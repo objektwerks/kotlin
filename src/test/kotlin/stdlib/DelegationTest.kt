@@ -3,17 +3,17 @@ package stdlib
 import org.junit.Test
 
 class DelegationTest {
-    interface SportsCar {
+    interface Car {
         fun race(): String
     }
 
-    class Porsche : SportsCar {
+    class SportsCar : Car {
         override fun race(): String = "prrrr"
     }
 
-    class DerivedPorsche(derived: SportsCar) : SportsCar by derived
+    class Porsche : Car by SportsCar()
 
     @Test fun delegation() {
-        assert( DerivedPorsche( Porsche() ).race() == "prrrr" )
+        assert( Porsche().race() == "prrrr" )
     }
 }
