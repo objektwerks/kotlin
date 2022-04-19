@@ -56,12 +56,8 @@ class CollectionTest {
 
         data class Person(val name: String, val city: String = "tampa", val state: String = "fl")
         val persons = listOf( Person("fred"), Person("barney") )
-        val groupByCity = persons.groupBy { it.city }
-        val groupByState = persons.groupBy { it.state }
-        assert( groupByCity.count() == 1)
-        assert( groupByCity["tampa"] == persons )
-        assert( groupByState.count() == 1)
-        assert( groupByState["fl"] == persons )
+        assert( persons.groupBy { it.city }["tampa"] == persons )
+        assert( persons.groupBy { it.state }["fl"] == persons )
     }
 
     @Test fun mutableList() {
