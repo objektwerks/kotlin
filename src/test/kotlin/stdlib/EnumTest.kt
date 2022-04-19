@@ -2,13 +2,13 @@ package stdlib
 
 import org.junit.Test
 
-enum class Ale {
-    paleAle,
-    indianPaleAle,
-    doubleIndianPaleAle
-}
-
 class EnumTest {
+    enum class Ale {
+        paleAle,
+        indianPaleAle,
+        doubleIndianPaleAle
+    }
+
     @Test fun enum() {
         assert( Ale.paleAle.toString() == "paleAle" )
         assert( Ale.indianPaleAle.toString() == "indianPaleAle" )
