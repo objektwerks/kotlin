@@ -58,7 +58,7 @@ class ClassTest {
         assertTrue( name.isNotEmpty() )
     }
 
-    @Suppress("unused") // draw is NOT unused!
+    @Suppress("unused") // draw is used!
     @Test fun abstract() {
         abstract class Shape {
             abstract fun draw(): String
