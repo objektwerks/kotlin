@@ -22,6 +22,10 @@ class CollectionTest {
         assert( list.first() == 1 )
         assert( list.last() == 3 )
 
+        val letters = listOf("abc", "ade")
+        assert( letters.find { it.startsWith("a") } == "abc" )
+        assert( letters.findLast { it.startsWith("a") } == "ade" )
+
         assert( list.any { it == 1 } )
         assert( list.all { it > 0 } )
         assert( list.none { it < 0 } )
