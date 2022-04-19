@@ -19,6 +19,9 @@ class CollectionTest {
         assert( listOf(1, 2, 3, 4) == list + 4 )
         assert( listOf(1, 2) == list - 3 )
 
+        assert( list.count() == 3 )
+        assert( list.count { it > 2 } == 1 )
+
         assert( list.first() == 1 )
         assert( list.last() == 3 )
 
