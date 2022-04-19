@@ -46,6 +46,13 @@ class FunctionTest {
         assert(closeOverValue == 6)
     }
 
+    @Test fun currying() {
+        val curriedAdd: (Int) -> (Int) -> Int = { x: Int ->
+            { y: Int -> x + y }
+        }
+        assert( curriedAdd(3)(6) == 9 )
+    }
+
     @Test fun defaultValue() {
         fun divide(x: Int, y: Int = 1): Int = x / y
         assert(divide(4) == 4)
