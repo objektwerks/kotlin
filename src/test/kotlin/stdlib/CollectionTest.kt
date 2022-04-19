@@ -55,9 +55,13 @@ class CollectionTest {
         assert( odds.toList() == listOf(1, 3) )
 
         data class Person(val name: String, val city: String = "tampa", val state: String = "fl")
-        val persons = listOf( Person("fred"), Person("barney") )
-        assert( persons.groupBy { it.city }["tampa"] == persons )
-        assert( persons.groupBy { it.state }["fl"] == persons )
+        val men = listOf( Person("fred"), Person("barney") )
+        assert( men.groupBy { it.city }["tampa"] == men )
+        assert( men.groupBy { it.state }["fl"] == men )
+
+        val women = listOf( Person("wilma"), Person("betty") )
+        val couples = listOf(men, women)
+        assert( couples.flatMap { couples }.count() == 4 )
     }
 
     @Test fun mutableList() {
