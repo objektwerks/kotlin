@@ -1,6 +1,7 @@
 package stdlib
 
 import kotlinx.coroutines.*
+import kotlinx.coroutines.channels.*
 import kotlinx.coroutines.flow.*
 
 import org.junit.Test
@@ -42,6 +43,18 @@ class CoroutineTest {
                 }
             }
             source().collect { value -> sum += value }
+            assert( sum == 6 )
+        }
+    }
+
+    @Test fun channel() {
+        runBlocking {
+            var sum = 0
+            val channel = Channel<Int>()
+            launch {
+                for (i in 1..3) channel.send(i)
+            }
+            repeat(3) { sum += channel.receive() }
             assert( sum == 6 )
         }
     }
