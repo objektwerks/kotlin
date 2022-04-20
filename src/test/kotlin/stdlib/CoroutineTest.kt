@@ -20,8 +20,8 @@ class CoroutineTest {
     }
 
     @Test fun runBlockingSum() {
-        fun sum(x: Int, y: Int): Int = x + y
-        assert( runBlocking { sum(1, 2) } == 3 )
+        fun runBlockingSum(x: Int, y: Int): Int = runBlocking { x + y }
+        assert( runBlockingSum(1, 2) == 3 )
     }
 
     @Test fun withContextSum() {
@@ -47,7 +47,7 @@ class CoroutineTest {
                 emit(i)
             }
         }
-        runBlocking<Unit> {
+        runBlocking {
             var sink = 0
             launch {
                 for (k in 1..3) {
