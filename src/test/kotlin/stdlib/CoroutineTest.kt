@@ -7,8 +7,8 @@ import kotlinx.coroutines.flow.*
 import org.junit.Test
 
 class CoroutineTest {
-    @Test fun runBlockingLaunch() {
-        runBlocking {
+    @Test fun runBlockingLaunchSum() {
+        suspend fun launchSum() = coroutineScope {  // this: CoroutineScope
             var sum = 0
             launch {
                 delay(1000)
@@ -16,6 +16,9 @@ class CoroutineTest {
                 assert(sum == 3)
             }
             sum += 2
+        }
+        runBlocking {
+            launchSum()
         }
     }
 
