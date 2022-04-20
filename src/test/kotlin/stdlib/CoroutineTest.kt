@@ -48,26 +48,26 @@ class CoroutineTest {
             }
         }
         runBlocking<Unit> {
-            var sum = 0
+            var sink = 0
             launch {
                 for (k in 1..3) {
                     delay(100)
                 }
             }
-            source().collect { value -> sum += value }
-            assert( sum == 6 )
+            source().collect { value -> sink += value }
+            assert( sink == 6 )
         }
     }
 
     @Test fun channel() {
         runBlocking {
-            var sum = 0
+            var sink = 0
             val channel = Channel<Int>()
             launch {
                 for (i in 1..3) channel.send(i)
             }
-            repeat(3) { sum += channel.receive() }
-            assert( sum == 6 )
+            repeat(3) { sink += channel.receive() }
+            assert( sink == 6 )
         }
     }
 }
