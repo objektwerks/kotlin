@@ -7,6 +7,18 @@ import kotlinx.coroutines.flow.*
 import org.junit.Test
 
 class CoroutineTest {
+    @Test fun runBlockingLaunch() {
+        runBlocking {
+            var sum = 0
+            launch {
+                delay(1000)
+                sum += 1
+                assert(sum == 3)
+            }
+            sum += 2
+        }
+    }
+
     @Test fun runBlockingSum() {
         fun runBlockingSum(x: Int, y: Int): Int = runBlocking { x + y }
         assert( runBlockingSum(1, 2) == 3 )
