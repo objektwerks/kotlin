@@ -3,6 +3,9 @@ package stdlib
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.*
 import kotlinx.coroutines.flow.*
+import kotlin.math.absoluteValue
+import kotlin.random.Random
+import kotlin.system.measureTimeMillis
 
 import org.junit.Test
 
@@ -54,6 +57,19 @@ class CoroutineTest {
                 }
             }
         assert( runBlocking { deferredSumOf( deferredAsyncSource() ) } == 65 )
+    }
+
+    @Test fun asyncAwait() {
+        fun randomInt(): Int = Random(10).nextInt().absoluteValue
+        val elapsedTime =
+            runBlocking {
+                measureTimeMillis {
+                    val x = async { randomInt() }
+                    val y = async { randomInt() }
+                    assert(x.await() + y.await() > 0)
+                }
+            }
+        assert(elapsedTime > 0)
     }
 
     @Test fun flow() {
