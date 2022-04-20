@@ -12,7 +12,7 @@ class CoroutineTest {
 
     private suspend fun deferredSumOf(deferred: List<Deferred<Int>>): Int = deferred.sumOf { it.await() }
 
-    private suspend fun deferred(): List<Deferred<Int>> =
+    private suspend fun deferredAsyncSource(): List<Deferred<Int>> =
         (1..10).map { n ->
             coroutineScope {
                 async { n + 1 }
@@ -22,6 +22,6 @@ class CoroutineTest {
     @Test fun coroutine() {
         assert( runBlockingSum(1, 2) == 3 )
         assert( runBlocking { withContextSum(1, 2) } == 3 )
-        assert( runBlocking { deferredSumOf( deferred() ) } == 65 )
+        assert( runBlocking { deferredSumOf( deferredAsyncSource() ) } == 65 )
     }
 }
