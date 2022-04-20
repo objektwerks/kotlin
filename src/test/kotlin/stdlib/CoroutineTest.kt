@@ -6,7 +6,7 @@ import org.junit.Test
 
 @Suppress("SameParameterValue")
 class CoroutineTest {
-    private fun sum(x: Int, y: Int): Int = runBlocking { x + y }
+    private fun runBlockingSum(x: Int, y: Int): Int = runBlocking { x + y }
 
     private suspend fun multiply(x: Int, y: Int): Int = withContext( Dispatchers.Default ) { x * y }
 
@@ -20,7 +20,7 @@ class CoroutineTest {
         }
 
     @Test fun coroutine() {
-        assert( sum(3, 3) == 6 )
+        assert( runBlockingSum(3, 3) == 6 )
         assert( runBlocking { multiply(3, 3) } == 9 )
         assert( runBlocking { sumOf( deferred() ) } == 65 )
     }
