@@ -10,7 +10,7 @@ class CoroutineTest {
 
     private suspend fun withContextSum(x: Int, y: Int): Int = withContext( Dispatchers.Default ) { x + y }
 
-    private suspend fun sumOf(deferred: List<Deferred<Int>>): Int = deferred.sumOf { it.await() }
+    private suspend fun deferredSumOf(deferred: List<Deferred<Int>>): Int = deferred.sumOf { it.await() }
 
     private suspend fun deferred(): List<Deferred<Int>> =
         (1..10).map { n ->
@@ -22,6 +22,6 @@ class CoroutineTest {
     @Test fun coroutine() {
         assert( runBlockingSum(1, 2) == 3 )
         assert( runBlocking { withContextSum(1, 2) } == 3 )
-        assert( runBlocking { sumOf( deferred() ) } == 65 )
+        assert( runBlocking { deferredSumOf( deferred() ) } == 65 )
     }
 }
