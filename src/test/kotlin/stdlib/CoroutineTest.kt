@@ -1,8 +1,7 @@
 package stdlib
 
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.*
 
 import org.junit.Test
 
@@ -35,7 +34,6 @@ class CoroutineTest {
                 emit(i)
             }
         }
-
         runBlocking<Unit> {
             var sum = 0
             launch {
