@@ -4,7 +4,6 @@ import kotlinx.coroutines.*
 
 import org.junit.Test
 
-@Suppress("SameParameterValue")
 class CoroutineTest {
     @Test fun runBlockingSum() {
         fun runBlockingSum(x: Int, y: Int): Int = runBlocking { x + y }
