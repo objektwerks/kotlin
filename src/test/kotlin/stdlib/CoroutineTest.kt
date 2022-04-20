@@ -22,6 +22,19 @@ class CoroutineTest {
         }
     }
 
+    @Test fun runBlockingLaunchJob() {
+        runBlocking {
+            var sum = 0
+            val job = launch {
+                delay(1000)
+                sum += 1
+            }
+            sum += 2
+            job.join()
+            assert(sum == 3)
+        }
+    }
+
     @Test fun runBlockingSum() {
         fun runBlockingSum(x: Int, y: Int): Int = runBlocking { x + y }
         assert( runBlockingSum(1, 2) == 3 )
