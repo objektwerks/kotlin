@@ -1,6 +1,8 @@
 package stdlib
 
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 import org.junit.Test
 
@@ -24,5 +26,25 @@ class CoroutineTest {
                 }
             }
         assert( runBlocking { deferredSumOf( deferredAsyncSource() ) } == 65 )
+    }
+
+    @Test fun flow() {
+        fun source(): Flow<Int> = flow {
+            for (i in 1..3) {
+                delay(100)
+                emit(i)
+            }
+        }
+
+        runBlocking<Unit> {
+            var sum = 0
+            launch {
+                for (k in 1..3) {
+                    delay(100)
+                }
+            }
+            source().collect { value -> sum += value }
+            assert( sum == 6 )
+        }
     }
 }
