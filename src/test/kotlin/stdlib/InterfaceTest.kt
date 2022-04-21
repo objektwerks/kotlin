@@ -12,12 +12,12 @@ class InterfaceTest {
         fun draw(): String
     }
 
-    @Test
-    fun byInterface() {
-        class Circle : Shape {
-            override val typeOf = ShapeType.circle
-            override fun draw(): String = "circle"
-        }
+    class Circle : Shape {
+        override val typeOf = ShapeType.circle
+        override fun draw(): String = "circle"
+    }
+
+    @Test fun byInterface() {
         assert(Circle().draw() == "circle")
     }
 
@@ -25,8 +25,7 @@ class InterfaceTest {
         fun assert(i: Int): Boolean
     }
 
-    @Test
-    fun functionInterface() {
+    @Test fun functionInterface() {
         val isEven = IntPredicate { it % 2 == 0 } // SAM conversion!
         assertTrue( isEven.assert(2) )
     }
