@@ -13,7 +13,7 @@ class TypeTest {
         assert( singletonList(3) == listOf(3) )
     }
 
-    @Test fun inout() {
+    @Test fun outin() {
         class Producer<out T>(private val t: T) {
             fun get(): T {
                 return t
