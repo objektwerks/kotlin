@@ -15,9 +15,7 @@ class TypeTest {
 
     @Test fun outin() {
         class Producer<out T>(private val t: T) {
-            fun get(): T {
-                return t
-            }
+            fun get(): T = t
         }
         assert( Producer(3).get() == 3 )
 
