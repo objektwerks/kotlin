@@ -1,5 +1,6 @@
 package stdlib
 
+import io.ktor.util.*
 import org.junit.Test
 import java.io.File
 
@@ -16,6 +17,14 @@ class FileTest {
         val bytes = "test write".encodeToByteArray()
         File(path).writeBytes(bytes)
         assert( File(path).readBytes().decodeToString() == bytes.decodeToString() )
+    }
+
+    @Test fun forEachLine() {
+        val buffer = mutableListOf<String>()
+        File("./LICENSE").forEachLine {
+            buffer.add(it)
+        }
+        assert( buffer.count() == 48 )
     }
 
     @Test fun useLines() {
