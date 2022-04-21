@@ -5,18 +5,18 @@ import java.io.File
 import org.junit.Test
 
 class FileTest {
-    @Test fun writeReadText() {
-        val path = "./build/text.txt"
-        val text = "test write"
-        File(path).writeText(text)
-        assert( File(path).readText() == text )
-    }
-
     @Test fun writeReadBytes() {
         val path = "./build/bytes.txt"
         val bytes = "test write".encodeToByteArray()
         File(path).writeBytes(bytes)
         assert( File(path).readBytes().decodeToString() == bytes.decodeToString() )
+    }
+
+    @Test fun writeReadText() {
+        val path = "./build/text.txt"
+        val text = "test write"
+        File(path).writeText(text)
+        assert( File(path).readText() == text )
     }
 
     @Test fun forEachLine() {
