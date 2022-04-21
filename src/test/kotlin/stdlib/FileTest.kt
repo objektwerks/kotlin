@@ -1,8 +1,8 @@
 package stdlib
 
-import io.ktor.util.*
-import org.junit.Test
 import java.io.File
+
+import org.junit.Test
 
 class FileTest {
     @Test fun writeReadText() {
