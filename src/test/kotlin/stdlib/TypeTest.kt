@@ -2,7 +2,7 @@ package stdlib
 
 import org.junit.Test
 
-class GenericTest {
+class TypeTest {
     @Test fun generic() {
         class Box<T>(t: T) {
             val value = t
