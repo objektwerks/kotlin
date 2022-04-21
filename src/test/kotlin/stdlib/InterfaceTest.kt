@@ -22,12 +22,12 @@ class InterfaceTest {
     }
 
     fun interface IntPredicate {
-        fun accept(i: Int): Boolean
+        fun assert(i: Int): Boolean
     }
 
     @Test
     fun functionInterface() {
-        val isEven = IntPredicate { it % 2 == 0 }
-        assertTrue( isEven.accept(2) )
+        val isEven = IntPredicate { it % 2 == 0 } // SAM conversion!
+        assertTrue( isEven.assert(2) )
     }
 }
