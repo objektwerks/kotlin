@@ -22,6 +22,8 @@ class RandomIntGenerator {
     }
 }
 
+@JvmRecord data class Person(val name: String, val age: Int)
+
 class ClassTest {
     @Test fun classes() {
         class None
@@ -93,6 +95,15 @@ class ClassTest {
         val ( destructuredValue ) = copy
         assertEquals( copy.value, destructuredValue )
         assertNotEquals( data, copy )
+    }
+
+    @Test fun record() {
+        val person = Person("fred flintstone", 24)
+        val (name, age) = person
+        assert( name == "fred flintstone" )
+        assert( age == 24 )
+        assert( person.hashCode() != 0 )
+        assert( person.copy(age = 25) != person )
     }
 
     @Test fun objectLiteral() {
