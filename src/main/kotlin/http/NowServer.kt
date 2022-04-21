@@ -16,6 +16,8 @@ fun main() {
             }
         }
     }
-    println("*** To test: curl http://localhost:7979/now")
+    println("*** Server started on localhost:7979")
+    println("*** See log at build/kotlin.log")
+    println("*** Select: http://localhost:7979/now")
     server.start(wait = true)
 }
