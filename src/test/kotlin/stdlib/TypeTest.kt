@@ -17,11 +17,12 @@ class TypeTest {
         class Producer<out T>(private val t: T) {
             fun get(): T = t
         }
-        assert( Producer(3).get() == 3 )
-
         class Consumer<in T> {
             fun toString(value: T): String = value.toString()
         }
-        assert( Consumer<Int>().toString(3) == "3" )
+
+        val source = Producer(3).get()
+        val sink = Consumer<Int>().toString(source)
+        assert(source == 3 && sink == "3")
     }
 }
