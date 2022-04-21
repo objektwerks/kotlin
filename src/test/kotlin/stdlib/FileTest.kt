@@ -17,4 +17,8 @@ class FileTest {
         File(path).writeBytes(bytes)
         assert( File(path).readBytes().decodeToString() == bytes.decodeToString() )
     }
+
+    @Test fun useLines() {
+        File("./LICENSE").useLines { assert( it.count() == 48 ) }
+    }
 }
