@@ -74,6 +74,17 @@ class ClassTest {
         assert( Circle().draw() == "circle" )
     }
 
+    @Test fun inner() {
+        class A {
+            inner class Inner(val id: String = "Inner.A")
+        }
+        class B {
+            inner class Inner(val id: String = "Inner.B")
+        }
+        assert( A().Inner().id == "Inner.A")
+        assert( B().Inner().id == "Inner.B")
+    }
+
     @Test fun open() {
         open class Car(val model: String) {
             open fun drive(): String = "chugchugchug"
