@@ -22,6 +22,9 @@ class RandomIntGenerator {
     }
 }
 
+@JvmInline
+value class IntValue(val i: Int)
+
 @JvmRecord data class Person(val name: String, val age: Int)
 
 class ClassTest {
@@ -86,6 +89,10 @@ class ClassTest {
         val porsche = Porsche("Boxster")
         assert( porsche.model == "Boxster" )
         assert( porsche.drive() == "purrrr" )
+    }
+
+    @Test fun value() {
+        assert( IntValue(1).i == 1 ) // @JvmInline
     }
 
     @Test fun data() {
