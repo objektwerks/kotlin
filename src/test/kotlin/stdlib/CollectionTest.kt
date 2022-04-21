@@ -77,6 +77,14 @@ class CollectionTest {
         assert( seq.map { it * it }.filter { it % 2 == 0 }.toList() == listOf(4) )
     }
 
+    @Test fun array() {
+        val array = arrayOf(1, 2, 3)
+        assert( array.map { it * it }.filter { it % 2 == 0 } == listOf(4) )
+
+        val arrayList = arrayListOf(1, 2, 3)
+        assert( array.map { it * it }.filter { it % 2 != 0 } == listOf(1, 9) )
+    }
+
     @Test fun set() {
         val set = setOf(1, 2, 3)
         assert( set.size == 3 )
