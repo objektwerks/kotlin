@@ -33,6 +33,12 @@ Run
 2. right click
 3. select run '*Kt'
 
+Logging
+-------
+See:
+1. build/kotlin.log
+2. build/kotlin.test.log
+
 Design
 ------
 >Kotlin focuses on **3** major areas:
