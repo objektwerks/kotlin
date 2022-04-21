@@ -83,6 +83,9 @@ class CollectionTest {
 
         val arrayList = arrayListOf(1, 2, 3)
         assert( arrayList.map { it * it }.filter { it % 2 != 0 } == listOf(1, 9) )
+
+        val intArray = intArrayOf(1, 2, 3)
+        assert( intArray.map { it * it * it }.filter { it % 2 == 0 } == listOf(8) )
     }
 
     @Test fun set() {
