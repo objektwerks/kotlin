@@ -29,4 +29,8 @@ class FileTest {
     @Test fun resource() {
         assert( this::class.java.getResource("/config.yaml").readText().isNotEmpty() )
     }
+
+    @Test fun resourceAsStream() {
+        assert( this::class.java.getResourceAsStream("/config.yaml").bufferedReader().readLines().count() == 2 )
+    }
 }
