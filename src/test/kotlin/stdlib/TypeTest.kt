@@ -17,14 +17,14 @@ class TypeTest {
 
     @Test fun outin() {
         class Producer<out T>(private val t: T) {
-            fun yield(): T = t
+            fun source(): T = t
         }
         class Consumer<in T> {
-            fun asString(value: T): String = value.toString()
+            fun sink(value: T): String = value.toString()
         }
 
-        val source = Producer(3).yield()
-        val sink = Consumer<Int>().asString(source)
+        val source = Producer(3).source()
+        val sink = Consumer<Int>().sink(source)
         assert(source == 3 && sink == "3")
     }
 }
