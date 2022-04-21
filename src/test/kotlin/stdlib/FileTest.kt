@@ -25,4 +25,8 @@ class FileTest {
     @Test fun readLines() {
         assert( File("./LICENSE").readLines().count() == 48 )
     }
+
+    @Test fun resource() {
+        assert( this::class.java.getResource("/config.yaml").readText().isNotEmpty() )
+    }
 }
