@@ -23,7 +23,7 @@ class RandomIntGenerator {
 }
 
 @JvmInline
-value class IntValue(val i: Int)
+value class IntValue(val int: Int)
 
 @JvmRecord data class Person(val name: String, val age: Int)
 
@@ -92,7 +92,7 @@ class ClassTest {
     }
 
     @Test fun value() {
-        assert( IntValue(1).i == 1 ) // @JvmInline, unboxed!
+        assert( IntValue(1).int == 1 ) // @JvmInline, unboxed!
     }
 
     @Test fun data() {
