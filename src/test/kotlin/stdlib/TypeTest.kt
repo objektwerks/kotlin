@@ -4,10 +4,8 @@ import org.junit.Test
 
 class TypeTest {
     @Test fun genericClass() {
-        class Box<T>(t: T) {
-            val value = t
-        }
-        assert( Box(3).value == 3 )
+        class Box<T>(val item: T)
+        assert( Box(3).item == 3 )
     }
 
     @Test fun genericFunction() {
