@@ -92,7 +92,7 @@ class ClassTest {
     }
 
     @Test fun value() {
-        assert( IntValue(1).i == 1 ) // @JvmInline
+        assert( IntValue(1).i == 1 ) // @JvmInline, unboxed!
     }
 
     @Test fun data() {
