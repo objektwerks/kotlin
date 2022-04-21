@@ -82,7 +82,7 @@ class CollectionTest {
         assert( array.map { it * it }.filter { it % 2 == 0 } == listOf(4) )
 
         val arrayList = arrayListOf(1, 2, 3)
-        assert( array.map { it * it }.filter { it % 2 != 0 } == listOf(1, 9) )
+        assert( arrayList.map { it * it }.filter { it % 2 != 0 } == listOf(1, 9) )
     }
 
     @Test fun set() {
