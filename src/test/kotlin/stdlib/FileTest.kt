@@ -21,4 +21,8 @@ class FileTest {
     @Test fun useLines() {
         File("./LICENSE").useLines { assert( it.count() == 48 ) }
     }
+
+    @Test fun readLines() {
+        assert( File("./LICENSE").readLines().count() == 48 )
+    }
 }
