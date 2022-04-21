@@ -8,15 +8,14 @@ import io.ktor.server.routing.*
 
 import java.time.Instant
 
-/**
- * To test server: curl http://localhost:7979/now
- */
 fun main() {
-    embeddedServer(Netty, port = 7979) {
+    val server = embeddedServer(Netty, port = 7979) {
         routing {
             get("/now") {
                 call.respondText("Ktor datetime is: ${Instant.now()}")
             }
         }
-    }.start(wait = true)
+    }
+    println("*** To test: curl http://localhost:7979/now")
+    server.start(wait = true)
 }
