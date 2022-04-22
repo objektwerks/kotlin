@@ -100,6 +100,14 @@ class ClassTest {
         val porsche = Porsche("Boxster")
         assert( porsche.model == "Boxster" )
         assert( porsche.drive() == "purrrr" )
+
+        open class Rectangle {
+            open fun draw(): String = "base"
+        }
+        class FilledRectangle : Rectangle() {
+            override fun draw(): String = super.draw() + "-filled"
+        }
+        assert( FilledRectangle().draw() == "base-filled" )
     }
 
     @Test fun value() {
