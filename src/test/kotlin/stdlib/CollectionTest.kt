@@ -118,6 +118,8 @@ class CollectionTest {
         assert( setOf(1, 2, 3, 4) == set )
         set.remove(4)
         assert( setOf(1, 2, 3) == set )
+        set.clear()
+        assert( set.isEmpty() )
     }
 
     @Test fun sortedSet() {
