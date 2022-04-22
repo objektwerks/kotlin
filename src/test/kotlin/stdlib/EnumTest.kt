@@ -31,5 +31,6 @@ class EnumTest {
         assert( RGB.red.value == "#FF0000" )
         assert( RGB.green.value == "#00FF00" )
         assert( RGB.blue.value == "#0000FF" )
+        assert( RGB.values().size == 3 )
     }
 }
