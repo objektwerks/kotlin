@@ -75,6 +75,8 @@ class CollectionTest {
         assert( listOf(1, 2, 3, 4) == list )
         list.remove(4)
         assert( listOf(1, 2, 3) == list )
+        list.clear()
+        assert( list.isEmpty() )
     }
 
     @Test fun sequence() {
