@@ -59,3 +59,7 @@ Arrow
 -----
 >Arrow is the **goto** FP library in the Kotlin space. In a limited way, it mirrors the
 >Typelevel Cats library. Arrow is in constant flux, though, and should be used judiciously.
+
+Resources
+---------
+1. [Kotlin Quick Guide] (https://github.com/Mr-Skully/kotlin-quick-guide)
