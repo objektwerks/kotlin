@@ -149,6 +149,8 @@ class CollectionTest {
         assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3, 4 to 4) )
         map.remove(4)
         assert( map == mutableMapOf(1 to 1, 2 to 2, 3 to 3) )
+        map.clear()
+        assert( map.isEmpty() )
     }
 
     @Test fun sortedMap() {
