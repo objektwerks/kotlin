@@ -80,8 +80,8 @@ class CollectionTest {
     }
 
     @Test fun sequence() {
-        val seq = sequenceOf(1, 2, 3)
-        assert( seq.map { it * it }.filter { it % 2 == 0 }.toList() == listOf(4) )
+        val lazyList = sequenceOf(1, 2, 3)
+        assert( lazyList.map { it * it }.filter { it % 2 == 0 }.toList() == listOf(4) )
     }
 
     @Test fun array() {
