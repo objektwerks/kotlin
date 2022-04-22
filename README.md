@@ -62,4 +62,4 @@ Arrow
 
 Resources
 ---------
-1. [Kotlin Quick Guide] (https://github.com/Mr-Skully/kotlin-quick-guide)
+1. [Kotlin Quick Guide](https://github.com/Mr-Skully/kotlin-quick-guide)
