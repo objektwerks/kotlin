@@ -33,6 +33,8 @@ class CollectionTest {
         assert( list.all { it > 0 } )
         assert( list.none { it < 0 } )
 
+        assert( list.joinToString() == "1, 2, 3" )
+
         assert( list.average() == 2.0 )
         assert( list.sum() == 6 )
         assert( list.sumOf { it * it } == 14 )
