@@ -12,7 +12,7 @@ class ControlFlowTest {
         assert( result > 3 )
     }
 
-    @Test fun foreach() {
+    @Test fun forin() {
         for (n in listOf(1, 2, 3)) { assert(n > 0) }
     }
 
