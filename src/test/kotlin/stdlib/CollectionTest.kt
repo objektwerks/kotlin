@@ -82,6 +82,8 @@ class CollectionTest {
     @Test fun array() {
         val array = arrayOf(1, 2, 3)
         assert( array.map { it * it }.filter { it % 2 == 0 } == listOf(4) )
+        assert( array.contentEquals( arrayOf(1, 2, 3) ) )
+        assert( !array.contentEquals( arrayOf(3, 2, 1) ) )
 
         val arrayList = arrayListOf(1, 2, 3)
         assert( arrayList.map { it * it }.filter { it % 2 != 0 } == listOf(1, 9) )
