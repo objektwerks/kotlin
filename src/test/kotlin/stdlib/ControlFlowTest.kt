@@ -46,4 +46,12 @@ class ControlFlowTest {
         }
         assert( result > 10 )
     }
+
+    @Test fun repeat() {
+        var sum = 0
+        repeat(3) {
+            sum += 1
+        }
+        assert( sum == 3 )
+    }
 }
