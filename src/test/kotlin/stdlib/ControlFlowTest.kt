@@ -7,13 +7,17 @@ import kotlin.math.absoluteValue
 import kotlin.test.fail
 
 class ControlFlowTest {
-    @Test fun ifelse() {
+    @Test fun ifElse() {
         val result = if (Random(10).nextInt() > 5) 6 else 4
         assert( result > 3 )
     }
 
-    @Test fun forin() {
+    @Test fun forIn() {
         for (n in listOf(1, 2, 3)) { assert(n > 0) }
+    }
+
+    @Test fun forEach() {
+        listOf(1, 2, 3).forEach { assert( it > 0 ) }
     }
 
     @Test fun range() {
