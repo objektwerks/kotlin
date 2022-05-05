@@ -26,38 +26,17 @@ Test
 
 Run
 ---
->The task: **gradle run** runs the 1st main(). Currently that is **console.App**.
->To selectively run an app:
+>To run the default app ( **console.App** ):
+1. gradle run
+>To selectively run any app:
 1. select
 2. right click
 3. select run '*Kt'
 
-Logging
--------
-See:
+Logs
+----
 1. build/kotlin.log
 2. build/kotlin.test.log
-
-Design
-------
->Kotlin focuses on **3** major areas:
-1. nullability
-2. exceptions
-3. Java compatibility
->In the FP space, 1 and 2 are ***foreign*** concepts. Nonetheless, akin to Scala, Kotlin can be used as an OO-FP hybrid.
-
-Collections
------------
->Kotlin collections are ***not*** like Scala collections. Instead, they mimic Java collections.
-
-Coroutines
-----------
->Kotlin coroutines are **complex** compared to using a Scala Future.
-
-Arrow
------
->Arrow is the **goto** FP library in the Kotlin space. In a limited way, it mirrors the
->Typelevel Cats library. Arrow is in constant flux, though, and should be used judiciously.
 
 Resources
 ---------
