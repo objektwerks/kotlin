@@ -11,7 +11,7 @@ import org.junit.Test
 
 class CoroutineTest {
     @Test fun runBlockingLaunchSum() {
-        suspend fun launchSum() = coroutineScope {  // this: CoroutineScope
+        suspend fun launchSum() = coroutineScope {
             var sum = 0
             launch {
                 delay(1000)
