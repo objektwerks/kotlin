@@ -42,4 +42,10 @@ class FileTest {
     @Test fun resourceAsStream() {
         assert( this::class.java.getResourceAsStream("/config.yaml").bufferedReader().readLines().count() == 2 )
     }
+
+    @Test fun use() {
+        File("./ddl.sql").inputStream().use {
+            assert(it.readAllBytes().isNotEmpty() )
+        }
+    }
 }
