@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.6.21"
-    kotlin("plugin.serialization") version "1.6.21"
+    kotlin("jvm") version "1.7.0"
+    kotlin("plugin.serialization") version "1.7.0"
     application
     id("com.adarshr.test-logger") version "3.2.0"
 }
@@ -27,10 +27,10 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.21")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.7.0")
 
-    implementation("org.jetbrains.kotlin:kotlin-test:1.6.21")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.6.21")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.7.0")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.7.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
 
