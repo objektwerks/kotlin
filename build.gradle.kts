@@ -32,7 +32,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-test:1.7.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.7.0")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
 
