@@ -50,7 +50,7 @@ dependencies {
     implementation("com.sksamuel.hoplite:hoplite-core:2.4.0")
     implementation("com.sksamuel.hoplite:hoplite-yaml:2.4.0")
 
-    implementation("com.h2database:h2:2.1.212")
+    implementation("com.h2database:h2:2.1.214")
 
     implementation("ch.qos.logback:logback-classic:1.2.11")
 }
