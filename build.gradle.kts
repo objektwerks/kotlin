@@ -34,12 +34,12 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
 
-    implementation("io.ktor:ktor-client-core:2.0.3")
-    implementation("io.ktor:ktor-client-cio:2.0.3")
-    implementation("io.ktor:ktor-server-core:2.0.3")
-    implementation("io.ktor:ktor-server-netty:2.0.3")
+    implementation("io.ktor:ktor-client-core:2.1.0")
+    implementation("io.ktor:ktor-client-cio:2.1.0")
+    implementation("io.ktor:ktor-server-core:2.1.0")
+    implementation("io.ktor:ktor-server-netty:2.1.0")
 
     implementation("org.jetbrains.exposed:exposed-core:0.39.2")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.39.2")
