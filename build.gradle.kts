@@ -47,8 +47,8 @@ dependencies {
 
     implementation("io.arrow-kt:arrow-core:1.1.2")
 
-    implementation("com.sksamuel.hoplite:hoplite-core:2.6.2")
-    implementation("com.sksamuel.hoplite:hoplite-yaml:2.6.2")
+    implementation("com.sksamuel.hoplite:hoplite-core:2.6.5")
+    implementation("com.sksamuel.hoplite:hoplite-yaml:2.6.5")
 
     implementation("com.h2database:h2:2.1.214")
 
