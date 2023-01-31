@@ -3,6 +3,7 @@ package sql
 import com.sksamuel.hoplite.ConfigLoader
 
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.junit.Test
 
@@ -44,7 +45,8 @@ class ExposedTest {
                 Todos.select { Todos.id eq todosId }.single()[Todos.task] == "Wash the car and drink beer!"
             )
 
-            Todos.deleteWhere{ Todos.id eq todosId }
+            val deleted = Todos.deleteWhere { id eq todosId }
+            assert( deleted == 1)
 
             assert( Todos.selectAll().count() == 0L )
 
