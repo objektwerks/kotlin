@@ -14,7 +14,7 @@ suspend fun main() {
     val json = response.bodyAsText()
     val jsonElement = Json.parseToJsonElement(json)
     val joke = jsonElement.jsonObject["value"]
-    println(jsonElement)
-    println(joke)
+    println("json: $jsonElement")
+    println("joke: $joke")
     client.close()
 }
