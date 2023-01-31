@@ -8,6 +8,6 @@ object App {
     @JvmStatic fun main(args : Array<String>) {
         args.forEach { arg -> println("Arg: $arg") }
         println("Greetings, ${greeting()}")
-        println("Datetime: ${Instant.now().toString()}")
+        println("Datetime: ${Instant.now()}")
     }
 }
