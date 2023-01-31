@@ -14,13 +14,13 @@ Gradle
 
 Build
 -----
-1. Use Intellij gradle to clean and build.
-2. gradle clean build
+>Use Intellij gradle to clean and build. Or use gradle:
+* gradle clean build
 
 Test
 ----
-1. Use Intellij gradle to clean, build, run and view tests.
-2. gradle clean build test
+>Use Intellij gradle to clean, build, run and view tests. Or use gradle:
+* gradle clean build test
      * view results courtesy of com.adarshr.test-logger plugin
      * optionally open ***build/reports/tests/test/index.html*** in a browser
 
