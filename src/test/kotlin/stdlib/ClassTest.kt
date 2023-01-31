@@ -22,8 +22,7 @@ class RandomIntGenerator {
     }
 }
 
-@JvmInline
-value class IntValue(val int: Int)
+@JvmInline value class IntValue(val int: Int)
 
 @JvmRecord data class Person(val name: String, val age: Int)
 
