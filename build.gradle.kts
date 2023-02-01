@@ -5,13 +5,15 @@ plugins {
     id("com.adarshr.test-logger") version "3.2.0"
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "19"
-    kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
-}
+tasks {
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "19"
+        kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
+    }
 
-tasks.withType<Test> {
-    useJUnit()
+    withType<Test> {
+        useJUnit()
+    }
 }
 
 group = "tripletail"
