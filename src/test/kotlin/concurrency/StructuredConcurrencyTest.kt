@@ -1,7 +1,6 @@
 package concurrency
 
 import jdk.incubator.concurrent.StructuredTaskScope.ShutdownOnFailure
-import java.util.concurrent.Callable
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.Future
 
@@ -18,8 +17,8 @@ class StructuredConcurrencyTest {
     fun structuredConcurrencyTest() {
         var lines: Int
         ShutdownOnFailure().use { scope ->
-            val alines: Future<Int> = scope.fork(Callable { FileLineCountTask("./data/data.a.csv").call() })
-            val blines: Future<Int> = scope.fork(Callable { FileLineCountTask("./data/data.b.csv").call() })
+            val alines: Future<Int> = scope.fork { FileLineCountTask("./data/data.a.csv").call() }
+            val blines: Future<Int> = scope.fork { FileLineCountTask("./data/data.b.csv").call() }
             scope.join()
             scope.throwIfFailed()
             lines = alines.resultNow() + blines.resultNow()
