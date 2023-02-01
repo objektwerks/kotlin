@@ -17,12 +17,9 @@ tasks {
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers", "-Xadd-modules=jdk.incubator.concurrent")
     }
 
-    withType<Test> {
-        useJUnit()
-    }
-
     withType<Test>().all {
-        allJvmArgs = listOf("--enable-preview")
+        useJUnit()
+        jvmArgs("--enable-preview", "--add-modules", "jdk.incubator.concurrent")
     }
 }
 
