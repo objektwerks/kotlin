@@ -5,8 +5,8 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.concurrent.Callable
 
-class FileLineCountTask(var file: String) : Callable<Int> {
-    fun fileLineCount(file: String): Int {
+class FileLineCountTask(private val file: String) : Callable<Int> {
+    private fun fileLineCount(file: String): Int {
         return try {
             val path = Paths.get(file)
             Files.readAllLines(path).size
