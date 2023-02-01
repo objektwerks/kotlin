@@ -8,7 +8,7 @@ plugins {
 tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "19"
-        kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers", "-Xadd-modules=jdk.incubator.concurrent")
+        kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers", "-Xadd-modules=[jdk.incubator.concurrent]")
     }
 
     withType<Test> {
