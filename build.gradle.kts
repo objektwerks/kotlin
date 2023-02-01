@@ -9,8 +9,7 @@ tasks {
     withType<JavaCompile> {
         val compilerArgs = options.compilerArgs
         compilerArgs.add("--enable-preview")
-        compilerArgs.add("--add-modules")
-        compilerArgs.add("jdk.incubator.concurrent")
+        compilerArgs.add("--add-modules jdk.incubator.concurrent")
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
