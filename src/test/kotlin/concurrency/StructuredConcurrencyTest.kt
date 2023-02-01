@@ -7,8 +7,7 @@ import java.util.concurrent.Future
 import org.junit.Test
 
 /**
- * Configure in gradle:
- * --enable-preview --add-modules jdk.incubator.concurrent
+ * Configure in gradle: --enable-preview --add-modules jdk.incubator.concurrent
  * Structured Concurrency: openjdk.org/jeps/428
  */
 class StructuredConcurrencyTest {

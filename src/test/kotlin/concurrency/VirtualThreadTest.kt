@@ -7,8 +7,7 @@ import java.util.concurrent.Future
 import org.junit.Test
 
 /**
- * Configure in gradle:
- * --enable-preview --add-modules jdk.incubator.concurrent
+ * Configure in gradle: --enable-preview --add-modules jdk.incubator.concurrent
  * Virtual Threads: openjdk.org/jeps/425
  * Article: www.marcobehler.com/guides/java-project-loom
  */
