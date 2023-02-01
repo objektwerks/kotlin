@@ -1,10 +1,10 @@
 package concurrency
 
 import java.util.concurrent.ExecutionException
+import java.util.concurrent.Executors
 import java.util.concurrent.Future
 
 import org.junit.Test
-import java.util.concurrent.Executors
 
 /**
  * Virtual Threads: openjdk.org/jeps/425
