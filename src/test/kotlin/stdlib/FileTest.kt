@@ -3,6 +3,7 @@ package stdlib
 import java.io.File
 
 import org.junit.Test
+import javax.imageio.ImageIO
 
 class FileTest {
     @Test fun writeReadBytes() {
@@ -47,5 +48,11 @@ class FileTest {
         File("./ddl.sql").inputStream().use {
             assert(it.readAllBytes().isNotEmpty() )
         }
+    }
+
+    @Test fun imageIO() {
+        val image = ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
+        assert( image.width > 0 )
+        assert( image.height > 0 )
     }
 }
