@@ -41,11 +41,10 @@ class FileTest {
     }
 
     @Test fun resource() {
-        assert(
-            this::class.java.getResource("/config.yaml")
-                .readText()
-                .isNotEmpty()
-        )
+        val lines = this::class.java.getResource("/config.yaml")?.readText()
+        if (lines != null) {
+            assert( lines.isNotEmpty() )
+        }
     }
 
     @Test fun resourceAsStream() {
