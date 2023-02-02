@@ -54,6 +54,7 @@ class ChuckNorrisApp {
         toolbar.add(button)
         frame.contentPane.add(toolbar, BorderLayout.NORTH)
 
+        textarea.border = BorderFactory.createLineBorder(Color.lightGray, 3)
         textarea.preferredSize = Dimension(360, 140)
         textarea.lineWrap = true
 
