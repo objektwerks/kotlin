@@ -10,12 +10,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 import java.awt.*
 
-import javax.swing.BorderFactory
-import javax.swing.JButton
-import javax.swing.JFrame
-import javax.swing.JPanel
-import javax.swing.JTextArea
-import javax.swing.JToolBar
+import javax.swing.*
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
 class ChuckNorrisApp {
