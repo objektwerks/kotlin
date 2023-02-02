@@ -12,6 +12,7 @@ import java.awt.BorderLayout
 import java.awt.Dimension
 
 import java.awt.EventQueue
+import javax.swing.BorderFactory
 import javax.swing.JButton
 import javax.swing.JFrame
 import javax.swing.JPanel
@@ -45,9 +46,11 @@ class ChuckNorrisApp {
 
         button.preferredSize = Dimension(80, 40)
         button.addActionListener {
+            var json = ""
             runBlocking {
-                textarea.text = getJoke()
+                json = getJoke()
             }
+            textarea.text = json
         }
 
         toolbar.add(button)
@@ -56,6 +59,7 @@ class ChuckNorrisApp {
         textarea.preferredSize = Dimension(380, 120)
         textarea.lineWrap = true
 
+        panel.border = BorderFactory.createEmptyBorder()
         panel.layout = BorderLayout()
         panel.add(textarea, BorderLayout.CENTER)
         frame.contentPane.add(panel, BorderLayout.CENTER)
