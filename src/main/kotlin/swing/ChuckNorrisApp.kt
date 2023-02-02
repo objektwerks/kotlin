@@ -9,6 +9,7 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 import java.awt.BorderLayout
+import java.awt.Color
 import java.awt.Dimension
 
 import java.awt.EventQueue
@@ -59,7 +60,7 @@ class ChuckNorrisApp {
         textarea.preferredSize = Dimension(380, 120)
         textarea.lineWrap = true
 
-        panel.border = BorderFactory.createEmptyBorder()
+        panel.border = BorderFactory.createLineBorder(Color.lightGray, 2)
         panel.layout = BorderLayout()
         panel.add(textarea, BorderLayout.CENTER)
         frame.contentPane.add(panel, BorderLayout.CENTER)
