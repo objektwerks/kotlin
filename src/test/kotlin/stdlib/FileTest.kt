@@ -41,24 +41,20 @@ class FileTest {
     }
 
     @Test fun resource() {
-        val lines = this::class.java.getResource("/config.yaml")?.readText()
-        if (lines != null) {
-            assert( lines.isNotEmpty() )
-        }
+        val text = this::class.java.getResource("/config.yaml")?.readText()
+        assert(text != null)
     }
 
     @Test fun resourceAsStream() {
-        assert(
-            this::class.java.getResourceAsStream("/config.yaml")
-                .bufferedReader()
-                .readLines()
-                .count() == 2
-        )
+        val lines = this::class.java.getResourceAsStream("/config.yaml")
+            ?.bufferedReader()
+            ?.readLines()
+        assert( lines?.count() == 2 )
     }
 
     @Test fun use() {
         File("./ddl.sql").inputStream().use {
-            assert(it.readAllBytes().isNotEmpty() )
+            assert( it.readAllBytes().isNotEmpty() )
         }
     }
 
