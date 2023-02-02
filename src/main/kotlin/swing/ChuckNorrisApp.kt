@@ -24,7 +24,11 @@ class ChuckNorrisApp {
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
 
-    private val logo = ImageIcon( ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg")) )
+    private val logo = JLabel(
+        ImageIcon(
+            ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
+        )
+    )
 
     private val frame = JFrame()
     private val button = JButton()
@@ -34,7 +38,7 @@ class ChuckNorrisApp {
 
     init {
         frame.title = "Chuck Norris Jokes"
-        frame.setSize(400, 200)
+        frame.setSize(400, 400)
         frame.defaultCloseOperation = EXIT_ON_CLOSE
         frame.setLocationRelativeTo(null)
         frame.layout = BorderLayout()
@@ -50,11 +54,14 @@ class ChuckNorrisApp {
         toolbar.add(button)
         frame.contentPane.add(toolbar, BorderLayout.NORTH)
 
-        textarea.preferredSize = Dimension(360, 120)
+        textarea.preferredSize = Dimension(360, 140)
         textarea.lineWrap = true
+
+        logo.preferredSize = Dimension(360, 260)
 
         panel.border = BorderFactory.createLineBorder(Color.lightGray, 3)
         panel.layout = BorderLayout()
+        panel.add(logo, BorderLayout.NORTH)
         panel.add(textarea, BorderLayout.CENTER)
 
         frame.contentPane.add(panel, BorderLayout.CENTER)
