@@ -61,7 +61,6 @@ class ChuckNorrisApp {
         textarea.isEditable = false
 
         logo.preferredSize = Dimension(360, 280)
-        logo.background = Color.lightGray
 
         panel.border = BorderFactory.createLineBorder(Color.lightGray, 3)
         panel.layout = BorderLayout()
