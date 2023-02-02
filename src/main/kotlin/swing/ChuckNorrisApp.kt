@@ -69,6 +69,6 @@ fun main() {
     val app = ChuckNorrisApp()
     EventQueue.invokeLater { app.open() }
     Runtime.getRuntime().addShutdownHook(object : Thread() {
-        override fun run() = runBlocking {app.close() }
+        override fun run() = runBlocking { app.close() }
     })
 }
