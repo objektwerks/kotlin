@@ -16,19 +16,19 @@ import javax.swing.JFrame
 class ChuckNorrisApp : JFrame() {
     private val client = HttpClient(CIO)
 
-    init {
-        title = "Chuck Norris Jokes"
-        defaultCloseOperation = EXIT_ON_CLOSE
-        setSize(400, 400)
-        setLocationRelativeTo(null)
-    }
-
-    suspend fun getJoke(): String {
+    private suspend fun getJoke(): String {
         return runCatching {
             val json = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
             val jsonElement = Json.parseToJsonElement(json)
             jsonElement.jsonObject["value"].toString()
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
+    }
+
+    init {
+        title = "Chuck Norris Jokes"
+        defaultCloseOperation = EXIT_ON_CLOSE
+        setSize(400, 400)
+        setLocationRelativeTo(null)
     }
 
     fun open() {
