@@ -8,11 +8,8 @@ import io.ktor.client.statement.*
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
-import java.awt.BorderLayout
-import java.awt.Color
-import java.awt.Dimension
+import java.awt.*
 
-import java.awt.EventQueue
 import javax.swing.BorderFactory
 import javax.swing.JButton
 import javax.swing.JFrame
@@ -47,11 +44,13 @@ class ChuckNorrisApp {
 
         button.text = "New Joke"
         button.addActionListener {
+            frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
             var json: String
             runBlocking {
                 json = getJoke()
             }
             textarea.text = json
+            frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
         }
 
         toolbar.add(button)
