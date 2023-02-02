@@ -7,6 +7,7 @@ import io.ktor.client.statement.*
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 
@@ -28,31 +29,22 @@ class ChuckNorrisApp : JFrame() {
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
 
+    private val toolbar = JToolBar()
+    private val button = JButton("GetJoke")
+    private val panel = JPanel()
+    private val textarea = JTextArea()
+
     init {
         title = "Chuck Norris Jokes"
-        defaultCloseOperation = EXIT_ON_CLOSE
         setSize(400, 400)
+        defaultCloseOperation = EXIT_ON_CLOSE
         setLocationRelativeTo(null)
-    }
 
-    fun buildToolBar(): JToolBar {
-        val toolbar = JToolBar()
-        toolbar
-    }
-
-    fun buildButton(): JButton {
-        val button = JButton("New Joke")
-        button
-    }
-
-    fun buildPanel(): JPanel {
-        val panel = JPanel()
-        panel
-    }
-
-    fun buildTextArea(): JTextArea {
-        val textarea = JTextArea()
-        textarea
+        button.addActionListener {
+            runBlocking {
+                textarea.text = getJoke()
+            }
+        }
     }
 
     fun open() {
