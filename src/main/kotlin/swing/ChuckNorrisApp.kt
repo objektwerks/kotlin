@@ -46,7 +46,6 @@ class ChuckNorrisApp {
         frame.layout = BorderLayout()
 
         button.text = "New Joke"
-        button.preferredSize = Dimension(80, 40)
         button.addActionListener {
             var json: String
             runBlocking {
