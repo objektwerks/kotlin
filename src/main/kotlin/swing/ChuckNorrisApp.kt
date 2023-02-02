@@ -56,14 +56,14 @@ class ChuckNorrisApp {
         toolbar.add(button)
         frame.contentPane.add(toolbar, BorderLayout.NORTH)
 
-        textarea.preferredSize = Dimension(380, 120)
+        textarea.preferredSize = Dimension(360, 120)
         textarea.lineWrap = true
 
-        panel.border = BorderFactory.createLineBorder(Color.lightGray, 2)
+        panel.border = BorderFactory.createLineBorder(Color.lightGray, 3)
         panel.layout = BorderLayout()
         panel.add(textarea, BorderLayout.CENTER)
-        frame.contentPane.add(panel, BorderLayout.CENTER)
 
+        frame.contentPane.add(panel, BorderLayout.CENTER)
         frame.pack()
     }
 
