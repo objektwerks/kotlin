@@ -46,7 +46,7 @@ class ChuckNorrisApp {
 
         button.preferredSize = Dimension(80, 40)
         button.addActionListener {
-            var json = ""
+            var json: String
             runBlocking {
                 json = getJoke()
             }
