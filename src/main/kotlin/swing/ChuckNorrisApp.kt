@@ -8,6 +8,8 @@ import io.ktor.client.statement.*
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
+import java.awt.BorderLayout
+import java.awt.Dimension
 
 import java.awt.EventQueue
 import javax.swing.JButton
@@ -29,31 +31,43 @@ class ChuckNorrisApp {
     }
 
     private val frame = JFrame()
+    private val button = JButton("New Joke")
     private val toolbar = JToolBar()
-    private val button = JButton("GetJoke")
-    private val panel = JPanel()
     private val textarea = JTextArea()
+    private val panel = JPanel()
 
     init {
         frame.title = "Chuck Norris Jokes"
-        frame.setSize(400, 400)
+        frame.setSize(400, 200)
         frame.defaultCloseOperation = EXIT_ON_CLOSE
         frame.setLocationRelativeTo(null)
+        frame.layout = BorderLayout()
 
+        button.preferredSize = Dimension(80, 40)
         button.addActionListener {
             runBlocking {
                 textarea.text = getJoke()
             }
         }
+
+        toolbar.add(button)
+        frame.contentPane.add(toolbar, BorderLayout.NORTH)
+
+        textarea.preferredSize = Dimension(380, 120)
+        textarea.lineWrap = true
+
+        panel.layout = BorderLayout()
+        panel.add(textarea, BorderLayout.CENTER)
+        frame.contentPane.add(panel, BorderLayout.CENTER)
+
+        frame.pack()
     }
 
     fun open() {
         frame.isVisible = true
     }
 
-    fun close() {
-        client.close()
-    }
+    fun close() = client.close()
 }
 
 fun main() {
