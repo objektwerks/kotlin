@@ -48,7 +48,7 @@ class ChuckNorrisApp {
             val json = runBlocking {
                 getJoke()
             }
-            textarea.text = json
+            textarea.text = json.removeSurrounding("\"")
             frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
         }
 
