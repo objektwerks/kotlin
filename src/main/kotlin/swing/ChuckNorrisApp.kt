@@ -56,6 +56,7 @@ class ChuckNorrisApp {
 
         textarea.border = BorderFactory.createLineBorder(Color.lightGray, 3)
         textarea.preferredSize = Dimension(360, 140)
+        textarea.background = Color.lightGray
         textarea.lineWrap = true
 
         logo.preferredSize = Dimension(360, 260)
