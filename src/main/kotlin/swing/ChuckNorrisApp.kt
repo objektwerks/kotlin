@@ -8,6 +8,7 @@ import io.ktor.client.statement.*
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.*
 import java.awt.*
+import javax.imageio.ImageIO
 
 import javax.swing.*
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
@@ -22,6 +23,8 @@ class ChuckNorrisApp {
             jsonElement.jsonObject["value"].toString()
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
+
+    private val logo = ImageIcon( ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg")) )
 
     private val frame = JFrame()
     private val button = JButton()
