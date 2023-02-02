@@ -15,8 +15,9 @@ import javax.swing.JFrame
 import javax.swing.JPanel
 import javax.swing.JTextArea
 import javax.swing.JToolBar
+import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
-class ChuckNorrisApp : JFrame() {
+class ChuckNorrisApp {
     private val client = HttpClient(CIO)
 
     private suspend fun getJoke(): String {
@@ -27,16 +28,17 @@ class ChuckNorrisApp : JFrame() {
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
 
+    private val frame = JFrame()
     private val toolbar = JToolBar()
     private val button = JButton("GetJoke")
     private val panel = JPanel()
     private val textarea = JTextArea()
 
     init {
-        title = "Chuck Norris Jokes"
-        setSize(400, 400)
-        defaultCloseOperation = EXIT_ON_CLOSE
-        setLocationRelativeTo(null)
+        frame.title = "Chuck Norris Jokes"
+        frame.setSize(400, 400)
+        frame.defaultCloseOperation = EXIT_ON_CLOSE
+        frame.setLocationRelativeTo(null)
 
         button.addActionListener {
             runBlocking {
@@ -46,7 +48,7 @@ class ChuckNorrisApp : JFrame() {
     }
 
     fun open() {
-        isVisible = true
+        frame.isVisible = true
     }
 
     fun close() {
