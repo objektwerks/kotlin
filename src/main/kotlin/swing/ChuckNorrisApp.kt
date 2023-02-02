@@ -11,7 +11,11 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 
 import java.awt.EventQueue
+import javax.swing.JButton
 import javax.swing.JFrame
+import javax.swing.JPanel
+import javax.swing.JTextArea
+import javax.swing.JToolBar
 
 class ChuckNorrisApp : JFrame() {
     private val client = HttpClient(CIO)
@@ -29,6 +33,26 @@ class ChuckNorrisApp : JFrame() {
         defaultCloseOperation = EXIT_ON_CLOSE
         setSize(400, 400)
         setLocationRelativeTo(null)
+    }
+
+    fun buildToolBar(): JToolBar {
+        val toolbar = JToolBar()
+        toolbar
+    }
+
+    fun buildButton(): JButton {
+        val button = JButton("New Joke")
+        button
+    }
+
+    fun buildPanel(): JPanel {
+        val panel = JPanel()
+        panel
+    }
+
+    fun buildTextArea(): JTextArea {
+        val textarea = JTextArea()
+        textarea
     }
 
     fun open() {
