@@ -1,9 +1,9 @@
 package stdlib
 
 import java.io.File
+import javax.imageio.ImageIO
 
 import org.junit.Test
-import javax.imageio.ImageIO
 
 class FileTest {
     @Test fun writeReadBytes() {
