@@ -33,7 +33,7 @@ class ChuckNorrisApp {
     }
 
     private val frame = JFrame()
-    private val button = JButton("New Joke")
+    private val button = JButton()
     private val toolbar = JToolBar()
     private val textarea = JTextArea()
     private val panel = JPanel()
@@ -45,6 +45,7 @@ class ChuckNorrisApp {
         frame.setLocationRelativeTo(null)
         frame.layout = BorderLayout()
 
+        button.text = "New Joke"
         button.preferredSize = Dimension(80, 40)
         button.addActionListener {
             var json: String
