@@ -5,8 +5,6 @@ import io.ktor.client.engine.cio.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
@@ -58,12 +56,10 @@ class ChuckNorrisApp : JFrame() {
 
 fun main() {
     val app = ChuckNorrisApp()
-    EventQueue.invokeLater( Runnable { app.open() } )
-    GlobalScope.launch {
-        Runtime.getRuntime().addShutdownHook(object : Thread() {
-            override fun run() {
-                app.close()
-            }
-        })
-    }
+    EventQueue.invokeLater { app.open() }
+    Runtime.getRuntime().addShutdownHook(object : Thread() {
+        override fun run() = runBlocking {
+            app.close()
+        }
+    })
 }
