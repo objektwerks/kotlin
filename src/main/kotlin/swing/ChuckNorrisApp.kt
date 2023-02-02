@@ -39,9 +39,7 @@ class ChuckNorrisApp {
         button.text = "New Joke"
         button.addActionListener {
             frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
-            val json = runBlocking {
-                getJoke()
-            }
+            val json = runBlocking { getJoke() }
             textarea.text = json.removeSurrounding("\"")
             frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
         }
