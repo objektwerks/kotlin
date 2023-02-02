@@ -10,7 +10,11 @@ class FileTest {
         val path = "./build/bytes.txt"
         val bytes = "test write".encodeToByteArray()
         File(path).writeBytes(bytes)
-        assert( File(path).readBytes().decodeToString() == bytes.decodeToString() )
+        assert(
+            File(path)
+                .readBytes()
+                .decodeToString() == bytes.decodeToString()
+        )
     }
 
     @Test fun writeReadText() {
