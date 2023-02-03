@@ -14,6 +14,7 @@ Apps
 >The default app is: console.App
 
 >Unlike Scala Sbt, Gradle does not provide a list of available apps to run.
+>So kindly review the Run section below.
 1. console/App
 2. http/ChuckNorrisClient
 3. http/NowServer
