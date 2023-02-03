@@ -34,9 +34,10 @@ fun main(args: Array<String>) {
 class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
         val executor = Executors.newVirtualThreadPerTaskExecutor()
+        val task = ChuckNorrisFxTask()
         primaryStage.apply {
             title = "Chuck Norris Jokes"
-            scene = ChuckNorrixFxView( executor, ChuckNorrisFxTask()).scene()
+            scene = ChuckNorrixFxView(executor, task).scene()
             maxWidth = 400.0
             maxHeight = 300.0
         }
