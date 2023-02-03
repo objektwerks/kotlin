@@ -34,6 +34,8 @@ class ChuckNorrixFxApp : Application() {
 }
 
 class ChuckNorrixFxView {
+    private val task = ChuckNorrisFxTask()
+
     private fun content() =
         VBox().apply {
             spacing = 6.0
