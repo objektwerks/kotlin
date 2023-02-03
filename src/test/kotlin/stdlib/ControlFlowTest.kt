@@ -2,9 +2,10 @@ package stdlib
 
 import java.util.*
 
-import org.junit.Test
 import kotlin.math.absoluteValue
 import kotlin.test.fail
+
+import org.junit.Test
 
 class ControlFlowTest {
     @Test fun ifElse() {
