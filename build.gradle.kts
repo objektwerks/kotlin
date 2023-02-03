@@ -3,7 +3,6 @@ plugins {
     kotlin("plugin.serialization") version "1.8.0"
     application
     id("com.adarshr.test-logger") version "3.2.0"
-    id("org.openjfx.javafxplugin") version "0.0.13"
 }
 
 tasks {
@@ -16,11 +15,6 @@ tasks {
         useJUnit()
         jvmArgs("--enable-preview", "--add-modules", "jdk.incubator.concurrent")
     }
-}
-
-javafx {
-    version = "19"
-    modules("javafx.controls", "javafx.base")
 }
 
 group = "tripletail"
