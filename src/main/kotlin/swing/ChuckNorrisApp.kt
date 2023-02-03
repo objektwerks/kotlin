@@ -13,6 +13,14 @@ import javax.imageio.ImageIO
 import javax.swing.*
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
+fun main() {
+    val app = ChuckNorrisApp()
+    EventQueue.invokeLater { app.open() }
+    Runtime.getRuntime().addShutdownHook(object : Thread() {
+        override fun run() = runBlocking { app.close() }
+    })
+}
+
 class ChuckNorrisApp {
     private val client = HttpClient(CIO)
 
@@ -76,12 +84,4 @@ class ChuckNorrisApp {
     }
 
     fun close() = client.close()
-}
-
-fun main() {
-    val app = ChuckNorrisApp()
-    EventQueue.invokeLater { app.open() }
-    Runtime.getRuntime().addShutdownHook(object : Thread() {
-        override fun run() = runBlocking { app.close() }
-    })
 }
