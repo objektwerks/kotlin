@@ -7,6 +7,7 @@ import io.ktor.client.statement.*
 
 import javafx.application.Application
 import javafx.application.Platform
+import javafx.concurrent.Task
 import javafx.embed.swing.SwingFXUtils
 import javafx.event.EventHandler
 import javafx.geometry.Insets
@@ -26,16 +27,21 @@ import kotlin.properties.Delegates
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
 
 fun main(args: Array<String>) {
     Application.launch(ChuckNorrixFxApp::class.java, *args)
 }
 
 class ChuckNorrixFxApp : Application() {
+    private val executor = Executors.newVirtualThreadPerTaskExecutor()
+    private val task = ChuckNorrisFxTask()
+
     override fun start(primaryStage: Stage) {
         primaryStage.apply {
             title = "Chuck Norris Jokes"
-            scene = ChuckNorrixFxView( ChuckNorrisFxTask() ).scene()
+            scene = ChuckNorrixFxView(executor, task ).scene()
             maxWidth = 400.0
             maxHeight = 300.0
         }
@@ -44,7 +50,7 @@ class ChuckNorrixFxApp : Application() {
     }
 }
 
-class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
+class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
     private var htmlProperty: String by Delegates.observable("") { _, _, newJoke ->
         Platform.runLater { webview.engine.loadContent(newJoke) }
     }
@@ -65,19 +71,13 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
         prefHeight = 30.0
         text = "New Joke"
         onAction = EventHandler { _ ->
-            Platform.runLater {
-                busyIndicator.isVisible = true
-                busyIndicator.progress = 50.0
-                isDisable = true
+            busyIndicator.progressProperty().bind(task.progressProperty())
+            busyIndicator.visibleProperty().bind(task.runningProperty())
+            visibleProperty().bind(task.runningProperty())
+            task.valueProperty().addListener { _, _, newValue ->
+                htmlProperty = newValue
             }
-            val html = runBlocking { task.getJoke() }
-            Platform.runLater {
-                busyIndicator.progress = 100.0
-                busyIndicator.progress = -1.0
-                busyIndicator.isVisible = false
-                isDisable = false
-            }
-            htmlProperty = html
+            executor.execute(task)
         }
     }
 
@@ -109,10 +109,10 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
     fun scene() = Scene(contentPane())
 }
 
-class ChuckNorrisFxTask {
+class ChuckNorrisFxTask : Task<String>() {
     private val client = HttpClient(CIO)
 
-    suspend fun getJoke(): String {
+    private suspend fun getJoke(): String {
         return runCatching {
             val text = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
             val jsonElement = Json.parseToJsonElement(text)
@@ -120,4 +120,6 @@ class ChuckNorrisFxTask {
             "<p>$value</p>"
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
+
+    override fun call(): String = runBlocking { getJoke() }
 }
