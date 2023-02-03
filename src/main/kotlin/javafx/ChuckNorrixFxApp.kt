@@ -18,6 +18,7 @@ import kotlinx.coroutines.runBlocking
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
+import kotlin.properties.Delegates
 
 fun main(args: Array<String>) {
     Application.launch(ChuckNorrixFxApp::class.java, *args)
@@ -37,6 +38,10 @@ class ChuckNorrixFxApp : Application() {
 }
 
 class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
+    private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
+        webview.engine.loadContent(newJoke)
+    }
+
     private val logo = ImageView().apply {
         image = Image(this::class.java.getResourceAsStream("/cn.jpg"))
         fitHeight = 100.0
