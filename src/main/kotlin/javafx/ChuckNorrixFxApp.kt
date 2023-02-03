@@ -70,11 +70,11 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
                 isDisable = true
             }
             val json = runBlocking { task.getJoke() }
-            jokeProperty = json.removeSurrounding("\"")
             Platform.runLater {
                 busyIndicator.isVisible = false
                 isDisable = false
             }
+            jokeProperty = json.removeSurrounding("\"")
         }
     }
 
