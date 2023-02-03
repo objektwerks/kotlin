@@ -73,7 +73,7 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         onAction = EventHandler { _ ->
             busyIndicator.progressProperty().bind(task.progressProperty())
             busyIndicator.visibleProperty().bind(task.runningProperty())
-            visibleProperty().bind(task.runningProperty())
+            disableProperty().bind(task.runningProperty())
             task.valueProperty().addListener { _, _, newValue ->
                 htmlProperty = newValue
             }
