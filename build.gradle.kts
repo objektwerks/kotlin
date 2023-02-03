@@ -3,6 +3,7 @@ plugins {
     kotlin("plugin.serialization") version "1.8.0"
     application
     id("com.adarshr.test-logger") version "3.2.0"
+    id("org.openjfx.javafxplugin") version "0.0.13"
 }
 
 tasks {
