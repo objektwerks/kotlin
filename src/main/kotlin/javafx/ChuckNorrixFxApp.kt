@@ -36,12 +36,11 @@ fun main(args: Array<String>) {
 
 class ChuckNorrixFxApp : Application() {
     private val executor = Executors.newVirtualThreadPerTaskExecutor()
-    private val task = ChuckNorrisFxTask()
 
     override fun start(primaryStage: Stage) {
         primaryStage.apply {
             title = "Chuck Norris Jokes"
-            scene = ChuckNorrixFxView(executor, task ).scene()
+            scene = ChuckNorrixFxView(executor).scene()
             maxWidth = 400.0
             maxHeight = 300.0
         }
@@ -50,7 +49,9 @@ class ChuckNorrixFxApp : Application() {
     }
 }
 
-class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
+class ChuckNorrixFxView(executor: Executor) {
+    private val client = HttpClient(CIO)
+
     private var htmlProperty: String by Delegates.observable("") { _, _, newJoke ->
         Platform.runLater { webview.engine.loadContent(newJoke) }
     }
@@ -71,6 +72,7 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         prefHeight = 30.0
         text = "New Joke"
         onAction = EventHandler { _ ->
+            val task = ChuckNorrisFxTask(client)
             busyIndicator.progressProperty().bind(task.progressProperty())
             busyIndicator.visibleProperty().bind(task.runningProperty())
             disableProperty().bind(task.runningProperty())
@@ -109,9 +111,7 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
     fun scene() = Scene(contentPane())
 }
 
-class ChuckNorrisFxTask : Task<String>() {
-    private val client = HttpClient(CIO)
-
+class ChuckNorrisFxTask(private val client: HttpClient) : Task<String>() {
     private suspend fun getJoke(): String {
         return runCatching {
             val text = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
