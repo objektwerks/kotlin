@@ -5,11 +5,7 @@ import io.ktor.client.engine.cio.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
-import java.util.concurrent.Executor
-import java.util.concurrent.Executors
-
 import javafx.application.Application
-import javafx.concurrent.Task
 import javafx.embed.swing.SwingFXUtils
 import javafx.event.EventHandler
 import javafx.geometry.Insets
@@ -36,11 +32,9 @@ fun main(args: Array<String>) {
 
 class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
-        val executor = Executors.newVirtualThreadPerTaskExecutor()
-        val task = ChuckNorrisFxTask()
         primaryStage.apply {
             title = "Chuck Norris Jokes"
-            scene = ChuckNorrixFxView(executor, task).scene()
+            scene = ChuckNorrixFxView( ChuckNorrisFxTask() ).scene()
             maxWidth = 400.0
             maxHeight = 300.0
         }
@@ -49,7 +43,7 @@ class ChuckNorrixFxApp : Application() {
     }
 }
 
-class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
+class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
     private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
         webview.engine.loadContent(newJoke)
     }
@@ -70,9 +64,14 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         prefHeight = 30.0
         text = "New Joke"
         onAction = EventHandler { _ ->
-            busyIndicator.isVisible = task.isRunning
-            isDisable = task.isRunning
-            executor.execute(task).run { jokeProperty = task.value }
+            busyIndicator.isVisible = true
+            isDisable = true
+            val json = runBlocking {
+                task.getJoke()
+            }
+            jokeProperty = json.removeSurrounding("\"")
+            busyIndicator.isVisible = false
+            isDisable = false
         }
     }
 
@@ -104,16 +103,14 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
     fun scene() = Scene(contentPane())
 }
 
-class ChuckNorrisFxTask : Task<String>() {
+class ChuckNorrisFxTask {
     private val client = HttpClient(CIO)
 
-    private suspend fun getJoke(): String {
+    suspend fun getJoke(): String {
         return runCatching {
             val json = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
             val jsonElement = Json.parseToJsonElement(json)
             jsonElement.jsonObject["value"].toString()
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
-
-    override fun call(): String = runBlocking { getJoke() }
 }
