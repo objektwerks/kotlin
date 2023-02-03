@@ -11,5 +11,5 @@ class ChuckNorrixFxApp : Application() {
 }
 
 fun main(args: Array<String>) {
-    Application.launch(*args)
+    Application.launch(ChuckNorrixFxApp::class.java, *args)
 }
