@@ -86,7 +86,6 @@ class ChuckNorrixFxView(executor: Executor) {
     private val busyIndicator = ProgressIndicator().apply {
         prefWidth = 60.0
         prefHeight = 30.0
-        progress = -1.0
         isVisible = false
     }
 
