@@ -6,6 +6,8 @@ Kotlin
 3. [Ktor](https://ktor.io)
 4. [Exposed](https://github.com/JetBrains/Exposed)
 5. [Json](https://kotlinx-serialization-json)
+6. [JavaFX](https://openjfx.io/)
+7. [Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html)
 
 Apps
 ----
