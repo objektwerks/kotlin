@@ -64,10 +64,9 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         prefHeight = 30.0
         text = "New Joke"
         onAction = EventHandler { _ ->
-            jokeProperty = task.value
             busyIndicator.isVisible = task.isRunning
             isDisable = task.isRunning
-            executor.execute(task)
+            executor.execute(task).run { jokeProperty = task.value }
         }
     }
 
