@@ -46,7 +46,7 @@ class ChuckNorrixFxApp : Application() {
 
 class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
     private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
-        webview.engine.loadContent(newJoke)
+        Platform.runLater { webview.engine.loadContent(newJoke) }
     }
 
     private val bufferedImage = ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
