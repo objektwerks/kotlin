@@ -9,8 +9,9 @@ Kotlin
 
 Apps
 ----
->The default app is: console.App Unlike Scala Sbt, Gradle does not pick up
-> and provide a list or apps to be selected to run.
+>The default app is: console.App
+
+>Unlike Scala Sbt, Gradle does not pick up and provide a list or apps to be selected to run.
 1. console/App
 2. http/ChuckNorrisClient
 3. http/NowServer
