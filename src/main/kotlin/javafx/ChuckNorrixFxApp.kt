@@ -12,6 +12,8 @@ import javafx.geometry.Insets
 import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.ProgressIndicator
+import javafx.scene.control.Separator
+import javafx.scene.control.ToolBar
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
@@ -75,15 +77,19 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         isVisible = false
     }
 
+    private val toolbar = ToolBar().apply {
+        prefHeight = 40.0
+        items.addAll(logo, Separator(), jokeButton, Separator(), busyIndicator)
+    }
 
-    private fun content() =
+    private fun contentPane() =
         VBox().apply {
             spacing = 6.0
             padding = Insets(6.0)
             children.add(VBox())
         }
 
-    fun scene() = Scene(content())
+    fun scene() = Scene(contentPane())
 }
 
 class ChuckNorrisFxTask : Task<String>() {
