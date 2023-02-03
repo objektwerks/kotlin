@@ -8,7 +8,10 @@ import io.ktor.client.statement.*
 import javafx.application.Application
 import javafx.concurrent.Task
 import javafx.geometry.Insets
+import javax.imageio.ImageIO
 import javafx.scene.Scene
+import javafx.scene.image.Image
+import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
 import javafx.stage.Stage
 import kotlinx.coroutines.runBlocking
@@ -24,7 +27,7 @@ class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
         primaryStage.apply {
             title = "Chuck Norris Jokes"
-            scene = ChuckNorrixFxView( ChuckNorrisFxTask() ).scene()
+            scene = ChuckNorrixFxView( ChuckNorrisFxTask()).scene()
             maxWidth = 400.0
             maxHeight = 300.0
         }
@@ -34,6 +37,11 @@ class ChuckNorrixFxApp : Application() {
 }
 
 class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
+    private val logo = ImageView().apply {
+        image = Image(this::class.java.getResourceAsStream("/cn.jpg"))
+        fitHeight = 100.0
+        fitWidth = 100.0
+    }
 
     private fun content() =
         VBox().apply {
