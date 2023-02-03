@@ -11,6 +11,7 @@ import javafx.event.EventHandler
 import javafx.geometry.Insets
 import javafx.scene.Scene
 import javafx.scene.control.Button
+import javafx.scene.control.ProgressIndicator
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
@@ -66,6 +67,14 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
             executor.execute(task)
         }
     }
+
+    private val busyIndicator = ProgressIndicator().apply {
+        prefWidth = 60.0
+        prefHeight = 30.0
+        progress = -1.0
+        isVisible = false
+    }
+
 
     private fun content() =
         VBox().apply {
