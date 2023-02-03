@@ -24,7 +24,7 @@ class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
         primaryStage.apply {
             title = "Chuck Norris Jokes"
-            scene = ChuckNorrixFxView().scene()
+            scene = ChuckNorrixFxView( ChuckNorrisFxTask() ).scene()
             maxWidth = 400.0
             maxHeight = 300.0
         }
@@ -33,8 +33,7 @@ class ChuckNorrixFxApp : Application() {
     }
 }
 
-class ChuckNorrixFxView {
-    private val task = ChuckNorrisFxTask()
+class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
 
     private fun content() =
         VBox().apply {
