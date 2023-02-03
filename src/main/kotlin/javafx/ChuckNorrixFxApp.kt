@@ -7,8 +7,10 @@ import io.ktor.client.statement.*
 
 import javafx.application.Application
 import javafx.concurrent.Task
+import javafx.event.EventHandler
 import javafx.geometry.Insets
 import javafx.scene.Scene
+import javafx.scene.control.Button
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
@@ -18,6 +20,8 @@ import kotlinx.coroutines.runBlocking
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
 import kotlin.properties.Delegates
 
 fun main(args: Array<String>) {
@@ -26,9 +30,10 @@ fun main(args: Array<String>) {
 
 class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
+        val executor = Executors.newVirtualThreadPerTaskExecutor()
         primaryStage.apply {
             title = "Chuck Norris Jokes"
-            scene = ChuckNorrixFxView( ChuckNorrisFxTask()).scene()
+            scene = ChuckNorrixFxView( executor, ChuckNorrisFxTask()).scene()
             maxWidth = 400.0
             maxHeight = 300.0
         }
@@ -37,7 +42,7 @@ class ChuckNorrixFxApp : Application() {
     }
 }
 
-class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
+class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
     private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
         webview.engine.loadContent(newJoke)
     }
@@ -49,6 +54,18 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
     }
 
     private val webview = WebView()
+
+    private val jokeButton = Button().apply {
+        prefWidth = 80.0
+        prefHeight = 30.0
+        text = "New Joke"
+        onAction = EventHandler() { _ ->
+            jokeProperty = task.value
+            // busyIndicator.visible = task.running
+            isDisable = task.isRunning
+            executor.execute(task)
+        }
+    }
 
     private fun content() =
         VBox().apply {
