@@ -22,11 +22,6 @@ tasks {
     }
 }
 
-javafx {
-    version = "19"
-    modules("javafx-base", "javafx.controls", "javafx-web")
-}
-
 group = "tripletail"
 version = "0.1-SNAPSHOT"
 
