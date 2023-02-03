@@ -82,6 +82,12 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         items.addAll(logo, Separator(), jokeButton, Separator(), busyIndicator)
     }
 
+    private val webviewPane = VBox().apply {
+        spacing = 3.0
+        padding = Insets(3.0)
+        children.add(webview)
+    }
+
     private fun contentPane() =
         VBox().apply {
             spacing = 6.0
