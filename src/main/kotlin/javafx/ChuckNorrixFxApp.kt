@@ -45,7 +45,7 @@ class ChuckNorrixFxApp : Application() {
 }
 
 class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
-    private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
+    private var htmlProperty: String by Delegates.observable("") { _, _, newJoke ->
         Platform.runLater { webview.engine.loadContent(newJoke) }
     }
 
@@ -70,14 +70,14 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
                 busyIndicator.progress = 50.0
                 isDisable = true
             }
-            val json = runBlocking { task.getJoke() }
+            val html = runBlocking { task.getJoke() }
             Platform.runLater {
                 busyIndicator.progress = 100.0
                 busyIndicator.progress = -1.0
                 busyIndicator.isVisible = false
                 isDisable = false
             }
-            jokeProperty = json.removeSurrounding("\"")
+            htmlProperty = html
         }
     }
 
@@ -114,9 +114,10 @@ class ChuckNorrisFxTask {
 
     suspend fun getJoke(): String {
         return runCatching {
-            val json = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
-            val jsonElement = Json.parseToJsonElement(json)
-            jsonElement.jsonObject["value"].toString()
+            val text = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
+            val jsonElement = Json.parseToJsonElement(text)
+            val value = jsonElement.jsonObject["value"].toString().removeSurrounding("\"")
+            "<p>$value</p>"
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
 }
