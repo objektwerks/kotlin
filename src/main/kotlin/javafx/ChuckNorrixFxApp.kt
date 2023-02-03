@@ -10,6 +10,7 @@ import java.util.concurrent.Executors
 
 import javafx.application.Application
 import javafx.concurrent.Task
+import javafx.embed.swing.SwingFXUtils
 import javafx.event.EventHandler
 import javafx.geometry.Insets
 import javax.imageio.ImageIO
@@ -53,9 +54,9 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         webview.engine.loadContent(newJoke)
     }
 
-    private val image = ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
+    private val bufferedImage = ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
     private val logo = ImageView().apply {
-        image = image
+        image = SwingFXUtils.toFXImage(bufferedImage, null )
         fitHeight = 100.0
         fitWidth = 100.0
         isPreserveRatio = true
