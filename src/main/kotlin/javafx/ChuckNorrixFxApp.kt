@@ -6,8 +6,9 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
 import javafx.application.Application
+import javafx.geometry.Insets
 import javafx.scene.Scene
-import javafx.scene.control.Label
+import javafx.scene.layout.VBox
 import javafx.stage.Stage
 
 import kotlinx.serialization.json.Json
@@ -19,17 +20,26 @@ fun main(args: Array<String>) {
 
 class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
-        primaryStage.title = "Chuck Norris Jokes"
-        primaryStage.scene = ChuckNorrixFxView().scene
+        primaryStage.apply {
+            title = "Chuck Norris Jokes"
+            scene = ChuckNorrixFxView().scene()
+            maxWidth = 400.0
+            maxHeight = 300.0
+        }
         primaryStage.centerOnScreen()
         primaryStage.show()
     }
 }
 
 class ChuckNorrixFxView {
-    private val label = Label("Test joke!")
+    private fun content() =
+        VBox().apply {
+            spacing = 6.0
+            padding = Insets(6.0)
+            children.add(VBox())
+        }
 
-    val scene = Scene(label, 400.0, 300.0)
+    fun scene() = Scene(content())
 }
 
 class ChuckNorrisFxTask {
