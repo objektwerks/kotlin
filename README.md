@@ -7,6 +7,14 @@ Kotlin
 4. [Exposed](https://github.com/JetBrains/Exposed)
 5. [Json](https://kotlinx-serialization-json)
 
+Apps
+----
+1. console/App
+2. http/ChuckNorrisClient
+3. http/NowServer
+4. javafx/ChuckNorrisFxApp
+5. swing/ChuckNorrisApp
+
 Gradle
 ------
 >To upgrade Gradle, edit the **version number** in this file:
