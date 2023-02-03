@@ -5,12 +5,12 @@ import org.junit.Test
 class TypeTest {
     @Test fun genericClass() {
         class Box<T>(val item: T)
-        assert( Box(3).item == 3 )
+        assert( Box(1).item == 1 )
     }
 
     @Test fun genericFunction() {
         fun <T> singletonList(item: T): List<T> = listOf(item)
-        assert( singletonList(3) == listOf(3) )
+        assert( singletonList(1) == listOf(1) )
     }
 
     @Test fun outin() {
@@ -21,8 +21,8 @@ class TypeTest {
             fun sink(value: T): String = value.toString()
         }
 
-        val source = Producer(3).source()
+        val source = Producer(1).source()
         val sink = Consumer<Int>().sink(source)
-        assert(source == 3 && sink == "3")
+        assert(source == 1 && sink == "1")
     }
 }
