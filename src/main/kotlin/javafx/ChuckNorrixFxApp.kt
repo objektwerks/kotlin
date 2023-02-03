@@ -26,13 +26,13 @@ class ChuckNorrixFxApp : Application() {
     }
 }
 
-class ChuckNorrixFxView() {
+class ChuckNorrixFxView {
     private val label = Label("Test joke!")
 
     val scene = Scene(label, 400.0, 300.0)
 }
 
-class ChuckNorrisFxTask() {
+class ChuckNorrisFxTask {
     private val client = HttpClient(CIO)
 
     private suspend fun getJoke(): String {
