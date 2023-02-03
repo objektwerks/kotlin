@@ -13,6 +13,10 @@ import javafx.stage.Stage
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 
+fun main(args: Array<String>) {
+    Application.launch(ChuckNorrixFxApp::class.java, *args)
+}
+
 class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
         primaryStage.title = "Chuck Norris Jokes"
@@ -36,8 +40,4 @@ class ChuckNorrisFxTask {
             jsonElement.jsonObject["value"].toString()
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
-}
-
-fun main(args: Array<String>) {
-    Application.launch(ChuckNorrixFxApp::class.java, *args)
 }
