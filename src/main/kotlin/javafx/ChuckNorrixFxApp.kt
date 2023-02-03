@@ -20,17 +20,19 @@ fun main(args: Array<String>) {
 class ChuckNorrixFxApp : Application() {
     override fun start(primaryStage: Stage) {
         primaryStage.title = "Chuck Norris Jokes"
-
-        val label = Label("Test joke!")
-        val scene = Scene(label, 400.0, 300.0)
-
-        primaryStage.scene = scene
+        primaryStage.scene = ChuckNorrixFxView().scene
         primaryStage.centerOnScreen()
         primaryStage.show()
     }
 }
 
-class ChuckNorrisFxTask {
+class ChuckNorrixFxView() {
+    private val label = Label("Test joke!")
+
+    val scene = Scene(label, 400.0, 300.0)
+}
+
+class ChuckNorrisFxTask() {
     private val client = HttpClient(CIO)
 
     private suspend fun getJoke(): String {
