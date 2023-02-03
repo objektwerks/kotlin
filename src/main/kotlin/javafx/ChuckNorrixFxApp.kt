@@ -6,6 +6,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
 import javafx.application.Application
+import javafx.application.Platform
 import javafx.embed.swing.SwingFXUtils
 import javafx.event.EventHandler
 import javafx.geometry.Insets
@@ -64,12 +65,16 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
         prefHeight = 30.0
         text = "New Joke"
         onAction = EventHandler { _ ->
-            busyIndicator.isVisible = true
-            isDisable = true
-            val json = runBlocking {task.getJoke() }
+            Platform.runLater {
+                busyIndicator.isVisible = true
+                isDisable = true
+            }
+            val json = runBlocking { task.getJoke() }
             jokeProperty = json.removeSurrounding("\"")
-            busyIndicator.isVisible = false
-            isDisable = false
+            Platform.runLater {
+                busyIndicator.isVisible = false
+                isDisable = false
+            }
         }
     }
 
