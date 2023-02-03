@@ -8,11 +8,11 @@ import io.ktor.client.statement.*
 import javafx.application.Application
 import javafx.concurrent.Task
 import javafx.geometry.Insets
-import javax.imageio.ImageIO
 import javafx.scene.Scene
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
+import javafx.scene.web.WebView
 import javafx.stage.Stage
 import kotlinx.coroutines.runBlocking
 
@@ -42,6 +42,8 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
         fitHeight = 100.0
         fitWidth = 100.0
     }
+
+    private val webview = WebView()
 
     private fun content() =
         VBox().apply {
