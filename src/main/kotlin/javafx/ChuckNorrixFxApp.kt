@@ -64,7 +64,7 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         text = "New Joke"
         onAction = EventHandler { _ ->
             jokeProperty = task.value
-            // busyIndicator.visible = task.running
+            busyIndicator.isVisible = task.isRunning
             isDisable = task.isRunning
             executor.execute(task)
         }
