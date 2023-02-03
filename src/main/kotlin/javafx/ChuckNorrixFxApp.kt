@@ -66,9 +66,7 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
         onAction = EventHandler { _ ->
             busyIndicator.isVisible = true
             isDisable = true
-            val json = runBlocking {
-                task.getJoke()
-            }
+            val json = runBlocking {task.getJoke() }
             jokeProperty = json.removeSurrounding("\"")
             busyIndicator.isVisible = false
             isDisable = false
