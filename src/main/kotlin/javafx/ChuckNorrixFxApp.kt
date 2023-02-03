@@ -91,7 +91,6 @@ class ChuckNorrixFxView(executor: Executor) {
     }
 
     private val toolbar = ToolBar().apply {
-        prefHeight = 40.0
         items.addAll(logo, Separator(), jokeButton, Separator(), busyIndicator)
     }
 
