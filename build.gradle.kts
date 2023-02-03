@@ -1,3 +1,7 @@
+import org.jetbrains.kotlin.resolve.multiplatform.allModulesProvidingActualsFor
+import org.openjfx.gradle.JavaFXModule
+import org.openjfx.gradle.JavaFXPlugin
+
 plugins {
     kotlin("jvm") version "1.8.0"
     kotlin("plugin.serialization") version "1.8.0"
@@ -16,6 +20,11 @@ tasks {
         useJUnit()
         jvmArgs("--enable-preview", "--add-modules", "jdk.incubator.concurrent")
     }
+}
+
+javafx {
+    version = "19"
+    modules("javafx-base", "javafx.controls", "javafx-web")
 }
 
 group = "tripletail"
