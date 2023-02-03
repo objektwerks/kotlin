@@ -5,6 +5,9 @@ import io.ktor.client.engine.cio.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
+
 import javafx.application.Application
 import javafx.concurrent.Task
 import javafx.event.EventHandler
@@ -19,13 +22,12 @@ import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
 import javafx.scene.web.WebView
 import javafx.stage.Stage
-import kotlinx.coroutines.runBlocking
 
+import kotlin.properties.Delegates
+
+import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
-import java.util.concurrent.Executor
-import java.util.concurrent.Executors
-import kotlin.properties.Delegates
 
 fun main(args: Array<String>) {
     Application.launch(ChuckNorrixFxApp::class.java, *args)
