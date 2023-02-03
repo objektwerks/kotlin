@@ -92,7 +92,7 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         VBox().apply {
             spacing = 6.0
             padding = Insets(6.0)
-            children.add(VBox())
+            children.addAll(toolbar, webviewPane)
         }
 
     fun scene() = Scene(contentPane())
