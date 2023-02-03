@@ -66,11 +66,14 @@ class ChuckNorrixFxView(task: ChuckNorrisFxTask) {
         text = "New Joke"
         onAction = EventHandler { _ ->
             Platform.runLater {
+                busyIndicator.progress = 50.0
                 busyIndicator.isVisible = true
                 isDisable = true
             }
             val json = runBlocking { task.getJoke() }
             Platform.runLater {
+                busyIndicator.progress = 100.0
+                busyIndicator.progress = -1.0
                 busyIndicator.isVisible = false
                 isDisable = false
             }
