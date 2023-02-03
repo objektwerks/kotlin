@@ -1,6 +1,6 @@
 Kotlin
 ------
->Kotlin feature tests:
+>Feature tests:
 1. [Arrow](https://arrow-kt.io)
 2. [Hoplite](https://github.com/sksamuel/hoplite)
 3. [Ktor](https://ktor.io)
