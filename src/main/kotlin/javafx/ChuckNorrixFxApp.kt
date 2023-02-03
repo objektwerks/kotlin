@@ -41,8 +41,8 @@ class ChuckNorrixFxApp : Application() {
         primaryStage.apply {
             title = "Chuck Norris Jokes"
             scene = ChuckNorrixFxView(executor).scene()
-            maxWidth = 400.0
-            maxHeight = 300.0
+            maxWidth = 360.0
+            maxHeight = 360.0
         }
         primaryStage.centerOnScreen()
         primaryStage.show()
@@ -59,8 +59,8 @@ class ChuckNorrixFxView(executor: Executor) {
     private val bufferedImage = ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
     private val logo = ImageView().apply {
         image = SwingFXUtils.toFXImage(bufferedImage, null )
-        fitHeight = 100.0
-        fitWidth = 100.0
+        fitHeight = 160.0
+        fitWidth = 160.0
         isPreserveRatio = true
         isSmooth = true
     }
