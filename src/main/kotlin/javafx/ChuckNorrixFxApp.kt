@@ -12,12 +12,12 @@ import javafx.application.Application
 import javafx.concurrent.Task
 import javafx.event.EventHandler
 import javafx.geometry.Insets
+import javax.imageio.ImageIO
 import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.ProgressIndicator
 import javafx.scene.control.Separator
 import javafx.scene.control.ToolBar
-import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.scene.layout.VBox
 import javafx.scene.web.WebView
@@ -53,10 +53,13 @@ class ChuckNorrixFxView(executor: Executor, task: ChuckNorrisFxTask) {
         webview.engine.loadContent(newJoke)
     }
 
+    private val image = ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
     private val logo = ImageView().apply {
-        image = Image(this::class.java.getResourceAsStream("/cn.jpg"))
+        image = image
         fitHeight = 100.0
         fitWidth = 100.0
+        isPreserveRatio = true
+        isSmooth = true
     }
 
     private val webview = WebView()
