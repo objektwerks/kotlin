@@ -6,10 +6,12 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
 import javafx.application.Application
+import javafx.concurrent.Task
 import javafx.geometry.Insets
 import javafx.scene.Scene
 import javafx.scene.layout.VBox
 import javafx.stage.Stage
+import kotlinx.coroutines.runBlocking
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
@@ -42,7 +44,7 @@ class ChuckNorrixFxView {
     fun scene() = Scene(content())
 }
 
-class ChuckNorrisFxTask {
+class ChuckNorrisFxTask : Task<String>() {
     private val client = HttpClient(CIO)
 
     private suspend fun getJoke(): String {
@@ -52,4 +54,6 @@ class ChuckNorrisFxTask {
             jsonElement.jsonObject["value"].toString()
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
+
+    override fun call(): String = runBlocking { getJoke() }
 }
