@@ -6,6 +6,10 @@ plugins {
 }
 
 tasks {
+    withType<JavaCompile>().all {
+        options.compilerArgs = listOf("--enable-preview", "add-modules=jdk.incubator.concurrent")
+    }
+
     withType<JavaExec>().all {
         jvmArgs = listOf("--enable-preview", "add-modules=jdk.incubator.concurrent")
     }
