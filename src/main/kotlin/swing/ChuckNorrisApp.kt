@@ -80,7 +80,6 @@ class ChuckNorrisApp {
         }
 
         toolbar.add(button)
-        frame.contentPane.add(toolbar, BorderLayout.NORTH)
 
         textarea.apply {
             border = BorderFactory.createLineBorder(Color.lightGray, 3)
@@ -99,8 +98,11 @@ class ChuckNorrisApp {
             add(textarea, BorderLayout.CENTER)
         }
 
-        frame.contentPane.add(panel, BorderLayout.CENTER)
-        frame.pack()
+        frame.apply {
+            contentPane.add(toolbar, BorderLayout.NORTH)
+            contentPane.add(panel, BorderLayout.CENTER)
+            pack()
+        }
     }
 
     fun open() {
