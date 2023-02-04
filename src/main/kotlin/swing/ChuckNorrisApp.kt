@@ -82,11 +82,13 @@ class ChuckNorrisApp {
         toolbar.add(button)
         frame.contentPane.add(toolbar, BorderLayout.NORTH)
 
-        textarea.border = BorderFactory.createLineBorder(Color.lightGray, 3)
-        textarea.preferredSize = Dimension(360, 120)
-        textarea.background = Color.lightGray
-        textarea.lineWrap = true
-        textarea.isEditable = false
+        textarea.apply {
+            border = BorderFactory.createLineBorder(Color.lightGray, 3)
+            preferredSize = Dimension(360, 120)
+            background = Color.lightGray
+            lineWrap = true
+            isEditable = false
+        }
 
         logo.preferredSize = Dimension(360, 280)
 
