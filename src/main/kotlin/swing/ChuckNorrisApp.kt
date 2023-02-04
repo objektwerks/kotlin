@@ -84,6 +84,7 @@ class ChuckNorrisApp {
             preferredSize = Dimension(360, 120)
             background = Color.lightGray
             lineWrap = true
+            wrapStyleWord = true
             isEditable = false
         }
 
