@@ -24,8 +24,8 @@ fun main() {
     EventQueue.invokeLater { app.open() }
     Runtime.getRuntime().addShutdownHook(object : Thread() {
         override fun run() {
-            println("*** closing app ...")
             app.close()
+            println("*** closed app.")
         }
     })
 }
