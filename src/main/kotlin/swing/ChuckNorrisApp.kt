@@ -92,10 +92,12 @@ class ChuckNorrisApp {
 
         logo.preferredSize = Dimension(360, 280)
 
-        panel.border = BorderFactory.createLineBorder(Color.lightGray, 3)
-        panel.layout = BorderLayout()
-        panel.add(logo, BorderLayout.NORTH)
-        panel.add(textarea, BorderLayout.CENTER)
+        panel.apply {
+            border = BorderFactory.createLineBorder(Color.lightGray, 3)
+            layout = BorderLayout()
+            add(logo, BorderLayout.NORTH)
+            add(textarea, BorderLayout.CENTER)
+        }
 
         frame.contentPane.add(panel, BorderLayout.CENTER)
         frame.pack()
