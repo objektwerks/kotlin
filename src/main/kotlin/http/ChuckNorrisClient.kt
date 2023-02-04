@@ -15,7 +15,7 @@ suspend fun main() {
         val json = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
         val jsonElement = Json.parseToJsonElement(json)
         println("json: $jsonElement")
-        jsonElement.jsonObject["value"].toString()
+        jsonElement.jsonObject["value"].toString().removeSurrounding("\"")
     }.getOrDefault("Chuck is taking a power nap. Come back later.")
 
     println("joke: $joke")
