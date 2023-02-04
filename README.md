@@ -25,9 +25,9 @@ JDK
 ---
 >This project, built using an Apple Airbook, M1, 16GB, uses:
 ```
-openjdk version "19.0.1" 2022-10-18
-OpenJDK Runtime Environment Zulu19.30+11-CA (build 19.0.1+10)
-OpenJDK 64-Bit Server VM Zulu19.30+11-CA (build 19.0.1+10, mixed mode, sharing)
+openjdk version "19.0.2" 2023-01-17
+OpenJDK Runtime Environment Zulu19.32+15-CA (build 19.0.2+7)
+OpenJDK 64-Bit Server VM Zulu19.32+15-CA (build 19.0.2+7, mixed mode, sharing)
 ```
 >which includes JavaFX.
 
