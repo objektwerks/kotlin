@@ -8,7 +8,7 @@ import io.ktor.client.statement.*
 import java.awt.*
 import javax.imageio.ImageIO
 import javax.swing.*
-import javax.swing.WindowConstants.EXIT_ON_CLOSE
+import javax.swing.WindowConstants.DISPOSE_ON_CLOSE
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
@@ -17,9 +17,13 @@ import kotlinx.serialization.json.*
 
 fun main() {
     val app = ChuckNorrisApp()
+    println("*** opening app ...")
     EventQueue.invokeLater { app.open() }
     Runtime.getRuntime().addShutdownHook(object : Thread() {
-        override fun run() = app.close()
+        override fun run() {
+            println("*** closing app ...")
+            app.close()
+        }
     })
 }
 
@@ -58,7 +62,7 @@ class ChuckNorrisApp {
     init {
         frame.title = "Chuck Norris Jokes"
         frame.setSize(400, 400)
-        frame.defaultCloseOperation = EXIT_ON_CLOSE
+        frame.defaultCloseOperation = DISPOSE_ON_CLOSE
         frame.setLocationRelativeTo(null)
         frame.layout = BorderLayout()
 
@@ -95,6 +99,5 @@ class ChuckNorrisApp {
 
     fun close() {
         httpClient.close()
-        frame.isVisible = false
     }
 }
