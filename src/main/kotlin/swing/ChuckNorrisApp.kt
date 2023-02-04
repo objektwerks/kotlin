@@ -10,9 +10,9 @@ import javax.imageio.ImageIO
 import javax.swing.*
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
-import kotlin.properties.Delegates
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import kotlin.properties.Delegates
 import kotlinx.serialization.json.*
 
 fun main() {
