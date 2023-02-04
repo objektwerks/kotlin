@@ -116,7 +116,7 @@ class ChuckNorrisFxTask(private val client: HttpClient) : Task<String>() {
             val jsonElement = Json.parseToJsonElement(text)
             val value = jsonElement.jsonObject["value"].toString().removeSurrounding("\"")
             "<p>$value</p>"
-        }.getOrDefault("Chuck is taking a power nap. Come back later.")
+        }.getOrDefault("<p>Chuck is taking a power nap. Come back later.</p>")
     }
 
     override fun call(): String = runBlocking { getJoke() }
