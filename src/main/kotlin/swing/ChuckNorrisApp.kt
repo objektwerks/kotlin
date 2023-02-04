@@ -74,7 +74,10 @@ class ChuckNorrisApp {
             }
         }
 
-        toolbar.add(button)
+        toolbar.apply {
+            margin = Insets(6, 6, 6, 6)
+            add(button)
+        }
 
         textarea.apply {
             border = BorderFactory.createLineBorder(Color.lightGray, 3)
