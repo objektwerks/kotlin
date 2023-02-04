@@ -31,7 +31,6 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 
-
 fun main(args: Array<String>) {
     Application.launch(ChuckNorrixFxApp::class.java, *args)
 }
