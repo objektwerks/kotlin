@@ -82,7 +82,7 @@ class CoroutineTest {
         runBlocking {
             var sink = 0
             launch {
-                for (k in 1..3) {
+                for (j in 1..3) {
                     delay(100)
                 }
             }
