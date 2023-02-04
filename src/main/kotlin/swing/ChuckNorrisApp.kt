@@ -6,13 +6,15 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
 import java.awt.*
+
 import javax.imageio.ImageIO
 import javax.swing.*
 import javax.swing.WindowConstants.DISPOSE_ON_CLOSE
 
+import kotlin.properties.Delegates
+
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
-import kotlin.properties.Delegates
 import kotlinx.serialization.json.*
 
 fun main() {
