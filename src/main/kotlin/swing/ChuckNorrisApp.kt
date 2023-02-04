@@ -40,7 +40,7 @@ class ChuckNorrisApp {
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
 
-    private fun runAsyncJokeTask() =
+    private fun runAsyncGetJoke() =
         runBlocking {
             async { jokeProperty = getJoke() }.await()
         }
@@ -74,7 +74,7 @@ class ChuckNorrisApp {
             text = "New Joke"
             addActionListener {
                 frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
-                runAsyncJokeTask()
+                runAsyncGetJoke()
                 frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
             }
         }
