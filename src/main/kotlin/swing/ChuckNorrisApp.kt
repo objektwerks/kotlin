@@ -24,11 +24,11 @@ fun main() {
 }
 
 class ChuckNorrisApp {
-    private val client = HttpClient(CIO)
+    private val httpClient = HttpClient(CIO)
 
     private suspend fun getJoke(): String {
         return runCatching {
-            val json = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
+            val json = httpClient.get("https://api.chucknorris.io/jokes/random").bodyAsText()
             val jsonElement = Json.parseToJsonElement(json)
             jsonElement.jsonObject["value"].toString().removeSurrounding("\"")
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
@@ -93,5 +93,8 @@ class ChuckNorrisApp {
         frame.isVisible = true
     }
 
-    fun close() = client.close()
+    fun close() {
+        httpClient.close()
+        frame.isVisible = false
+    }
 }
