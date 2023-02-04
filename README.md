@@ -53,11 +53,6 @@ Logs
 1. build/kotlin.log
 2. build/kotlin.test.log
 
-Recommendation
---------------
->Kotlin is ***not*** a solid language for Swing and JavaFX.
->For Swing, use Java or Scala. Also, for JavaFX, use Jave or Scala-ScalaFX. Not Kotlin!
-
 Resources
 ---------
 1. [Kotlin Docs](https://kotlinlang.org/docs/home.html)
