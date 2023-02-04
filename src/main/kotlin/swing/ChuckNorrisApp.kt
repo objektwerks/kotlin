@@ -48,7 +48,8 @@ class ChuckNorrisApp {
             async { jokeProperty = getJoke() }.await()
         }
 
-    private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
+    private var jokeProperty: String by Delegates.observable("")
+    { _, _, newJoke ->
         EventQueue.invokeLater { textarea.text = newJoke }
     }
 
