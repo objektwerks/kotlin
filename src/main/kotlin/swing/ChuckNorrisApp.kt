@@ -5,13 +5,14 @@ import io.ktor.client.engine.cio.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
-import kotlinx.coroutines.runBlocking
-import kotlinx.serialization.json.*
 import java.awt.*
 import javax.imageio.ImageIO
-
 import javax.swing.*
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
+
+import kotlin.properties.Delegates
+import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.*
 
 fun main() {
     val app = ChuckNorrisApp()
@@ -30,6 +31,14 @@ class ChuckNorrisApp {
             val jsonElement = Json.parseToJsonElement(json)
             jsonElement.jsonObject["value"].toString().removeSurrounding("\"")
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
+    }
+
+    private fun callJokeTask() {
+        runBlocking { jokeProperty = getJoke() }
+    }
+
+    private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
+        EventQueue.invokeLater { textarea.text = newJoke }
     }
 
     private val logo = JLabel(
@@ -54,7 +63,7 @@ class ChuckNorrisApp {
         button.text = "New Joke"
         button.addActionListener {
             frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
-            textarea.text = runBlocking { getJoke() }
+            callJokeTask()
             frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
         }
 
