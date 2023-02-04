@@ -11,6 +11,7 @@ import javax.swing.*
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
 import kotlin.properties.Delegates
+import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.*
 
@@ -33,9 +34,10 @@ class ChuckNorrisApp {
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
 
-    private fun callJokeTask() {
-        runBlocking { jokeProperty = getJoke() }
-    }
+    private fun callJokeTask() =
+        runBlocking {
+            async { jokeProperty = getJoke() }.await()
+        }
 
     private var jokeProperty: String by Delegates.observable("") { _, _, newJoke ->
         EventQueue.invokeLater { textarea.text = newJoke }
