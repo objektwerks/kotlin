@@ -107,7 +107,5 @@ class ChuckNorrisApp {
         frame.isVisible = true
     }
 
-    fun close() {
-        httpClient.close()
-    }
+    fun close() = httpClient.close()
 }
