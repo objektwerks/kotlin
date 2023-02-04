@@ -28,7 +28,7 @@ class ChuckNorrisApp {
         return runCatching {
             val json = client.get("https://api.chucknorris.io/jokes/random").bodyAsText()
             val jsonElement = Json.parseToJsonElement(json)
-            jsonElement.jsonObject["value"].toString()
+            jsonElement.jsonObject["value"].toString().removeSurrounding("\"")
         }.getOrDefault("Chuck is taking a power nap. Come back later.")
     }
 
@@ -54,8 +54,7 @@ class ChuckNorrisApp {
         button.text = "New Joke"
         button.addActionListener {
             frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
-            val json = runBlocking { getJoke() }
-            textarea.text = json.removeSurrounding("\"")
+            textarea.text = runBlocking { getJoke() }
             frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
         }
 
