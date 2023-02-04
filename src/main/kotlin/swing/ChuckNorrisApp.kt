@@ -70,11 +70,13 @@ class ChuckNorrisApp {
             layout = BorderLayout()
         }
 
-        button.text = "New Joke"
-        button.addActionListener {
-            frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
-            callJokeTask()
-            frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
+        button.apply {
+            text = "New Joke"
+            addActionListener {
+                frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
+                callJokeTask()
+                frame.cursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR)
+            }
         }
 
         toolbar.add(button)
