@@ -62,11 +62,13 @@ class ChuckNorrisApp {
     private val panel = JPanel()
 
     init {
-        frame.title = "Chuck Norris Jokes"
-        frame.setSize(400, 400)
-        frame.defaultCloseOperation = DISPOSE_ON_CLOSE
-        frame.setLocationRelativeTo(null)
-        frame.layout = BorderLayout()
+        frame.apply {
+            title = "Chuck Norris Jokes"
+            setSize(400, 400)
+            defaultCloseOperation = DISPOSE_ON_CLOSE
+            setLocationRelativeTo(null)
+            layout = BorderLayout()
+        }
 
         button.text = "New Joke"
         button.addActionListener {
