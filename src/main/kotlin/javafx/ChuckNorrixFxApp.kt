@@ -22,13 +22,15 @@ import javafx.scene.layout.VBox
 import javafx.scene.web.WebView
 import javafx.stage.Stage
 
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
+
 import kotlin.properties.Delegates
 
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
-import java.util.concurrent.Executor
-import java.util.concurrent.Executors
+
 
 fun main(args: Array<String>) {
     Application.launch(ChuckNorrixFxApp::class.java, *args)
