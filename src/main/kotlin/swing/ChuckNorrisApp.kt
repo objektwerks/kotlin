@@ -49,12 +49,7 @@ class ChuckNorrisApp {
         EventQueue.invokeLater { textarea.text = newJoke }
     }
 
-    private val logo = JLabel(
-        ImageIcon(
-            ImageIO.read(this::class.java.getResourceAsStream("/cn.jpg"))
-        )
-    )
-
+    private val logo = JLabel( ImageIcon( ImageIO.read( this::class.java.getResourceAsStream("/cn.jpg") ) ) )
     private val frame = JFrame()
     private val button = JButton()
     private val toolbar = JToolBar()
