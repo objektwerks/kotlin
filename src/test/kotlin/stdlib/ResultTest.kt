@@ -25,7 +25,7 @@ class ResultTest {
             runCatching {
                 Instant.parse(validDateTime)
             }.map { it.toEpochMilli() }
-             .getOrDefault { } != Instant.now().toEpochMilli()
+             .getOrDefault { 0 } != Instant.now().toEpochMilli()
         )
 
         assert(
