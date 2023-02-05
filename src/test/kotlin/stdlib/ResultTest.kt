@@ -38,7 +38,7 @@ class ResultTest {
             runCatching {
                 Instant.parse(validDateTime)
             }.recover { Instant.now() }
-             .getOrDefault { } == validInstant
+             .getOrDefault { 0 } == validInstant
         )
     }
 }
