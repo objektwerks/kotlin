@@ -8,6 +8,7 @@ data class Values(val items: List<String>)
 val Values.delimitted: String get() = items.joinToString()
 
 class FunctionTest {
+    // Lambdas. Or anonymous or literal functions.
     val sum = { x: Int, y: Int -> x + y }
     val multiply: (Int, Int) -> Int = { x: Int, y: Int -> x * y }
 
