@@ -64,11 +64,11 @@ class FunctionTest {
 
     @Test fun currying() {
         val curriedAdd: (Int) -> (Int) -> Int = { x: Int ->
-            { y: Int -> x + y }
+            { y: Int -> x + y } // Lambda!
         }
         assert( curriedAdd(3)(6) == 9 )
 
-        val curriedMultiply: (Int) -> (Int) -> Int = { x: Int, y: Int -> x * y }.curried() // Arrow!
+        val curriedMultiply: (Int) -> (Int) -> Int = { x: Int, y: Int -> x * y }.curried() // Arrow KT!
         assert( curriedMultiply(3)(6) == 18 )
     }
 
