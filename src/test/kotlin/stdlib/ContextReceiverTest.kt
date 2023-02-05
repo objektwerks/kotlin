@@ -15,14 +15,14 @@ class ContextReceiverTest {
     context(LoggerContext)
     class Store {
         fun save(value: String): Boolean {
-            logger.log("*** saved: $value")
+            logger.log("store saved: $value")
             return true
         }
     }
 
     @Test fun context() {
         val loggerContext = object: LoggerContext {
-            override val logger: Logger = Logger("test")
+            override val logger: Logger = Logger("*** logger context ")
         }
         with(loggerContext) {
             val store = Store()
