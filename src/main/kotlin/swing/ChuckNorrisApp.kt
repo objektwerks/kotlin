@@ -18,19 +18,21 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.*
 
-fun main() {
-    val app = ChuckNorrisApp()
-    println("*** opening app ...")
-    EventQueue.invokeLater { app.open() }
-    Runtime.getRuntime().addShutdownHook(object : Thread() {
-        override fun run() {
-            app.close()
-            println("*** closed app.")
-        }
-    })
-}
-
 class ChuckNorrisApp {
+    companion object {
+        @JvmStatic fun main(args: Array<String>) {
+            val app = ChuckNorrisApp()
+            println("*** opening app ...")
+            EventQueue.invokeLater { app.open() }
+            Runtime.getRuntime().addShutdownHook(object : Thread() {
+                override fun run() {
+                    app.close()
+                    println("*** closed app.")
+                }
+            })
+        }
+    }
+
     private val httpClient = HttpClient(CIO)
 
     private suspend fun getJoke(): String {
