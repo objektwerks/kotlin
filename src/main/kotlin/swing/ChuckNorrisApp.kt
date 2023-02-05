@@ -54,22 +54,14 @@ class ChuckNorrisApp {
     }
 
     private val logo = JLabel( ImageIcon( ImageIO.read( this::class.java.getResourceAsStream("/cn.jpg") ) ) )
-    private val frame = JFrame()
     private val button = JButton()
     private val toolbar = JToolBar()
     private val textarea = JTextArea()
     private val panel = JPanel()
+    private val frame = JFrame()
 
     init {
-        frame.apply {
-            title = "Chuck Norris Jokes"
-            setSize(400, 400)
-            defaultCloseOperation = DISPOSE_ON_CLOSE
-            setLocationRelativeTo(null)
-            layout = BorderLayout()
-        }
-
-        button.apply {
+        with(button) {
             text = "New Joke"
             addActionListener {
                 frame.cursor = Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)
@@ -78,12 +70,12 @@ class ChuckNorrisApp {
             }
         }
 
-        toolbar.apply {
+        with(toolbar) {
             margin = Insets(6, 6, 6, 6)
             add(button)
         }
 
-        textarea.apply {
+        with(textarea) {
             border = BorderFactory.createLineBorder(Color.lightGray, 3)
             preferredSize = Dimension(360, 120)
             background = Color.lightGray
@@ -94,14 +86,19 @@ class ChuckNorrisApp {
 
         logo.preferredSize = Dimension(360, 280)
 
-        panel.apply {
+        with(panel) {
             border = BorderFactory.createLineBorder(Color.lightGray, 3)
             layout = BorderLayout()
             add(logo, BorderLayout.NORTH)
             add(textarea, BorderLayout.CENTER)
         }
 
-        frame.apply {
+        with(frame) {
+            title = "Chuck Norris Jokes"
+            setSize(400, 400)
+            defaultCloseOperation = DISPOSE_ON_CLOSE
+            setLocationRelativeTo(null)
+            layout = BorderLayout()
             contentPane.add(toolbar, BorderLayout.NORTH)
             contentPane.add(panel, BorderLayout.CENTER)
             pack()
