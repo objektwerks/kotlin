@@ -113,7 +113,7 @@ class ClassTest {
         assert( IntValue(1).int == 1 ) // @JvmInline, unboxed!
     }
 
-    @Test fun data() {
+    @Test fun dataClass() {
         data class Data(val value: String)
         val data = Data("data")
         val copy = data.copy(value = "copy")
@@ -122,7 +122,7 @@ class ClassTest {
         assertNotEquals( data, copy )
     }
 
-    @Test fun record() {
+    @Test fun jvmRecord() {
         val person = Person("fred flintstone", 24)
         val (name, age) = person
         assert( name == "fred flintstone" )
