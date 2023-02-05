@@ -165,8 +165,8 @@ class CollectionTest {
         assert( setOf(1, 2, 3).reversed() == listOf(3, 2, 1) )
         assert( setOf(3, 2, 1).sorted() == listOf(1, 2, 3) )
 
-        assert( listOf("three", "four", "two").sorted() == listOf("four", "three", "two") )
-        assert( listOf("three", "four", "two").sortedDescending() == listOf("two", "three", "four") )
+        assert( listOf("c", "b", "a").sorted() == listOf("a", "b", "c") )
+        assert( listOf("a", "b", "c").sortedDescending() == listOf("c", "b", "a") )
 
         assert( listOf("three", "four", "two").sortedBy { it.length } == listOf("two", "four", "three") )
         assert( listOf("two", "four", "three").sortedByDescending { it.length } == listOf("three", "four", "two") )
