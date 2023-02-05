@@ -15,7 +15,7 @@ class ContextReceiverTest {
     context(LoggerContext)
     class Store {
         fun save(value: String): Boolean {
-            logger.log("saved: $value")
+            logger.log("*** saved: $value")
             return true
         }
     }
