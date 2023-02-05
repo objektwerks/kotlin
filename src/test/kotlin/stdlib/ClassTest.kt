@@ -141,7 +141,7 @@ class ClassTest {
     }
 
     @Test fun objectSingleton() {
-        assert( DateTime.now().isNotEmpty() )
+        assert( DateTime.now().isNotEmpty() ) // See definition above!
     }
 
     @Test fun objectCompanion() {
