@@ -14,7 +14,7 @@ class ChuckNorrisClient {
         @JvmStatic fun main(args: Array<String>): Unit = ChuckNorrisClient().run()
     }
 
-    fun run(): Unit {
+    fun run() {
         runBlocking { runJoke() }
     }
 
