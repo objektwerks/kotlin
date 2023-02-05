@@ -123,7 +123,7 @@ class ClassTest {
     }
 
     @Test fun jvmRecord() {
-        val person = Person("fred flintstone", 24)
+        val person = Person("fred flintstone", 24) // See definition above!
         val (name, age) = person
         assert( name == "fred flintstone" )
         assert( age == 24 )
