@@ -145,7 +145,7 @@ class ClassTest {
     }
 
     @Test fun objectCompanion() {
-        assert( RandomIntGenerator.int() > 0 )
+        assert( RandomIntGenerator.int() > 0 ) // See definition above!
     }
 
     sealed class Expr
