@@ -31,11 +31,13 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 
-fun main(args: Array<String>) {
-    Application.launch(ChuckNorrixFxApp::class.java, *args)
-}
-
 class ChuckNorrixFxApp : Application() {
+    companion object {
+        @JvmStatic fun main(args: Array<String>) {
+            launch(ChuckNorrixFxApp::class.java, *args)
+        }
+    }
+
     private val executor = Executors.newVirtualThreadPerTaskExecutor()
 
     override fun start(primaryStage: Stage) {
