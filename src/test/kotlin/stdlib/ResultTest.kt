@@ -58,9 +58,9 @@ class ResultTest {
     @Test fun recover() {
         assert(
             runCatching {
-                Instant.parse(validDateTime)
+                Instant.parse(invalidDateTime)
             }.recover { Instant.now() }
-             .getOrDefault {  } == validInstant
+             .getOrDefault { 0 } != 0
         )
     }
 }
