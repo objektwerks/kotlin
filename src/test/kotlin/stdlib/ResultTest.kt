@@ -4,6 +4,10 @@ import java.time.Instant
 
 import org.junit.Test
 
+/**
+ * Result is a controversial type:
+ * 1. https://www.droidcon.com/2022/04/06/resilient-use-cases-with-kotlin-result-coroutines-and-annotations/
+ */
 class ResultTest {
     private val validDateTime = "2021-02-04T12:21:41.00Z"
     private val validInstant = Instant.parse(validDateTime)
