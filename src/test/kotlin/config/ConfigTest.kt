@@ -1,4 +1,4 @@
-package hoplite
+package config
 
 import com.sksamuel.hoplite.ConfigLoader
 
