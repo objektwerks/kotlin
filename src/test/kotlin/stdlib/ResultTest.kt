@@ -18,7 +18,7 @@ class ResultTest {
     @Test fun on() {
         runCatching {
             Instant.parse(validDateTime)
-        }.onFailure { fail("date time parsing failed!") }
+        }.onFailure { fail(invalidDateTime) }
          .onSuccess { assert(true) }
     }
 
@@ -60,7 +60,7 @@ class ResultTest {
             runCatching {
                 Instant.parse(validDateTime)
             }.recover { Instant.now() }
-             .getOrDefault { 0 } == validInstant
+             .getOrDefault {  } == validInstant
         )
     }
 }
