@@ -50,6 +50,17 @@ class ControlFlowTest {
             else -> n
         }
         assert( result > 10 )
+
+        fun isTypeOf(typeOf: Any): String = when(typeOf) {
+            is String -> "s"
+            is Int -> "i"
+            is Boolean -> "2"
+            else -> ""
+        }
+        assert(isTypeOf("string") == "s")
+        assert(isTypeOf(1) == "i")
+        assert(isTypeOf(true) == "2")
+        assert(isTypeOf(1.0) == "")
     }
 
     @Test fun repeat() {
