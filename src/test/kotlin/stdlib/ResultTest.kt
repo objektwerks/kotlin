@@ -12,6 +12,7 @@ import org.junit.Assert.fail
  */
 class ResultTest {
     private val validDateTime = "2021-02-04T12:21:41.00Z"
+    private val invalidDateTime = "invalid date time"
     private val validInstant = Instant.parse(validDateTime)
 
     @Test fun on() {
@@ -32,7 +33,7 @@ class ResultTest {
     @Test fun failure() {
         assert(
             runCatching {
-                Instant.parse("invalid date time")
+                Instant.parse(invalidDateTime)
             }.getOrDefault { Instant.now() } != validInstant
         )
     }
