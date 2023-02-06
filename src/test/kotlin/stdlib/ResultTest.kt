@@ -3,6 +3,7 @@ package stdlib
 import java.time.Instant
 
 import org.junit.Test
+import org.junit.Assert.fail
 
 /**
  * Result is a controversial type:
@@ -12,6 +13,13 @@ import org.junit.Test
 class ResultTest {
     private val validDateTime = "2021-02-04T12:21:41.00Z"
     private val validInstant = Instant.parse(validDateTime)
+
+    @Test fun on() {
+        runCatching {
+            Instant.parse(validDateTime)
+        }.onFailure { fail("date time parsing failed!") }
+         .onSuccess { assert(true) }
+    }
 
     @Test fun success() {
         assert(
