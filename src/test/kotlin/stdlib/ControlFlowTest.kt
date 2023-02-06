@@ -1,6 +1,6 @@
 package stdlib
 
-import java.util.*
+import java.util.Random
 
 import kotlin.math.absoluteValue
 import kotlin.test.fail
