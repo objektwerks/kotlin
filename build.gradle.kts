@@ -6,6 +6,14 @@ plugins {
 }
 
 tasks {
+    withType<JavaCompile>().all {
+        options.compilerArgs = listOf("--enable-preview", "add-modules=jdk.incubator.concurrent")
+    }
+
+    withType<JavaExec>().all {
+        jvmArgs = listOf("--enable-preview", "add-modules=jdk.incubator.concurrent")
+    }
+
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "19"
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers", "-X--add-modules", "-Xadd-modules=jdk.incubator.concurrent")
