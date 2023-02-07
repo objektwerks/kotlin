@@ -18,6 +18,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.*
 
+/**
+ * See: https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md
+ * which I was unaware of when I built this app.
+ */
 class ChuckNorrisApp {
     companion object {
         @JvmStatic fun main(args: Array<String>) {
