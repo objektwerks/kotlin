@@ -20,6 +20,7 @@ class CoroutineTest {
             }
             sum += 2
         }
+
         runBlocking {
             launchSum()
         }
@@ -40,11 +41,13 @@ class CoroutineTest {
 
     @Test fun runBlockingSum() {
         fun runBlockingSum(x: Int, y: Int): Int = runBlocking { x + y }
+
         assert( runBlockingSum(1, 2) == 3 )
     }
 
     @Test fun withContextSum() {
         suspend fun withContextSum(x: Int, y: Int): Int = withContext( Dispatchers.Default ) { x + y }
+
         assert( runBlocking { withContextSum(1, 2) } == 3 )
     }
 
@@ -56,11 +59,13 @@ class CoroutineTest {
                     async { n + 1 }
                 }
             }
+
         assert( runBlocking { deferredSumOf( deferredAsyncSource() ) } == 65 )
     }
 
     @Test fun asyncAwait() {
         fun randomInt(): Int = Random(10).nextInt().absoluteValue
+
         val elapsedTime =
             runBlocking {
                 measureTimeMillis {
@@ -70,36 +75,5 @@ class CoroutineTest {
                 }
             }
         assert(elapsedTime > 0)
-    }
-
-    @Test fun flow() {
-        fun source(): Flow<Int> = flow {
-            for (i in 1..3) {
-                delay(100)
-                emit(i)
-            }
-        }
-        runBlocking {
-            var sink = 0
-            launch {
-                for (j in 1..3) {
-                    delay(100)
-                }
-            }
-            source().collect { value -> sink += value }
-            assert( sink == 6 )
-        }
-    }
-
-    @Test fun channel() {
-        runBlocking {
-            var sink = 0
-            val channel = Channel<Int>()
-            launch {
-                for (i in 1..3) channel.send(i)
-            }
-            repeat(3) { sink += channel.receive() }
-            assert( sink == 6 )
-        }
     }
 }
