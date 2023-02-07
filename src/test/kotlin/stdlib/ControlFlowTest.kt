@@ -2,9 +2,6 @@ package stdlib
 
 import java.util.Random
 
-import kotlin.math.absoluteValue
-import kotlin.test.fail
-
 import org.junit.Test
 
 class ControlFlowTest {
