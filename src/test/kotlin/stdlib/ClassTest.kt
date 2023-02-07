@@ -184,7 +184,7 @@ class ClassTest {
     class SportsCar : Car {
         override fun race(): String = "prrrr"
     }
-    class Porsche : Car by SportsCar()
+    class Porsche : Car by SportsCar() // Porsche extends Car, which then delegates to the SportsCar race function.
 
     @Test fun delegation() {
         assert( Porsche().race() == "prrrr" )
