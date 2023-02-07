@@ -8,8 +8,7 @@ import kotlin.test.fail
 import org.junit.Test
 
 class WhenTest {
-    @Test
-    fun match() {
+    @Test fun match() {
         when (val n = Random(10).nextInt().absoluteValue) {
             0 -> fail("number equals zero!")
             else -> assert( n > 10 )
@@ -20,13 +19,16 @@ class WhenTest {
             else -> n
         }
         assert( result > 10 )
+    }
 
+    @Test fun isMatch() {
         fun isTypeOf(typeOf: Any): String = when(typeOf) {
             is String -> "s"
             is Int -> "i"
             is Boolean -> "2"
             else -> ""
         }
+
         assert(isTypeOf("string") == "s")
         assert(isTypeOf(1) == "i")
         assert(isTypeOf(true) == "2")
