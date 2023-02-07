@@ -31,6 +31,10 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 
+/**
+ * See: https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md
+ * which I was unaware of when I built this app.
+ */
 class ChuckNorrixFxApp : Application() {
     companion object {
         @JvmStatic fun main(args: Array<String>) = launch(ChuckNorrixFxApp::class.java, *args)
