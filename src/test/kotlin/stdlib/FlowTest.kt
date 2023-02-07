@@ -9,8 +9,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class FlowTest {
-    @Test
-    fun flow() {
+    @Test fun flow() {
         fun source(): Flow<Int> = kotlinx.coroutines.flow.flow {
             for (i in 1..3) {
                 delay(100)
@@ -30,8 +29,7 @@ class FlowTest {
         }
     }
 
-    @Test
-    fun channel() {
+    @Test fun channel() {
         runBlocking {
             var sink = 0
             val channel = Channel<Int>()
