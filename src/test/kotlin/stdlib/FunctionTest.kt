@@ -8,7 +8,7 @@ data class Values(val items: List<String>)
 val Values.delimitted: String get() = items.joinToString()
 
 class FunctionTest {
-    // Lambdas. Or anonymous or literal functions.
+    // Lambdas. Anonymous or literal functions.
     val sum = { x: Int, y: Int -> x + y }
     val multiply: (Int, Int) -> Int = { x: Int, y: Int -> x * y }
 
@@ -28,7 +28,7 @@ class FunctionTest {
     }
 
     @Test fun propertyExtension() {
-        val values = Values( listOf("a", "b", "c") )
+        val values = Values( listOf("a", "b", "c") ) // See Values above.
         assert( values.delimitted == "a, b, c")
     }
 
