@@ -8,12 +8,14 @@ import kotlin.test.fail
 import org.junit.Test
 
 class WhenTest {
-    @Test fun match() {
+    @Test fun valueMatch() {
         when (val n = Random(10).nextInt().absoluteValue) {
-            0 -> fail("number equals zero!")
+            0  -> fail("number equals zero!")
             else -> assert( n > 10 )
         }
+    }
 
+    @Test fun inMatch() {
         val result = when (val n = Random(10).nextInt().absoluteValue) {
             in 0..10 -> fail("number is between 0 and 10!")
             else -> n
