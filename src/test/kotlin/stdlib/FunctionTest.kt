@@ -43,9 +43,11 @@ class FunctionTest {
 
     @Test fun infix() {
         class Numbers {
+            infix fun square(n: Int): Int = n * n
             infix fun cube(n: Int): Int = n * n * n
         }
         val numbers = Numbers()
+        assert(numbers square 3 == 9)
         assert(numbers cube 3 == 27)
     }
 
