@@ -19,6 +19,7 @@ class TypeTest {
         class Producer<out T>(private val t: T) {
             fun source(): T = t
         }
+
         class Consumer<in T> {
             fun sink(value: T): String = value.toString()
         }
