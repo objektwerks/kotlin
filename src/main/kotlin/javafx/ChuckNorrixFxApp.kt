@@ -33,9 +33,7 @@ import kotlinx.serialization.json.jsonObject
 
 class ChuckNorrixFxApp : Application() {
     companion object {
-        @JvmStatic fun main(args: Array<String>) {
-            launch(ChuckNorrixFxApp::class.java, *args)
-        }
+        @JvmStatic fun main(args: Array<String>) = launch(ChuckNorrixFxApp::class.java, *args)
     }
 
     private val executor = Executors.newVirtualThreadPerTaskExecutor()
