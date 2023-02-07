@@ -51,6 +51,7 @@ class CoroutineTest {
 
     @Test fun deferredSumOf() {
         suspend fun deferredSumOf(deferred: List<Deferred<Int>>): Int = deferred.sumOf { it.await() }
+
         suspend fun deferredAsyncSource(): List<Deferred<Int>> =
             (1..10).map { n ->
                 coroutineScope {
