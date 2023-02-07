@@ -14,9 +14,10 @@ class VirtualThreadTest {
     @Test
     @Throws(ExecutionException::class, InterruptedException::class)
     fun virtualThreadTest() {
-        val tasks = ArrayList<FileLineCountTask>(2)
-        tasks.add(FileLineCountTask("./data/data.a.csv"))
-        tasks.add(FileLineCountTask("./data/data.b.csv"))
+        val tasks = listOf(
+            FileLineCountTask("./data/data.a.csv"),
+            FileLineCountTask("./data/data.b.csv")
+        )
         val lines = Executors.newVirtualThreadPerTaskExecutor().use { executor ->
             executor.invokeAll(tasks).sumOf { future -> future.get() }
         }
