@@ -15,7 +15,9 @@ class FunctionTest {
     @Test fun function() {
         fun square(n: Int): Int = n * n
         assert(square(2) == 4)
+    }
 
+    @Test fun genericFunction() {
         fun <T> asSingletonList(item: T): List<T> = listOf(item)
         assert(asSingletonList(3) == listOf(3))
     }
