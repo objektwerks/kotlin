@@ -29,14 +29,17 @@ class RandomIntGenerator {
 class ClassTest {
     @Test fun classes() {
         class None
+
         assert( None().hashCode() > 0 )
 
         class Field(val name: String)
+
         assert( Field("field").name == "field" )
     }
 
     @Test fun primaryConstructor() {
         class Property constructor(val value: String)
+
         assert( Property("value").value == "value" )
     }
 
@@ -44,6 +47,7 @@ class ClassTest {
         class Sink(val url: String) {
             constructor(protocol: String, path: String) : this("$protocol$path")
         }
+
         assert( Sink("file://", "home/temp").url.isNotEmpty() )
     }
 
@@ -54,6 +58,7 @@ class ClassTest {
                 url = "$protocol$path"
             }
         }
+
         assert( !Source("file://", "home/temp").url.isNullOrEmpty() )
     }
 
@@ -67,9 +72,11 @@ class ClassTest {
         abstract class Shape {
             abstract fun draw(): String
         }
+
         class Circle : Shape() {
             override fun draw(): String = "circle"
         }
+
         assert( Circle().draw() == "circle" )
     }
 
@@ -77,9 +84,11 @@ class ClassTest {
         class A {
             inner class Inner(val id: String = "Inner.A")
         }
+
         class B {
             inner class Inner(val id: String = "Inner.B")
         }
+
         assert( A().Inner().id == "Inner.A")
         assert( B().Inner().id == "Inner.B")
     }
@@ -88,6 +97,7 @@ class ClassTest {
         open class Car(val model: String) {
             open fun drive(): String = "chugchugchug"
         }
+
         class Porsche(model: String) : Car(model) {
             override fun drive(): String = "purrrr"
         }
@@ -103,9 +113,11 @@ class ClassTest {
         open class Rectangle {
             open fun draw(): String = "base"
         }
+
         class FilledRectangle : Rectangle() {
             override fun draw(): String = super.draw() + "-filled"
         }
+
         assert( FilledRectangle().draw() == "base-filled" )
     }
 
@@ -115,6 +127,7 @@ class ClassTest {
 
     @Test fun dataClass() {
         data class Data(val value: String)
+
         val data = Data("data")
         val copy = data.copy(value = "copy")
         val ( destructuredValue ) = copy
@@ -137,6 +150,7 @@ class ClassTest {
             val world = "Kotlin"
             fun message() = "$hello, $world!"
         }
+
         assert( greeting.message() == "Hello, Kotlin!")
     }
 
