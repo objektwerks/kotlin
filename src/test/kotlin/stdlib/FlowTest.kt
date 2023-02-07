@@ -17,6 +17,7 @@ class FlowTest {
                 emit(i)
             }
         }
+
         runBlocking {
             var sink = 0
             launch {
