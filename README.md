@@ -12,11 +12,11 @@ Kotlin
 Apps
 ----
 >The following apps are available:
-1. console/App
-2. http/ChuckNorrisClient
-3. http/NowServer
-4. javafx/ChuckNorrisFxApp
-5. swing/ChuckNorrisApp
+1. console.App
+2. http.ChuckNorrisClient
+3. http.NowServer
+4. javafx.ChuckNorrisFxApp
+5. swing.ChuckNorrisApp
 >The default app is: console.App See the Run section below.
 
 >**Note:** Unlike Scala Sbt, Gradle does not provide a list of available apps to run.
