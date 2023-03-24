@@ -63,5 +63,5 @@ dependencies {
 
     implementation("com.h2database:h2:2.1.214")
 
-    implementation("ch.qos.logback:logback-classic:1.4.5")
+    implementation("ch.qos.logback:logback-classic:1.4.6")
 }
