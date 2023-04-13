@@ -15,7 +15,7 @@ tasks {
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "19"
+        kotlinOptions.jvmTarget = "20"
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers", "-X--add-modules", "-Xadd-modules=jdk.incubator.concurrent")
     }
 
@@ -47,16 +47,16 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 
-    implementation("io.ktor:ktor-client-core:2.3.0-eap-624")
-    implementation("io.ktor:ktor-client-cio:2.3.0-eap-624")
-    implementation("io.ktor:ktor-server-core:2.3.0-eap-625")
-    implementation("io.ktor:ktor-server-netty:2.3.0-eap-624")
+    implementation("io.ktor:ktor-client-core:2.2.4")
+    implementation("io.ktor:ktor-client-cio:2.2.4")
+    implementation("io.ktor:ktor-server-core:2.2.4")
+    implementation("io.ktor:ktor-server-netty:2.2.4")
 
     implementation("org.jetbrains.exposed:exposed-core:0.40.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.40.1")
     implementation("org.jetbrains.exposed:exposed-dao:0.40.1")
 
-    implementation("io.arrow-kt:arrow-core:1.1.6-alpha.58")
+    implementation("io.arrow-kt:arrow-core:1.1.5")
 
     implementation("com.sksamuel.hoplite:hoplite-core:2.7.2")
     implementation("com.sksamuel.hoplite:hoplite-yaml:2.7.2")
