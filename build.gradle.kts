@@ -15,7 +15,7 @@ tasks {
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "20"
+        kotlinOptions.jvmTarget = "19"
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers", "-X--add-modules", "-Xadd-modules=jdk.incubator.concurrent")
     }
 
