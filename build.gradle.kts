@@ -56,7 +56,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:0.40.1")
     implementation("org.jetbrains.exposed:exposed-dao:0.40.1")
 
-    implementation("io.arrow-kt:arrow-core:1.1.6-alpha.58")
+    implementation("io.arrow-kt:arrow-core:1.2.0-RC")
 
     implementation("com.sksamuel.hoplite:hoplite-core:2.7.2")
     implementation("com.sksamuel.hoplite:hoplite-yaml:2.7.2")
