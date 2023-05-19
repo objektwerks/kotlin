@@ -47,10 +47,10 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 
-    implementation("io.ktor:ktor-client-core:2.3.1-eap-669")
-    implementation("io.ktor:ktor-client-cio:2.3.1-eap-672")
-    implementation("io.ktor:ktor-server-core:2.3.1-eap-674")
-    implementation("io.ktor:ktor-server-netty:2.3.0-eap-624")
+    implementation("io.ktor:ktor-client-core:2.3.0")
+    implementation("io.ktor:ktor-client-cio:2.3.0")
+    implementation("io.ktor:ktor-server-core:2.3.0")
+    implementation("io.ktor:ktor-server-netty:2.3.0")
 
     implementation("org.jetbrains.exposed:exposed-core:0.40.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.40.1")
