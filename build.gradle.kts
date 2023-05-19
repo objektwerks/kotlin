@@ -43,14 +43,14 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-test:1.8.21")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.8.21")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-Beta")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 
-    implementation("io.ktor:ktor-client-core:2.2.4")
-    implementation("io.ktor:ktor-client-cio:2.2.4")
-    implementation("io.ktor:ktor-server-core:2.2.4")
-    implementation("io.ktor:ktor-server-netty:2.2.4")
+    implementation("io.ktor:ktor-client-core:2.3.1-eap-669")
+    implementation("io.ktor:ktor-client-cio:2.3.1-eap-672")
+    implementation("io.ktor:ktor-server-core:2.3.1-eap-674")
+    implementation("io.ktor:ktor-server-netty:2.3.0-eap-624")
 
     implementation("org.jetbrains.exposed:exposed-core:0.40.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.40.1")
