@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.8.21"
-    kotlin("plugin.serialization") version "1.8.21"
+    kotlin("jvm") version "1.9.0-Beta"
+    kotlin("plugin.serialization") version "1.9.0-Beta"
     application
     id("com.adarshr.test-logger") version "3.2.0"
 }
@@ -15,7 +15,7 @@ tasks {
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "19"
+        kotlinOptions.jvmTarget = "20"
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers", "-X--add-modules", "-Xadd-modules=jdk.incubator.concurrent")
     }
 
@@ -38,10 +38,10 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.21")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0-Beta")
 
-    implementation("org.jetbrains.kotlin:kotlin-test:1.8.21")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.8.21")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.9.0-Beta")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.0-Beta")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
 
