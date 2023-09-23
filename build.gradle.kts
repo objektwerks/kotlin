@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("jvm") version "1.9.20-Beta"
     kotlin("plugin.serialization") version "1.9.20-Beta"
@@ -5,9 +7,14 @@ plugins {
     id("com.adarshr.test-logger") version "3.2.0"
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+
 tasks {
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "21"
+    withType<KotlinCompile> {
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
     }
 }
