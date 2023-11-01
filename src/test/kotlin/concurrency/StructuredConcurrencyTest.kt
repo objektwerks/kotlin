@@ -1,7 +1,6 @@
 package concurrency
 
 import java.util.concurrent.ExecutionException
-import java.util.concurrent.Future
 import java.util.concurrent.StructuredTaskScope
 
 import org.junit.Test
