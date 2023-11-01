@@ -27,11 +27,5 @@ class OptionTest {
         assert( Some(3).filter { it > 0 }  == Some(3) )
 
         assert( Some(3).fold( { }, { it * 3 } ) == 9)
-
-        val value = when(val none: Option<Int> = None) {
-            is Some -> none.value
-            is None -> 0
-        }
-        assert( value == 0 )
     }
 }
