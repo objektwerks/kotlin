@@ -13,15 +13,13 @@ java {
     }
 }
 
-tasks
-    .withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile>()
-    .configureEach {
-        compilerOptions
-            .languageVersion
-            .set(
-                org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_0
-            )
+kotlin {
+    sourceSets.all {
+        languageSettings {
+            languageVersion = "2.0"
+        }
     }
+}
 
 tasks {
     withType<KotlinCompile> {
