@@ -28,7 +28,7 @@ tasks {
 }
 
 group = "tripletail"
-version = "1.1"
+version = "1.2-SNAPSHOT"
 
 application {
     mainClass.set("console.App")
