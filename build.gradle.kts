@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.0.0-Beta1"
-    kotlin("plugin.serialization") version "2.0.0-Beta1"
+    kotlin("jvm") version "2.0.0-Beta2"
+    kotlin("plugin.serialization") version "2.0.0-Beta2"
     application
     id("com.adarshr.test-logger") version "4.0.0"
 }
@@ -40,10 +40,10 @@ repositories {
 
 dependencies {
     implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-Beta1")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-Beta2")
 
-    implementation("org.jetbrains.kotlin:kotlin-test:2.0.0-Beta1")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.0.0-Beta1")
+    implementation("org.jetbrains.kotlin:kotlin-test:2.0.0-Beta2")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.0.0-Beta2")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
