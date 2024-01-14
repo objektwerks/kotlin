@@ -34,7 +34,7 @@ class ExposedTest {
             assert( todosId > 0 )
 
             assert(
-                Todos.select { Todos.id eq todosId }.single()[Todos.task] == "Wash the car."
+                Todos.selectAll().where { Todos.id eq todosId }.single()[Todos.task] == "Wash the car."
             )
 
             Todos.update( { Todos.id eq todosId } ) {
@@ -42,7 +42,7 @@ class ExposedTest {
             }
 
             assert(
-                Todos.select { Todos.id eq todosId }.single()[Todos.task] == "Wash the car and drink beer!"
+                Todos.selectAll().where { Todos.id eq todosId }.single()[Todos.task] == "Wash the car and drink beer!"
             )
 
             val deleted = Todos.deleteWhere { id eq todosId }
