@@ -29,9 +29,12 @@ Gradle
 
 Build
 -----
->Use Intellij gradle to clean and build. Or use gradle:
+>Use Intellij gradle to clean and build project.
+
+>Alternatively use gradle:
 * gradle clean build
->Or use gradlew:
+
+>Finally use gradlew:
 *  ./gradlew clean build -Pkotlin.experimental.tryK2=true
 
 Test
