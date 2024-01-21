@@ -25,7 +25,7 @@ Gradle
 ------
 >To upgrade Gradle, edit the **version number** in this file:
 * gradle/wrapper/gradle-wrapper.properties
->**Note:** Also validate Preference > ... > Build Tools > Gradle for the correct **current** Gradle version.
+>Validate Settings > Build, Execution, Deployment > Build Tools > Gradle for the correct **current** Gradle version.
 
 Build
 -----
