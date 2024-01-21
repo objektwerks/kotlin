@@ -32,15 +32,17 @@ Build
 >Use Intellij gradle to clean and build project.
 
 >Alternatively use gradle:
-* gradle clean build
+1. gradle clean build
 
 >Finally use gradlew:
-*  ./gradlew clean build -Pkotlin.experimental.tryK2=true
+1. ./gradlew clean build -Pkotlin.experimental.tryK2=true
 
 Test
 ----
->Use Intellij gradle to clean, build, run and view tests. Or use gradle:
-* gradle clean build test
+>Use Intellij gradle to clean, build, run and view tests.
+
+>Alternatively use gradle:
+1. gradle clean build test
      * view results courtesy of com.adarshr.test-logger plugin
      * optionally open ***build/reports/tests/test/index.html*** in a browser
 
@@ -48,6 +50,7 @@ Run
 ---
 >To run the default app ( **console.App** ):
 1. gradle run
+
 >To selectively run any app:
 1. select
 2. right click
