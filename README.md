@@ -52,9 +52,9 @@ Run
 1. gradle run
 
 >To selectively run any app:
-1. select
-2. right click
-3. select run '*Kt'
+1. select app from src dir
+2. right click app
+3. select run ( named 'app' )
 
 Logs
 ----
