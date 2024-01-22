@@ -90,7 +90,7 @@ class FunctionTest {
     }
 
     @Test fun varargs() {
-        fun <T> toList(vararg ts: T): List<T> = mutableListOf<T>( *ts )
+        fun <T> toList(vararg ts: T): List<T> = mutableListOf( *ts )
 
         assert(toList(1, 2, 3) == listOf(1, 2, 3))
     }
