@@ -38,7 +38,7 @@ class ClassTest {
     }
 
     @Test fun primaryConstructor() {
-        class Property constructor(val value: String)
+        class Property(val value: String)
 
         assert( Property("value").value == "value" )
     }
