@@ -24,13 +24,13 @@ class EnumTest {
         assert( Ale.valueOf("indianPaleAle") == Ale.indianPaleAle )
         assert( Ale.valueOf("doubleIndianPaleAle") == Ale.doubleIndianPaleAle )
 
-        val beers = Ale.values()
+        val beers = Ale.entries.toTypedArray()
         assert( beers.size == 3 )
         beers.asList().forEach { beer -> assert( beers.contains( beer ) ) }
 
         assert( RGB.red.value == "#FF0000" )
         assert( RGB.green.value == "#00FF00" )
         assert( RGB.blue.value == "#0000FF" )
-        assert( RGB.values().size == 3 )
+        assert( RGB.entries.size == 3 )
     }
 }
