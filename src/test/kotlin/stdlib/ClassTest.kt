@@ -165,7 +165,7 @@ class ClassTest {
     sealed class Expr
     class Const(val value: Int) : Expr()
     class Sum(val left: Expr, val right: Expr) : Expr()
-    object NotANumber : Expr()
+    data object NotANumber : Expr()
 
     private fun eval(expr: Expr): Int =
         when (expr) {
