@@ -53,13 +53,13 @@ class ClassTest {
 
     @Test fun init() {
         class Source(protocol: String, path: String) {
-            val url: String?
+            var url: String = ""
             init {
                 url = "$protocol$path"
             }
         }
 
-        assert( !Source("file://", "home/temp").url.isNullOrEmpty() )
+        assert( Source("file://", "home/temp").url.isNotEmpty() )
     }
 
     @Test fun typeAlias() {
