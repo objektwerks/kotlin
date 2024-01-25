@@ -28,4 +28,8 @@ class ImmutableCollectionTest {
         assert( map.getOrElse(4) { 0 } == 0 )
         assert( map.getOrDefault(4, 0) == 0 )
     }
+
+    @Test fun conversion() {
+        assert( listOf(1, 2, 3).toImmutableList() == persistentListOf(1, 2, 3) )
+    }
 }
