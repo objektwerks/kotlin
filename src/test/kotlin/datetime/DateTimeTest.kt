@@ -9,12 +9,12 @@ import org.junit.Test
 class DateTimeTest {
     @Test fun datetime() {
         val now = Clock.System.now()
-        val local = now.toLocalDateTime(TimeZone.currentSystemDefault())
 
         val nowAsString = now.toString()
         val parsedNow = Instant.parse(nowAsString)
         assert( parsedNow.toOption().isSome() )
 
+        val local = now.toLocalDateTime(TimeZone.currentSystemDefault())
         val date = local.date
         val time = local.time
         assert( date.toOption().isSome() )
