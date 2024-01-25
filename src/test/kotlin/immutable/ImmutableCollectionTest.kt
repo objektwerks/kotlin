@@ -16,6 +16,9 @@ class ImmutableCollectionTest {
     }
 
     @Test fun set() {
+        val set = persistentSetOf(1, 2, 3)
+        assert( set.size == 3 )
+        assert( set.contains(1) )
     }
 
     @Test fun map() {
