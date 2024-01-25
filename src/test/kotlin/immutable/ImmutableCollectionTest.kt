@@ -44,6 +44,8 @@ class ImmutableCollectionTest {
         assert( list.all { it > 0 } )
         assert( list.none { it < 0 } )
 
+        assert( list.joinToString() == "1, 2, 3" )
+
         val letters = persistentListOf("abc", "ade")
         assert( letters.find { it.startsWith("a") } == "abc" )
         assert( letters.findLast { it.startsWith("a") } == "ade" )
