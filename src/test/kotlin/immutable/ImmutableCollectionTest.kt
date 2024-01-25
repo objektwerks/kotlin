@@ -1,5 +1,7 @@
 package immutable
 
+import kotlinx.collections.immutable.*
+
 import org.junit.Test
 
 /**
@@ -7,6 +9,10 @@ import org.junit.Test
  */
 class ImmutableCollectionTest {
     @Test fun list() {
+        val list = persistentListOf(1, 2, 3)
+        assert( list.size == 3 )
+        assert( list[0] == 1 )
+        assert( list.getOrElse(3) { 0 } == 0 )
     }
 
     @Test fun set() {
