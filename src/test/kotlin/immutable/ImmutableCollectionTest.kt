@@ -40,6 +40,10 @@ class ImmutableCollectionTest {
         assert( evens == persistentListOf(2) )
         assert( odds == persistentListOf(1, 3) )
 
+        assert( list.any { it == 1 } )
+        assert( list.all { it > 0 } )
+        assert( list.none { it < 0 } )
+
         val letters = persistentListOf("abc", "ade")
         assert( letters.find { it.startsWith("a") } == "abc" )
         assert( letters.findLast { it.startsWith("a") } == "ade" )
