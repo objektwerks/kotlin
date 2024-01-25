@@ -17,6 +17,9 @@ class ImmutableCollectionTest {
         assert( list.first() == 1 )
         assert( list.last() == 3 )
 
+        assert( list.minOrNull() == 1 )
+        assert( list.maxOrNull() == 3 )
+
         assert( list.average() == 2.0 )
         assert( list.sum() == 6 )
 
