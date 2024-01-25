@@ -64,6 +64,16 @@ class ImmutableCollectionTest {
         val set = persistentSetOf(1, 2, 3)
         assert( set.size == 3 )
         assert( set.contains(1) )
+
+        assert( persistentSetOf(1, 2, 3, 4) == set + 4 )
+        assert( persistentSetOf(1, 2) == set - 3 )
+
+        assert( set.map { it * it } == persistentListOf(1, 4, 9) )
+        assert( set.filter { it % 2 == 0 } == persistentListOf(2) )
+        assert( set.zip( persistentListOf(4, 5, 6) ) == persistentListOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
+
+        assert( set union persistentSetOf(4, 5, 6) == persistentSetOf(1, 2, 3, 4, 5, 6) )
+        assert( persistentSetOf(2, 4, 6) intersect persistentSetOf(4, 6, 8) == persistentSetOf(4, 6) )
     }
 
     @Test fun map() {
