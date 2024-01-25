@@ -32,5 +32,6 @@ class ImmutableCollectionTest {
     @Test fun conversion() {
         assert( listOf(1, 2, 3).toImmutableList() == persistentListOf(1, 2, 3) )
         assert( setOf(1, 2, 3).toImmutableSet() == persistentSetOf(1, 2, 3) )
+        assert( mapOf(1 to 1, 2 to 2, 3 to 3).toImmutableMap() == persistentMapOf(1 to 1, 2 to 2, 3 to 3) )
     }
 }
