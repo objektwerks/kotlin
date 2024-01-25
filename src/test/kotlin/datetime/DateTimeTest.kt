@@ -11,13 +11,7 @@ class DateTimeTest {
         val local = now.toLocalDateTime(TimeZone.currentSystemDefault())
         val date = local.date
         val time = local.time
-        assert( date.toOption().isNone() )
-        assert( time.toOption().isNone() )
-    }
-
-    @Test fun date() {
-    }
-
-    @Test fun time() {
+        assert( date.toOption().isSome() )
+        assert( time.toOption().isSome() )
     }
 }
