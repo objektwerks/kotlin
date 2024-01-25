@@ -49,6 +49,15 @@ class ImmutableCollectionTest {
         val letters = persistentListOf("abc", "ade")
         assert( letters.find { it.startsWith("a") } == "abc" )
         assert( letters.findLast { it.startsWith("a") } == "ade" )
+
+        data class Person(val name: String, val city: String = "tampa", val state: String = "fl")
+        val men = persistentListOf( Person("fred"), Person("barney") )
+        assert( men.groupBy { it.city }["tampa"] == men )
+        assert( men.groupBy { it.state }["fl"] == men )
+
+        val women = persistentListOf( Person("wilma"), Person("betty") )
+        val couples = persistentListOf(men, women)
+        assert( couples.flatMap { couples }.count() == 4 )
     }
 
     @Test fun set() {
