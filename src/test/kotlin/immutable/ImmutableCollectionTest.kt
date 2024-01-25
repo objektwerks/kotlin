@@ -8,4 +8,7 @@ class ImmutableCollectionTest {
 
     @Test fun set() {
     }
+
+    @Test fun map() {
+    }
 }
