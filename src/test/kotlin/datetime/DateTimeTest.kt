@@ -24,5 +24,11 @@ class DateTimeTest {
 
         val knownTime = LocalTime(hour = 23, minute = 59, second = 59)
         assert( knownTime.toOption().isSome() )
+
+        assert( "2010-06-01T22:19:44.475Z".toInstant().toOption().isSome() )
+        "2010-06-01T22:19:44".toLocalDateTime()
+        "2010-06-01".toLocalDate()
+        "12:01:03".toLocalTime()
+        "12:0:03.999".toLocalTime()
     }
 }
