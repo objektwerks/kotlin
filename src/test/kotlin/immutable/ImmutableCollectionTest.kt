@@ -25,6 +25,10 @@ class ImmutableCollectionTest {
         assert( list.zip( persistentListOf(4, 5, 6) ) == persistentListOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
 
         assert( persistentListOf( persistentListOf("kotlin") ).flatten() == persistentListOf("kotlin") )
+
+        assert( list.drop(2) == persistentListOf(3) )
+        assert( list.take(1) == persistentListOf(1) )
+        assert( list.slice(2..2) == persistentListOf(3) )
     }
 
     @Test fun set() {
