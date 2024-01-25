@@ -26,8 +26,8 @@ class DateTimeTest {
         val knownTime = LocalTime(hour = 23, minute = 59, second = 59)
         assert( knownTime.toOption().isSome() )
 
-        assert( "2020-12-01T22:19:44.475Z".toInstant().toOption().isSome() )
-        assert( "2020-12-01T22:19:44".toLocalDateTime().toOption().isSome() )
+        assert( "2020-12-01T22:20:40.475Z".toInstant().toOption().isSome() )
+        assert( "2020-12-01T22:20:40".toLocalDateTime().toOption().isSome() )
         assert( "2020-12-01".toLocalDate().toOption().isSome() )
         assert( "12:01:03".toLocalTime().toOption().isSome() )
         assert( "12:01:03.999".toLocalTime().toOption().isSome() )
