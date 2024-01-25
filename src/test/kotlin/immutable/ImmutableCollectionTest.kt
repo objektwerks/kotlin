@@ -16,6 +16,9 @@ class ImmutableCollectionTest {
 
         assert( list.average() == 2.0 )
         assert( list.sum() == 6 )
+
+        assert( list.fold(0) { acc, i -> acc + i } == 6 )
+        assert( list.reduce { acc, i -> acc + i } == 6 )
     }
 
     @Test fun set() {
