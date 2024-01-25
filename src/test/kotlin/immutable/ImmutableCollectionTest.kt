@@ -39,5 +39,9 @@ class ImmutableCollectionTest {
         val list = persistentListOf(1, 2, 3)
         val mutatedList = list.mutate { mutableList -> mutableList.add(4) }
         assert( mutatedList == persistentListOf(1, 2, 3, 4) )
+
+        val set = persistentSetOf(1, 2, 3)
+        val mutatedSet = set.mutate { mutableSet -> mutableSet.add(4) }
+        assert( mutatedSet == persistentSetOf(1, 2, 3, 4) )
     }
 }
