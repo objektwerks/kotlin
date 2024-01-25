@@ -17,5 +17,8 @@ class DateTimeTest {
 
         val knownDate = LocalDate(year = 2020, monthNumber = 1, dayOfMonth = 1)
         assert( knownDate.toOption().isSome() )
+
+        val knownTime = LocalTime(hour = 23, minute = 59, second = 59)
+        assert( knownTime.toOption().isSome() )
     }
 }
