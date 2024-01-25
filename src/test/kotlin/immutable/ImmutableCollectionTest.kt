@@ -39,6 +39,10 @@ class ImmutableCollectionTest {
         val (evens, odds) = list.partition { it % 2 == 0 }
         assert( evens == persistentListOf(2) )
         assert( odds == persistentListOf(1, 3) )
+
+        val letters = persistentListOf("abc", "ade")
+        assert( letters.find { it.startsWith("a") } == "abc" )
+        assert( letters.findLast { it.startsWith("a") } == "ade" )
     }
 
     @Test fun set() {
