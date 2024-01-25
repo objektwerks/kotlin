@@ -29,6 +29,12 @@ class ImmutableCollectionTest {
         assert( list.drop(2) == persistentListOf(3) )
         assert( list.take(1) == persistentListOf(1) )
         assert( list.slice(2..2) == persistentListOf(3) )
+
+        val (evens, odds) = list.partition { it % 2 == 0 }
+        assert( evens == persistentListOf(2) )
+        assert( odds == persistentListOf(1, 3) )
+        assert( evens.toPersistentList() == persistentListOf(2) )
+        assert( odds.toPersistentList() == persistentListOf(1, 3) )
     }
 
     @Test fun set() {
