@@ -74,6 +74,8 @@ class ImmutableCollectionTest {
 
         assert( set union persistentSetOf(4, 5, 6) == persistentSetOf(1, 2, 3, 4, 5, 6) )
         assert( persistentSetOf(2, 4, 6) intersect persistentSetOf(4, 6, 8) == persistentSetOf(4, 6) )
+
+        assert( set.clear().isEmpty() )
     }
 
     @Test fun map() {
