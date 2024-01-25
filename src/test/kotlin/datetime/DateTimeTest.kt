@@ -29,6 +29,6 @@ class DateTimeTest {
         assert( "2010-06-01T22:19:44".toLocalDateTime().toOption().isSome() )
         assert( "2010-06-01".toLocalDate().toOption().isSome() )
         assert( "12:01:03".toLocalTime().toOption().isSome() )
-        "12:0:03.999".toLocalTime()
+        assert( "12:0:03.999".toLocalTime().toOption().isSome() )
     }
 }
