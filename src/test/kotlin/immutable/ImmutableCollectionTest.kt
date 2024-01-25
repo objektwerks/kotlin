@@ -19,6 +19,10 @@ class ImmutableCollectionTest {
 
         assert( list.fold(0) { acc, i -> acc + i } == 6 )
         assert( list.reduce { acc, i -> acc + i } == 6 )
+
+        assert( list.map { it * it } == persistentListOf(1, 4, 9) )
+        assert( list.filter { it % 2 == 0 } == persistentListOf(2) )
+        assert( list.zip( listOf(4, 5, 6) ) == persistentListOf( Pair(1, 4), Pair(2, 5), Pair(3, 6)) )
     }
 
     @Test fun set() {
