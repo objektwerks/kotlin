@@ -58,6 +58,8 @@ class ImmutableCollectionTest {
         val women = persistentListOf( Person("wilma"), Person("betty") )
         val couples = persistentListOf(men, women)
         assert( couples.flatMap { couples }.count() == 4 )
+
+        assert( list.clear().isEmpty() )
     }
 
     @Test fun set() {
