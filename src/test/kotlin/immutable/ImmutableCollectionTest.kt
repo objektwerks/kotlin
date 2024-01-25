@@ -1,5 +1,6 @@
 package immutable
 
+import arrow.core.zip
 import kotlinx.collections.immutable.*
 
 import org.junit.Test
@@ -86,6 +87,14 @@ class ImmutableCollectionTest {
         assert( map.size == 3 )
         assert( map.getOrElse(4) { 0 } == 0 )
         assert( map.getOrDefault(4, 0) == 0 )
+
+        assert( persistentMapOf(1 to 1, 2 to 2) == persistentMapOf(1 to 1 ) + (2 to 2) )
+        assert( persistentMapOf(1 to 1) == persistentMapOf(1 to 1, 2 to 2) - 2 )
+
+        map.forEach { (k, v) -> assert( k == v ) }
+        assert( map.map { it.value * it.value } == persistentListOf(1, 4, 9) )
+        assert( map.filter { it.value % 2 == 0 } == persistentMapOf(2 to 2) )
+        assert( map.zip( persistentMapOf(1 to 4, 2 to 5, 3 to 6) ) == persistentMapOf(1 to Pair(1, 4), 2 to Pair(2, 5), 3 to Pair(3, 6)) )
     }
 
     @Test fun conversion() {
