@@ -39,6 +39,8 @@ class DateTimeTest {
         assert( future.toOption().isSome() )
 
         val period = past.periodUntil(Clock.System.now(), TimeZone.UTC)
+        assert(period.years > 0)
+        // assert(period.months > 0) // bug!
         assert(period.days > 0)
         assert(period.hours > 0)
     }
