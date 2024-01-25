@@ -34,4 +34,10 @@ class ImmutableCollectionTest {
         assert( setOf(1, 2, 3).toImmutableSet() == persistentSetOf(1, 2, 3) )
         assert( mapOf(1 to 1, 2 to 2, 3 to 3).toImmutableMap() == persistentMapOf(1 to 1, 2 to 2, 3 to 3) )
     }
+
+    @Test fun mutate() {
+        val list = persistentListOf(1, 2, 3)
+        val mutatedList = list.mutate { mutableList -> mutableList.add(4) }
+        assert( mutatedList == persistentListOf(1, 2, 3, 4) )
+    }
 }
