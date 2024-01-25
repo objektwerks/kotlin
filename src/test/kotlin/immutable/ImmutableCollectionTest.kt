@@ -43,5 +43,9 @@ class ImmutableCollectionTest {
         val set = persistentSetOf(1, 2, 3)
         val mutatedSet = set.mutate { mutableSet -> mutableSet.add(4) }
         assert( mutatedSet == persistentSetOf(1, 2, 3, 4) )
+
+        val map = persistentMapOf(1 to 1, 2 to 2, 3 to 3)
+        val mutatedMap = map.mutate { mutableMap -> mutableMap[4] = 4 }
+        assert( mutatedMap == persistentMapOf(1 to 1, 2 to 2, 3 to 3, 4 to 4) )
     }
 }
