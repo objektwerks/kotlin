@@ -13,6 +13,9 @@ class ImmutableCollectionTest {
         assert( list.size == 3 )
         assert( list[0] == 1 )
         assert( list.getOrElse(3) { 0 } == 0 )
+
+        assert( list.average() == 2.0 )
+        assert( list.sum() == 6 )
     }
 
     @Test fun set() {
