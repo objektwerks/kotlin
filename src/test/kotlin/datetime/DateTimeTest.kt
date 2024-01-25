@@ -37,5 +37,8 @@ class DateTimeTest {
         val future = now + duration
         assert( duration.toOption().isSome() )
         assert( future.toOption().isSome() )
+
+        val period = past.periodUntil(Clock.System.now(), TimeZone.UTC)
+        assert(period.days > 0)
     }
 }
