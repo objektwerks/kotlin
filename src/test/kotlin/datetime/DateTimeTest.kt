@@ -47,7 +47,9 @@ class DateTimeTest {
         val months = past.until(Clock.System.now(), DateTimeUnit.MONTH, TimeZone.UTC)
         assert(months > 0)
 
-        val tomorrow = now.plus(value = 2, unit = DateTimeUnit.DAY, timeZone = TimeZone.currentSystemDefault())
+        val tomorrow = now.plus(value = 1, unit = DateTimeUnit.DAY, timeZone = TimeZone.currentSystemDefault())
         assert( tomorrow.toOption().isSome() )
+        val yesterday = now.minus(value = 1, unit = DateTimeUnit.DAY, timeZone = TimeZone.currentSystemDefault())
+        assert( yesterday.toOption().isSome() )
     }
 }
