@@ -10,6 +10,10 @@ class DateTimeTest {
         val now = Clock.System.now()
         val local = now.toLocalDateTime(TimeZone.currentSystemDefault())
 
+        val nowAsString = now.toString()
+        val parsedNow = Instant.parse(nowAsString)
+        assert( parsedNow.toOption().isSome() )
+
         val date = local.date
         val time = local.time
         assert( date.toOption().isSome() )
