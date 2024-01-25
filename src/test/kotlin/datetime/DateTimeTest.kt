@@ -40,5 +40,6 @@ class DateTimeTest {
 
         val period = past.periodUntil(Clock.System.now(), TimeZone.UTC)
         assert(period.days > 0)
+        assert(period.hours > 0)
     }
 }
