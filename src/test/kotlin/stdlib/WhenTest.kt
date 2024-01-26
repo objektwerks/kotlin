@@ -31,9 +31,9 @@ class WhenTest {
             else -> ""
         }
 
-        assert(isTypeOf("string") == "s")
-        assert(isTypeOf(1) == "i")
-        assert(isTypeOf(true) == "2")
-        assert(isTypeOf(1.0) == "")
+        assert( isTypeOf("string") == "s" )
+        assert( isTypeOf(1) == "i" )
+        assert( isTypeOf(true) == "2" )
+        assert( isTypeOf(1.0) == "" )
     }
 }
