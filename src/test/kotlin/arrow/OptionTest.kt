@@ -26,6 +26,6 @@ class OptionTest {
 
         assert( Some(3).filter { it > 0 }  == Some(3) )
 
-        assert( Some(3).fold( { 0 }, { it * 3 } ) == 9)
+        assert( Some(3).fold( { 0 }, { it * 3 } ) == 9 )
     }
 }
