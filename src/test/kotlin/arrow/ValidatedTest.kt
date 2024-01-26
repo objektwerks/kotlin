@@ -30,12 +30,12 @@ class ValidatedTest {
     @Test fun valid() {
         val person = Person("Fred Flintstone", 37)
         val result = PersonValidator.validate(person)
-        assert(result.isRight())
+        assert( result.isRight() )
     }
 
     @Test fun invalid() {
         val person = Person("", 0)
         val result = PersonValidator.validate(person)
-        assert(result.isLeft())
+        assert( result.isLeft() )
     }
 }
