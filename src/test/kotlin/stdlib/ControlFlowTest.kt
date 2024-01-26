@@ -11,7 +11,7 @@ class ControlFlowTest {
     }
 
     @Test fun forIn() {
-        for (n in listOf(1, 2, 3)) { assert(n > 0) }
+        for (n in listOf(1, 2, 3)) { assert( n > 0 ) }
     }
 
     @Test fun forEach() {
@@ -19,7 +19,7 @@ class ControlFlowTest {
     }
 
     @Test fun range() {
-        for (n in 1..3) { assert(n > 0) }
+        for (n in 1..3) { assert( n > 0 ) }
     }
 
     @Test fun loop() {
