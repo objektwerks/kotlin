@@ -26,9 +26,9 @@ class ContextReceiverTest {
         }
         with(loggerContext) {
             val store = Store()
-            assert(store.save(Random.nextInt().toString()))
-            assert(store.save(Random.nextInt().toString()))
-            assert(store.save(Random.nextInt().toString()))
+            assert( store.save(Random.nextInt().toString()) )
+            assert( store.save(Random.nextInt().toString()) )
+            assert( store.save(Random.nextInt().toString()) )
         }
     }
 }
