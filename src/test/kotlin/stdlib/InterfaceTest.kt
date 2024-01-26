@@ -18,7 +18,7 @@ class InterfaceTest {
     }
 
     @Test fun byInterface() {
-        assert(Circle().draw() == "circle")
+        assert( Circle().draw() == "circle" )
     }
 
     fun interface IntPredicate {
