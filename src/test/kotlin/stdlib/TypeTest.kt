@@ -26,6 +26,6 @@ class TypeTest {
 
         val source = Producer(1).source()
         val sink = Consumer<Int>().sink(source)
-        assert(source == 1 && sink == "1")
+        assert( source == 1 && sink == "1" )
     }
 }
