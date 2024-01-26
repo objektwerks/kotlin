@@ -19,7 +19,7 @@ class ResultTest {
         runCatching {
             Instant.parse(validDateTime)
         }.onFailure { fail(invalidDateTime) }
-         .onSuccess { assert(true) }
+         .onSuccess { assert( true ) }
     }
 
     @Test fun success() {
