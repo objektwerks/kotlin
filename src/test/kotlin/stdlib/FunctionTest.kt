@@ -9,42 +9,42 @@ val Values.delimitted: String get() = items.joinToString()
 
 class FunctionTest {
     // Lambdas
-    val sum = { x: Int, y: Int -> x + y }
+    val sum: (Int, Int) -> Int = { x: Int, y: Int -> x + y }
     val multiply: (Int, Int) -> Int = { x: Int, y: Int -> x * y }
 
     @Test fun function() {
         fun square(n: Int): Int = n * n
 
-        assert(square(2) == 4)
+        assert( square(2) == 4 )
     }
 
     @Test fun genericFunction() {
         fun <T> asSingletonList(item: T): List<T> = listOf(item)
 
-        assert(asSingletonList(3) == listOf(3))
+        assert( asSingletonList(3) == listOf(3) )
     }
 
     @Test fun functionExtension() {
         fun String.addBang(): String = "$this!"
 
-        assert("hello".addBang() == "hello!")
+        assert( "hello".addBang() == "hello!" )
     }
 
     @Test fun propertyExtension() {
         val values = Values( listOf("a", "b", "c") ) // See Values above.
-        assert( values.delimitted == "a, b, c")
+        assert( values.delimitted == "a, b, c" )
     }
 
     @Test fun higherOrder() {
         fun total(x: Int, y: Int, f: (Int, Int) -> Int): Int = f(x, y)
 
-        assert(total(3, 3, sum) == 6)
-        assert(total(3, 3, multiply) == 9)
+        assert( total(3, 3, sum) == 6 )
+        assert( total(3, 3, multiply) == 9 )
     }
 
     @Test fun lambda() {
-        assert(sum(3, 3) == 6)
-        assert(multiply(3, 3) == 9)
+        assert( sum(3, 3) == 6 )
+        assert( multiply(3, 3) == 9 )
     }
 
     @Test fun infix() {
@@ -54,14 +54,14 @@ class FunctionTest {
         }
 
         val numbers = Numbers()
-        assert(numbers square 3 == 9)
-        assert(numbers cube 3 == 27)
+        assert( numbers square 3 == 9 )
+        assert( numbers cube 3 == 27 )
     }
 
     @Test fun operator() {
         operator fun Int.times(value: String) = value.repeat(this)
 
-        assert(2 * "m" == "mm")
+        assert( 2 * "m" == "mm" )
     }
 
     @Test fun closure() {
@@ -69,7 +69,7 @@ class FunctionTest {
         listOf(1, 2, 3).filter { it > 0 }.forEach {
             closeOverValue += it
         }
-        assert(closeOverValue == 6)
+        assert( closeOverValue == 6 )
     }
 
     @Test fun currying() {
@@ -85,14 +85,14 @@ class FunctionTest {
     @Test fun defaultValue() {
         fun divide(x: Int, y: Int = 1): Int = x / y
 
-        assert(divide(4) == 4)
-        assert(divide(4, 2) == 2)
+        assert( divide(4) == 4 )
+        assert( divide(4, 2) == 2 )
     }
 
     @Test fun varargs() {
         fun <T> toList(vararg ts: T): List<T> = mutableListOf( *ts )
 
-        assert(toList(1, 2, 3) == listOf(1, 2, 3))
+        assert( toList(1, 2, 3) == listOf(1, 2, 3) )
     }
 
     @Test fun tailrec() {
@@ -100,7 +100,7 @@ class FunctionTest {
             if (n == 1) acc
             else factorial(n - 1, acc * n)
 
-        assert(factorial(9) == 362880)
+        assert( factorial(9) == 362_880 )
     }
 
     @Test fun letScope() { // it scope
