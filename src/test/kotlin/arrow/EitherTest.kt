@@ -18,7 +18,7 @@ class EitherTest {
         val list = listOf("1", "2", "3", "four")
 
         val rights = list.map { toInt(it) }.filter { it.isRight() }
-        assert(rights == listOf(Right(1), Right(2), Right(3)))
+        assert( rights == listOf(Right(1), Right(2), Right(3)) )
 
         val ints = list.map { toInt(it) }.filter { it.isRight() }.map { it.getOrElse { 0 } }
         assert( ints == listOf(1, 2, 3) )
