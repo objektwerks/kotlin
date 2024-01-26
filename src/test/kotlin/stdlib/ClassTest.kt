@@ -89,8 +89,8 @@ class ClassTest {
             inner class Inner(val id: String = "Inner.B")
         }
 
-        assert( A().Inner().id == "Inner.A")
-        assert( B().Inner().id == "Inner.B")
+        assert( A().Inner().id == "Inner.A" )
+        assert( B().Inner().id == "Inner.B" )
     }
 
     @Test fun open() {
@@ -151,7 +151,7 @@ class ClassTest {
             fun message() = "$hello, $world!"
         }
 
-        assert( greeting.message() == "Hello, Kotlin!")
+        assert( greeting.message() == "Hello, Kotlin!" )
     }
 
     @Test fun objectSingleton() {
