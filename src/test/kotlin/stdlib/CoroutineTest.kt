@@ -14,7 +14,7 @@ class CoroutineTest {
             launch {
                 delay(1000)
                 sum += 1
-                assert(sum == 3)
+                assert( sum == 3 )
             }
             sum += 2
         }
@@ -33,7 +33,7 @@ class CoroutineTest {
             }
             sum += 2
             job.join()
-            assert(sum == 3)
+            assert( sum == 3 )
         }
     }
 
@@ -70,9 +70,9 @@ class CoroutineTest {
                 measureTimeMillis {
                     val x = async { randomInt() }
                     val y = async { randomInt() }
-                    assert(x.await() + y.await() > 0)
+                    assert( x.await() + y.await() > 0 )
                 }
             }
-        assert(elapsedTime > 0)
+        assert( elapsedTime > 0 )
     }
 }
