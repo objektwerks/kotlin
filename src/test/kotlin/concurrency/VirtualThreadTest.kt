@@ -16,6 +16,6 @@ class VirtualThreadTest {
         val lines = Executors.newVirtualThreadPerTaskExecutor().use { executor ->
             executor.invokeAll(tasks).sumOf { future -> future.get() }
         }
-        assert(lines == 540959)
+        assert( lines == 540_959 )
     }
 }
