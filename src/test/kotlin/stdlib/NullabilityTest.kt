@@ -8,8 +8,8 @@ import org.junit.Test
 class NullabilityTest {
     @Test fun nullable() {
         val text: String? = null
-        assert(text.isNullOrEmpty())
-        assert((text?.length ?: -1) == -1)
+        assert( text.isNullOrEmpty() )
+        assert( (text?.length ?: -1) == -1 )
         assertFailsWith<NullPointerException> {
             text!!.length
         }
@@ -17,7 +17,7 @@ class NullabilityTest {
 
     @Test fun notNullable() {
         val value = "value"
-        assert(value.isNotEmpty())
+        assert( value.isNotEmpty() )
     }
 
     @Test fun nullableList() {
