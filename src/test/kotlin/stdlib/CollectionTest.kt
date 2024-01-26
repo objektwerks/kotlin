@@ -177,8 +177,8 @@ class CollectionTest {
     @Test fun equality() {
         val authors = setOf("Shakespeare", "Hemingway", "Twain")
         val writers = setOf("Twain", "Shakespeare", "Hemingway")
-        assert(authors == writers)
-        assertFalse(authors === writers)
+        assert( authors == writers )
+        assertFalse( authors === writers )
     }
 
     @Test fun takeIfUnless() {
