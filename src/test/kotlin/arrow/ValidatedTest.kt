@@ -28,7 +28,7 @@ object PersonValidator {
 
 class ValidatedTest {
     @Test fun valid() {
-        val person = Person("Fred Flintstone", 37)
+        val person = Person("Fred Flintstone", 24)
         val result = PersonValidator.validate(person)
         assert( result.isRight() )
     }
