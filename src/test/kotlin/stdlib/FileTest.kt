@@ -42,7 +42,7 @@ class FileTest {
 
     @Test fun resource() {
         val text = this::class.java.getResource("/config.yaml")?.readText()
-        assert(text != null)
+        assert( text != null )
     }
 
     @Test fun resourceAsStream() {
