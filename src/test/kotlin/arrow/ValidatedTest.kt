@@ -7,13 +7,11 @@ import arrow.core.raise.ensure
 import org.junit.Test
 
 data class Person(val name: String, val age: Int)
-
 sealed class PersonError {
     data class InvalidName(val name: String) : PersonError()
     data class InvalidAge(val age: Int) : PersonError()
     data class InvalidPerson(val person: Person) : PersonError()
 }
-
 object PersonValidator {
     private fun String.validatedName(): Either<NonEmptyList<PersonError.InvalidName>, String> =
         if (this.isNotEmpty()) this.right()
@@ -29,7 +27,6 @@ object PersonValidator {
 }
 
 object EmptyAuthorName
-
 data class Author internal constructor(val name: String) {
     companion object {
         operator fun invoke(name: String): Either<EmptyAuthorName, Author> = either {
