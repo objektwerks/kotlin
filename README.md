@@ -19,8 +19,6 @@ Apps
 5. swing.ChuckNorrisApp
 >The default app is: console.App See the Run section below.
 
->**Note:** Unlike Scala Sbt, Gradle does not provide a list of available apps to run.
-
 Gradle
 ------
 >To upgrade Gradle, edit the **version number** in this file:
