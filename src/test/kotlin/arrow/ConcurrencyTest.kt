@@ -17,16 +17,12 @@ class ConcurrencyTest {
         ) { xx, yy -> xx + yy }
 
     @Test fun concurrency() {
-        assert(
-            runBlocking {
-                parMapDoubleAndSum(listOf(1, 2)) == listOf(1, 4)
-            }
-        )
+        runBlocking {
+            assert( parMapDoubleAndSum(listOf(1, 2)) == listOf(1, 4) )
+        }
 
-        assert(
-            runBlocking {
-                parZipDoubleAndSum(1, 2) == 5
-            }
-        )
+        runBlocking {
+            assert( parZipDoubleAndSum(1, 2) == 5 )
+        }
     }
 }
