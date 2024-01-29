@@ -18,7 +18,7 @@ import kotlin.test.Test
 }
 
 class OpticsTest {
-    @Test fun copy() {
+    @Test fun optics() { // Optics don't actually work at this time!
         val city = City(name = "tampa", country = "US")
         val street = Street(number = 1, name = "stone")
         val address = Address(street = street, city = city)
