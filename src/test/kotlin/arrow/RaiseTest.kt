@@ -23,5 +23,6 @@ class RaiseTest {
         )
 
         assert( listOf("1", "2", "3", "four").mapOrAccumulate { toInt(it) }.isLeft() )
+        assert( listOf("1", "2", "3").mapOrAccumulate { toInt(it) }.isRight() )
     }
 }
