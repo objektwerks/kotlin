@@ -8,8 +8,7 @@ import java.util.concurrent.Callable
 class FileLineCountTask(private val file: String) : Callable<Int> {
     private fun fileLineCount(file: String): Int {
         return try {
-            val path = Paths.get(file)
-            Files.readAllLines(path).size
+            Files.readAllLines( Paths.get(file) ).size
         } catch (ioe: IOException) {
             -1
         }
