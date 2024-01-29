@@ -24,16 +24,15 @@ fun Customer.capitalizeCity(): Customer =
         address = address.copy(
             city = address.city.copy(
                 name = address.city.name.replaceFirstChar {
-                    if (it.isLowerCase()) it.titlecase(Locale.getDefault())
-                    else it.toString()
+                    it.titlecase(Locale.getDefault())
                 }
             )
         )
     )
 
 /* Optics ( copy, get, set, modify ) don't work at this time!
-fun Customer.capitalizeCountryModify(): Customer = this.address.city.name.modify(this) { it.capitalize() }
-fun Customer.capitalizeCountryCopy(): Customer = this.copy { this.address.city.name transform { it.capitalize() } }
+fun Customer.capitalizeCityModify(): Customer = this.address.city.name.modify(this) { it.capitalize() }
+fun Customer.capitalizeCityCopy(): Customer = this.copy { this.address.city.name transform { it.capitalize() } }
  */
 
 class OpticsTest {
