@@ -42,7 +42,7 @@ class OpticsTest {
     private val customer = Customer(name = "fred", age = 24, address)
 
     @Test fun copy() {
-        val modifiedCustomer = customer.capitalizeCity() // Substitute with standard copy!
+        val modifiedCustomer = customer.capitalizeCity()
         assert( modifiedCustomer.address.city.name.first() == 'T')
     }
 
