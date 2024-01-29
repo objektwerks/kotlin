@@ -20,7 +20,7 @@ class ResourceTest {
         val dataSourceAsResource = resource( {
             DataSource().also { it.connect() }
         } ) { ds, exitCase ->
-            println("*** Releasing data source with exit case: $exitCase")
+            println("*** Closing data source with exit case: $exitCase")
             withContext(Dispatchers.IO) { ds.close() }
         }
         val result = runBlocking {
