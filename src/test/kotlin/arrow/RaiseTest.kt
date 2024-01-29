@@ -1,8 +1,24 @@
 package arrow
 
+import arrow.core.raise.Raise
+import arrow.core.raise.fold
+
 import kotlin.test.Test
 
+object InvalidInt
+
 class RaiseTest {
+    private fun Raise<InvalidInt>.toInt(value: String): Int =
+        when ( val integer = value.toIntOrNull() ) {
+            null -> raise( InvalidInt )
+            else -> integer
+        }
+
     @Test fun raise() {
+        fold(
+            { toInt("1") },
+            { _: InvalidInt -> 0 },
+            { int: Int -> assert( int == 1 ) }
+        )
     }
 }
