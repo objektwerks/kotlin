@@ -10,8 +10,8 @@ import kotlin.test.Test
 
 class ResourceTest {
     class DataSource {
-        fun connect(): Unit = println("Connecting to datasource...")
-        fun close(): Unit = println("Closed datasource connection.")
+        fun connect(): Unit = println("Connecting to data source...")
+        fun close(): Unit = println("Closed data source connection.")
         fun query(): List<String> = listOf("a", "b", "c")
     }
 
