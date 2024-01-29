@@ -1,6 +1,7 @@
 package arrow
 
-import arrow.optics.optics
+import arrow.optics.*
+
 import java.util.*
 
 import kotlin.test.Test
