@@ -30,7 +30,7 @@ fun Customer.capitalizeCity(): Customer =
         )
     )
 
-/* Optics ( copy, get, set, modify ) don't work at this time!
+/* Compile errors!
 fun Customer.capitalizeCityModify(): Customer = this.address.city.name.modify(this) { it.capitalize() }
 fun Customer.capitalizeCityCopy(): Customer = this.copy { this.address.city.name transform { it.capitalize() } }
  */
@@ -41,15 +41,13 @@ class OpticsTest {
     private val address = Address(street = street, city = city)
     private val customer = Customer(name = "fred", age = 24, address)
 
-    @Test fun optics() {
+    @Test fun copy() {
         val modifiedCustomer = customer.capitalizeCity() // Substitute with standard copy!
         assert( modifiedCustomer.address.city.name.first() == 'T')
     }
 
-    @Test fun lenses() {
-        // Lenses ( copy, get, set, modify ) don't work at this time!
-        // Forget optionals, traversals, prisms and isos.
-        // Of course, working versions of these features exist in Scala - and they work!
-        // Frankly, the Arrow docs leave a lot to be desired.
+    @Test fun optics() {
+        // Optics and lenses ( copy, get, set, modify ) don't work!
+        // Passing on optionals, traversals, prisms and isos.
     }
 }
