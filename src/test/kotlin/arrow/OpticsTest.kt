@@ -31,13 +31,18 @@ fun Customer.capitalizeCountry(): Customer =
         )
     )
 
+/* Optics ( copy, get, set, modify ) don't work at this time!
+fun Customer.capitalizeCountryModify(): Customer = this.address.city.country.modify(this) { it.capitalize() }
+fun Customer.capitalizeCountryCopy(): Customer = this.copy { this.address.city.country transform { it.capitalize() } }
+ */
+
 class OpticsTest {
-    @Test fun optics() { // Optics ( modify, get, set ) don't actually work at this time!
+    @Test fun optics() {
         val city = City(name = "tampa", country = "US")
         val street = Street(number = 1, name = "stone")
         val address = Address(street = street, city = city)
         val customer = Customer(name = "fred", age = 24, address)
-        val modifiedCustomer = customer.capitalizeCountry()
+        val modifiedCustomer = customer.capitalizeCountry() // Substitute with standard copy!
         assert( modifiedCustomer.name.first() == 'F')
     }
 }
