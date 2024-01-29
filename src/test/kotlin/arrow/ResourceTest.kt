@@ -10,8 +10,8 @@ import kotlin.test.Test
 
 class ResourceTest {
     class DataSource {
-        fun connect(): Unit = println("Connecting to data source...")
-        fun close(): Unit = println("Closed data source connection.")
+        fun connect(): Unit = println("*** Connecting to data source...")
+        fun close(): Unit = println("*** Closed data source connection.")
         fun query(): List<String> = listOf("a", "b", "c")
     }
 
@@ -20,7 +20,7 @@ class ResourceTest {
         val dataSourceAsResource = resource( {
             DataSource().also { it.connect() }
         } ) { ds, exitCase ->
-            println("Releasing $ds with exit: $exitCase")
+            println("*** Releasing data source with exit case: $exitCase")
             withContext(Dispatchers.IO) { ds.close() }
         }
         val result = runBlocking {
