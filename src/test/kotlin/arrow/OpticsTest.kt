@@ -1,6 +1,7 @@
 package arrow
 
 import arrow.optics.optics
+import java.util.*
 
 import kotlin.test.Test
 
@@ -17,13 +18,25 @@ import kotlin.test.Test
     companion object
 }
 
+fun Customer.capitalizeCountry(): Customer =
+    this.copy(
+        address = address.copy(
+            city = address.city.copy(
+                country = address.city.country.replaceFirstChar {
+                    if (it.isLowerCase()) it.titlecase(Locale.getDefault())
+                    else it.toString()
+                }
+            )
+        )
+    )
+
 class OpticsTest {
     @Test fun optics() { // Optics ( modify, get, set ) don't actually work at this time!
         val city = City(name = "tampa", country = "US")
         val street = Street(number = 1, name = "stone")
         val address = Address(street = street, city = city)
         val customer = Customer(name = "fred", age = 24, address)
-        val modifiedCustomer = customer.copy(name = "Fred")
+        val modifiedCustomer = customer.capitalizeCountry()
         assert( modifiedCustomer.name.first() == 'F')
     }
 }
