@@ -18,7 +18,10 @@ class OpticsTest {
         companion object
     }
 
-    @Test fun optics() {
+    fun Person.capitalizeCountryModify(): Person =
+        Person.address.city.country.modify(this) { it.capitalize() }
+
+    @Test fun modify() {
 
     }
 }
