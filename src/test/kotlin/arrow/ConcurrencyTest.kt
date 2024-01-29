@@ -5,6 +5,8 @@ import arrow.fx.coroutines.parMap
 import arrow.fx.coroutines.parZip
 import arrow.fx.coroutines.raceN
 
+import concurrency.FileLineCountTask
+
 import kotlin.test.Test
 
 import kotlinx.coroutines.runBlocking
@@ -18,10 +20,10 @@ class ConcurrencyTest {
             { y * y }
         ) { xx, yy -> xx + yy }
 
-    private suspend fun raceAndDouble(x: Int, y: Int): Int =
+    private suspend fun race(): Int =
         raceN(
-            { x * x },
-            { y * y }
+            { FileLineCountTask("./data/data.a.csv").call() },
+            { FileLineCountTask("./data/data.b.csv").call() }
         ).merge()
 
     @Test fun concurrency() {
@@ -34,8 +36,8 @@ class ConcurrencyTest {
         }
 
         runBlocking {
-            val double = raceAndDouble(1, 2)
-            assert( double == 1 || double == 4 )
+            val count = race()
+            assert( count == 270_397 || count == 270_562 )
         }
     }
 }
