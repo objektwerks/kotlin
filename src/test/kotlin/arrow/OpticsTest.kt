@@ -19,11 +19,11 @@ import kotlin.test.Test
     companion object
 }
 
-fun Customer.capitalizeCountry(): Customer =
+fun Customer.capitalizeCity(): Customer =
     this.copy(
         address = address.copy(
             city = address.city.copy(
-                country = address.city.country.replaceFirstChar {
+                name = address.city.name.replaceFirstChar {
                     if (it.isLowerCase()) it.titlecase(Locale.getDefault())
                     else it.toString()
                 }
@@ -32,17 +32,18 @@ fun Customer.capitalizeCountry(): Customer =
     )
 
 /* Optics ( copy, get, set, modify ) don't work at this time!
-fun Customer.capitalizeCountryModify(): Customer = this.address.city.country.modify(this) { it.capitalize() }
-fun Customer.capitalizeCountryCopy(): Customer = this.copy { this.address.city.country transform { it.capitalize() } }
+fun Customer.capitalizeCountryModify(): Customer = this.address.city.name.modify(this) { it.capitalize() }
+fun Customer.capitalizeCountryCopy(): Customer = this.copy { this.address.city.name transform { it.capitalize() } }
  */
 
 class OpticsTest {
+    private val city = City(name = "tampa", country = "us")
+    private val street = Street(number = 1, name = "stone")
+    private val address = Address(street = street, city = city)
+    private val customer = Customer(name = "fred", age = 24, address)
+
     @Test fun optics() {
-        val city = City(name = "tampa", country = "US")
-        val street = Street(number = 1, name = "stone")
-        val address = Address(street = street, city = city)
-        val customer = Customer(name = "fred", age = 24, address)
-        val modifiedCustomer = customer.capitalizeCountry() // Substitute with standard copy!
-        assert( modifiedCustomer.name.first() == 'F')
+        val modifiedCustomer = customer.capitalizeCity() // Substitute with standard copy!
+        assert( modifiedCustomer.address.city.name.first() == 'T')
     }
 }
