@@ -6,9 +6,8 @@ import arrow.core.raise.Raise
 
 import kotlin.test.Test
 
-object InvalidInt
-
 class RaiseTest {
+    object InvalidInt
     private fun Raise<InvalidInt>.toInt(value: String): Int =
         when ( val integer = value.toIntOrNull() ) {
             null -> raise( InvalidInt )
