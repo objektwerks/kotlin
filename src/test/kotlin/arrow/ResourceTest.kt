@@ -26,6 +26,7 @@ class ResourceTest {
         val result = runBlocking {
             dataSourceAsResource.use { ds -> ds.query() }
         }
+        println("*** Data source query: $result.")
         assert( result.size == 3 )
     }
 }
