@@ -1,5 +1,6 @@
 package arrow
 
+import arrow.core.mapOrAccumulate
 import arrow.core.raise.fold
 import arrow.core.raise.Raise
 
@@ -20,5 +21,7 @@ class RaiseTest {
             { _: InvalidInt -> 0 },
             { int: Int -> assert( int == 1 ) }
         )
+
+        assert( listOf("1", "2", "3", "four").mapOrAccumulate { toInt(it) }.isLeft() )
     }
 }
