@@ -1,7 +1,7 @@
 package arrow
 
-import arrow.core.raise.Raise
 import arrow.core.raise.fold
+import arrow.core.raise.Raise
 
 import kotlin.test.Test
 
