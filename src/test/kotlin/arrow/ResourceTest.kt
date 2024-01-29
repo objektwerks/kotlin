@@ -15,8 +15,7 @@ class ResourceTest {
         fun query(): List<String> = listOf("a", "b", "c")
     }
 
-    @Test
-    fun resource() {
+    @Test fun resource() {
         val dataSourceAsResource = resource( {
             DataSource().also { it.connect() }
         } ) { ds, exitCase ->
