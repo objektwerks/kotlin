@@ -45,4 +45,8 @@ class OpticsTest {
         val modifiedCustomer = customer.capitalizeCity() // Substitute with standard copy!
         assert( modifiedCustomer.address.city.name.first() == 'T')
     }
+
+    @Test fun lenses() {
+        // Lenses ( copy, get, set, modify ) don't work at this time!
+    }
 }
