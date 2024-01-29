@@ -1,7 +1,9 @@
 package arrow
 
+import arrow.core.merge
 import arrow.fx.coroutines.parMap
 import arrow.fx.coroutines.parZip
+import arrow.fx.coroutines.raceN
 
 import kotlin.test.Test
 
@@ -16,6 +18,12 @@ class ConcurrencyTest {
             { y * y }
         ) { xx, yy -> xx + yy }
 
+    private suspend fun raceAndDouble(x: Int, y: Int): Int =
+        raceN(
+            { x * x },
+            { y * y }
+        ).merge()
+
     @Test fun concurrency() {
         runBlocking {
             assert( parMapDoubleAndSum(listOf(1, 2)) == listOf(1, 4) )
@@ -23,6 +31,11 @@ class ConcurrencyTest {
 
         runBlocking {
             assert( parZipDoubleAndSum(1, 2) == 5 )
+        }
+
+        runBlocking {
+            val double = raceAndDouble(1, 2)
+            assert( double == 1 || double == 4 )
         }
     }
 }
