@@ -50,6 +50,6 @@ class OpticsTest {
         // Lenses ( copy, get, set, modify ) don't work at this time!
         // Forget optionals, traversals, prisms and isos.
         // Of course, working versions of these features exist in Scala - and they work!
-        // And, frankly, the Arrow docs leave a lot to be desired.
+        // Frankly, the Arrow docs leave a lot to be desired.
     }
 }
