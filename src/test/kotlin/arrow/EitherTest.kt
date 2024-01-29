@@ -5,9 +5,8 @@ import arrow.core.Either.*
 
 import kotlin.test.Test
 
-class ToIntException(message: String) : Exception(message)
-
 class EitherTest {
+    class ToIntException(message: String) : Exception(message)
     private fun toInt(value: String): Either<ToIntException, Int> =
         when ( val integer = value.toIntOrNull() ) {
             null -> Left(ToIntException(value))
