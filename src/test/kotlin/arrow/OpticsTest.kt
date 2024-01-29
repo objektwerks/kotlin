@@ -18,7 +18,7 @@ import kotlin.test.Test
 }
 
 class OpticsTest {
-    @Test fun optics() { // Optics don't actually work at this time!
+    @Test fun optics() { // Optics ( modify, get, set ) don't actually work at this time!
         val city = City(name = "tampa", country = "US")
         val street = Street(number = 1, name = "stone")
         val address = Address(street = street, city = city)
