@@ -7,16 +7,16 @@ import kotlin.test.Test
 import kotlinx.coroutines.runBlocking
 
 class ConcurrencyTest {
-    private suspend fun parSum(x: Int, y: Int): Int =
+    private suspend fun parDoubleAndSum(x: Int, y: Int): Int =
         parZip(
-            { x },
-            { y }
-        ) { a, b -> a + b }
+            { x * x },
+            { y * y }
+        ) { xx, yy -> xx + yy }
 
     @Test fun concurrency() {
         assert(
             runBlocking {
-                parSum(1, 2) == 3
+                parDoubleAndSum(1, 2) == 5
             }
         )
     }
