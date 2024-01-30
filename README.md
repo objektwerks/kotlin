@@ -9,6 +9,11 @@ Kotlin
 6. [JavaFX](https://openjfx.io/)
 7. [Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html)
 
+Warning
+-------
+>Arrow has been a moving target for years. It's highly unstable and unreliable, less a few basic features.
+>Similar features ***just*** work in the Scala space. And this is a common issue with Kotlin in general.
+
 Apps
 ----
 >The following apps are available:
