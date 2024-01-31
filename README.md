@@ -11,8 +11,8 @@ Kotlin
 
 Warning
 -------
->Arrow has been a moving target for years. It's highly unstable and unreliable, less a few basic features.
->Similar features ***just*** work in the Scala space. And this is a common issue with Kotlin in general.
+>Arrow has been a moving target since its inception. Not all documented features work,
+>less a few fundamental features like Option and Either.
 
 Apps
 ----
