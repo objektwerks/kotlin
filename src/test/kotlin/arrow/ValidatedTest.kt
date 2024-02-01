@@ -48,6 +48,7 @@ class ValidatedTest {
         val person = Person("", 0)
         val result = PersonValidator.validate(person)
         assert( result.isLeft() )
+        // TODO! assert( result.fold( { e -> e.size }, { null } ) == 2 )
     }
 
     @Test fun smartConstructor() {
