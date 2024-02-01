@@ -13,7 +13,7 @@ sealed class PersonError {
     data class InvalidPerson(val person: Person) : PersonError()
 }
 object PersonValidator {
-    private fun String.validatedName(): Either<NonEmptyList<PersonError.InvalidName>, String> =
+    private fun String.validateName(): Either<NonEmptyList<PersonError.InvalidName>, String> =
         if (this.isNotEmpty()) this.right()
         else PersonError.InvalidName(this).nel().left()
 
@@ -22,7 +22,7 @@ object PersonValidator {
         else PersonError.InvalidAge(this).nel().left()
 
     fun validate(person: Person): Either<NonEmptyList<PersonError>, Person> =
-        if (person.name.validatedName().isRight() && person.age.validatedAge().isRight()) person.right()
+        if (person.name.validateName().isRight() && person.age.validatedAge().isRight()) person.right()
         else PersonError.InvalidPerson(person).nel().left()
 }
 
