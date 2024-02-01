@@ -9,10 +9,10 @@ Kotlin
 6. [JavaFX](https://openjfx.io/)
 7. [Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html)
 
-Warning
--------
->Arrow has been a moving target since its inception. Not all documented features work,
->less a few fundamental, yet important, features like Option, Either and Validation.
+Arrow
+-----
+>Arrow has been a moving target since its inception. Not all features work as documented,
+>less a few fundamental features like Option, Either and validation.
 
 Apps
 ----
