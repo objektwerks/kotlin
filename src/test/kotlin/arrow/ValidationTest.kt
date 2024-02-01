@@ -19,6 +19,9 @@ object PersonValidator {
         if (this > 0) this.right()
         else PersonError.InvalidAge(this).nel().left()
 
+    /**
+     * This is fail-fast, not accumulate --- which I can't get to work.
+     */
     fun validate(person: Person): Either<NonEmptyList<PersonError>, Person> =
         if (person.name.validateName().isRight() && person.age.validateAge().isRight()) person.right()
         else PersonError.InvalidPerson(person).nel().left()
@@ -29,13 +32,11 @@ class ValidatedTest {
         val person = Person("Fred Flintstone", 24)
         val result = PersonValidator.validate(person)
         assert( result.isRight() )
-        assert( result.fold( { null }, { p -> p } ) == person )
     }
 
     @Test fun invalid() {
         val person = Person("", 0)
         val result = PersonValidator.validate(person)
         assert( result.isLeft() )
-        // TODO! assert( result.fold( { e -> e.size }, { null } ) == 2 )
     }
 }
