@@ -55,9 +55,9 @@ dependencies {
     implementation("io.ktor:ktor-server-core:2.3.8")
     implementation("io.ktor:ktor-server-netty:2.3.8")
 
-    implementation("org.jetbrains.exposed:exposed-core:0.46.0")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.46.0")
-    implementation("org.jetbrains.exposed:exposed-dao:0.46.0")
+    implementation("org.jetbrains.exposed:exposed-core:0.47.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.47.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.47.0")
 
     implementation("io.arrow-kt:arrow-core:1.2.1")
     implementation("io.arrow-kt:arrow-fx-coroutines:1.2.1")
