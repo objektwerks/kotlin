@@ -41,6 +41,7 @@ class ValidatedTest {
         val person = Person("Fred Flintstone", 24)
         val result = PersonValidator.validate(person)
         assert( result.isRight() )
+        assert( result.fold( { null }, { p -> p } ) == person )
     }
 
     @Test fun invalid() {
