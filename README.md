@@ -11,8 +11,7 @@ Kotlin
 
 Arrow
 -----
->Arrow has been a moving target since its inception. Not all features work as documented,
->less a few fundamental features like Option, Either and validation.
+>Arrow has been a moving target since its inception. Consequently, not ***all*** features work as documented!
 
 Apps
 ----
