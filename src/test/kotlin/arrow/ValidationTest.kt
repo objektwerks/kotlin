@@ -1,8 +1,6 @@
 package arrow
 
 import arrow.core.*
-import arrow.core.raise.either
-import arrow.core.raise.ensure
 
 import org.junit.Test
 
@@ -26,16 +24,6 @@ object PersonValidator {
         else PersonError.InvalidPerson(person).nel().left()
 }
 
-object EmptyAuthorName
-data class Author internal constructor(val name: String) {
-    companion object {
-        operator fun invoke(name: String): Either<EmptyAuthorName, Author> = either {
-            ensure(name.isNotEmpty()) { EmptyAuthorName }
-            Author(name)
-        }
-    }
-}
-
 class ValidatedTest {
     @Test fun valid() {
         val person = Person("Fred Flintstone", 24)
@@ -49,10 +37,5 @@ class ValidatedTest {
         val result = PersonValidator.validate(person)
         assert( result.isLeft() )
         // TODO! assert( result.fold( { e -> e.size }, { null } ) == 2 )
-    }
-
-    @Test fun smartConstructor() {
-        assert( Author.invoke("").isLeft() )
-        assert( Author.invoke("Fred Flintstone").isRight() )
     }
 }
