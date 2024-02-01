@@ -17,12 +17,12 @@ object PersonValidator {
         if (this.isNotEmpty()) this.right()
         else PersonError.InvalidName(this).nel().left()
 
-    private fun Int.validatedAge(): Either<NonEmptyList<PersonError.InvalidAge>, Int> =
+    private fun Int.validateAge(): Either<NonEmptyList<PersonError.InvalidAge>, Int> =
         if (this > 0) this.right()
         else PersonError.InvalidAge(this).nel().left()
 
     fun validate(person: Person): Either<NonEmptyList<PersonError>, Person> =
-        if (person.name.validateName().isRight() && person.age.validatedAge().isRight()) person.right()
+        if (person.name.validateName().isRight() && person.age.validateAge().isRight()) person.right()
         else PersonError.InvalidPerson(person).nel().left()
 }
 
