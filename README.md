@@ -12,7 +12,7 @@ Kotlin
 Warning
 -------
 >Arrow has been a moving target since its inception. Not all documented features work,
->less a few fundamental features like Option and Either.
+>less a few fundamental, yet important, features like Option, Either and Validation.
 
 Apps
 ----
