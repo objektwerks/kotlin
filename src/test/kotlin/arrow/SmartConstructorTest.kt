@@ -11,6 +11,9 @@ sealed class AuthorError {
     data object InvalidAge : AuthorError()
 }
 
+/**
+ * This is fail-fast, not accumulate. zipOrAccumulate does not work!
+ */
 data class Author internal constructor(val name: String, val age: Int) {
     companion object {
         operator fun invoke(name: String, age: Int): Either<AuthorError, Author> = either {
