@@ -20,7 +20,7 @@ object PersonValidator {
         else PersonError.InvalidAge(this).nel().left()
 
     /**
-     * This is fail-fast, not accumulate --- which I can't get to work.
+     * This is fail-fast, not accumulate.
      */
     fun validate(person: Person): Either<NonEmptyList<PersonError>, Person> =
         if (person.name.validateName().isRight() && person.age.validateAge().isRight()) person.right()
