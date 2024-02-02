@@ -19,6 +19,9 @@ sealed class AuthorError {
 /**
  * Smart constructor pattern!
  * Validation accmulates errors!
+ *
+ * The constructor should be private, not internal.
+ * See: https://youtrack.jetbrains.com/issue/KT-11914/Confusing-data-class-copy-with-private-constructor
  */
 data class Author internal constructor(val name: Name, val age: Age) {
     companion object {
