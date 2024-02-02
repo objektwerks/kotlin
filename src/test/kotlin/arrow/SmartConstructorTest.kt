@@ -14,7 +14,7 @@ sealed class AuthorError {
 }
 
 /**
- * This is fail-fast, not accumulate. zipOrAccumulate does not work!
+ * Validation accmulates errors!
  */
 data class Author internal constructor(val name: String, val age: Int) {
     companion object {
