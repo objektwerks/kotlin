@@ -35,7 +35,7 @@ Build
 -----
 >Use Intellij gradle to clean and build project.
 
->Alternatively use gradle:
+>Alternatively use commandline gradle:
 1. gradle clean build
 
 >Finally use gradlew:
@@ -45,7 +45,7 @@ Test
 ----
 >Use Intellij gradle to clean, build, run and view tests.
 
->Alternatively use gradle:
+>Alternatively use commandline gradle:
 1. gradle clean build test
      * view results courtesy of com.adarshr.test-logger plugin
      * optionally open ***build/reports/tests/test/index.html*** in a browser
