@@ -36,5 +36,6 @@ class ValidationTest {
 
     @Test fun invalid() {
         assert( Author.invoke("", 0).isLeft() )
+        assert( Author.invoke("", 0).fold( { it.size }, { null }) == 2 )
     }
 }
