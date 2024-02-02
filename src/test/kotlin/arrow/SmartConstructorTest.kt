@@ -29,8 +29,11 @@ data class Author internal constructor(val name: String, val age: Int) {
 }
 
 class SmartConstructorTest {
-    @Test fun smartConstructor() {
-        assert( Author.invoke("", 0).isLeft() )
+    @Test fun valid() {
         assert( Author.invoke("Fred Flintstone", 24).isRight() )
+    }
+
+    @Test fun invalid() {
+        assert( Author.invoke("", 0).isLeft() )
     }
 }
