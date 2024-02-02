@@ -14,6 +14,7 @@ sealed class AuthorError {
 }
 
 /**
+ * Smart constructor pattern!
  * Validation accmulates errors!
  */
 data class Author internal constructor(val name: String, val age: Int) {
@@ -28,7 +29,7 @@ data class Author internal constructor(val name: String, val age: Int) {
     }
 }
 
-class SmartConstructorTest {
+class ValidationTest {
     @Test fun valid() {
         assert( Author.invoke("Fred Flintstone", 24).isRight() )
     }
