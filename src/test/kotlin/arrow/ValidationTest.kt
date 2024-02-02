@@ -5,11 +5,13 @@ import arrow.core.*
 import org.junit.Test
 
 data class Person(val name: String, val age: Int)
+
 sealed class PersonError {
     data class InvalidName(val name: String) : PersonError()
     data class InvalidAge(val age: Int) : PersonError()
     data class InvalidPerson(val person: Person) : PersonError()
 }
+
 object PersonValidator {
     private fun String.validateName(): Either<NonEmptyList<PersonError.InvalidName>, String> =
         if (this.isNotEmpty()) this.right()
