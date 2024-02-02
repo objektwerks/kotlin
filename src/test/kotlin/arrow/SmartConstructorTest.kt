@@ -6,19 +6,24 @@ import arrow.core.raise.ensure
 
 import org.junit.Test
 
-object EmptyAuthorName
-data class Author internal constructor(val name: String) {
+sealed class AuthorError {
+    data object InvalidName : AuthorError()
+    data object InvalidAge : AuthorError()
+}
+
+data class Author internal constructor(val name: String, val age: Int) {
     companion object {
-        operator fun invoke(name: String): Either<EmptyAuthorName, Author> = either {
-            ensure(name.isNotEmpty()) { EmptyAuthorName }
-            Author(name)
+        operator fun invoke(name: String, age: Int): Either<AuthorError, Author> = either {
+            ensure(name.isNotEmpty()) { AuthorError.InvalidName }
+            ensure(age > 0 ) { AuthorError.InvalidAge }
+            Author(name, age)
         }
     }
 }
 
 class SmartConstructorTest {
     @Test fun smartConstructor() {
-        assert( Author.invoke("").isLeft() )
-        assert( Author.invoke("Fred Flintstone").isRight() )
+        assert( Author.invoke("", 0).isLeft() )
+        assert( Author.invoke("Fred Flintstone", 24).isRight() )
     }
 }
