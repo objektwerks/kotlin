@@ -13,16 +13,19 @@ sealed class AuthorError {
     data object InvalidAge : AuthorError()
 }
 
+@JvmInline value class Name(val value: String)
+@JvmInline value class Age(val value: Int)
+
 /**
  * Smart constructor pattern!
  * Validation accmulates errors!
  */
-data class Author internal constructor(val name: String, val age: Int) {
+data class Author internal constructor(val name: Name, val age: Age) {
     companion object {
-        operator fun invoke(name: String, age: Int): Either<NonEmptyList<AuthorError>, Author> = either {
+        operator fun invoke(name: Name, age: Age): Either<NonEmptyList<AuthorError>, Author> = either {
             zipOrAccumulate(
-                { ensure(name.isNotEmpty()) { AuthorError.InvalidName } },
-                { ensure(age > 0 ) { AuthorError.InvalidAge } }
+                { ensure(name.value.isNotEmpty()) { AuthorError.InvalidName } },
+                { ensure(age.value > 0 ) { AuthorError.InvalidAge } }
             ) { _, _ -> Author(name, age) }
 
         }
@@ -31,11 +34,11 @@ data class Author internal constructor(val name: String, val age: Int) {
 
 class ValidationTest {
     @Test fun valid() {
-        assert( Author.invoke("Fred Flintstone", 24).isRight() )
+        assert( Author.invoke( Name("Fred Flintstone"), Age(24) ).isRight() )
     }
 
     @Test fun invalid() {
-        assert( Author.invoke("", 0).isLeft() )
-        assert( Author.invoke("", 0).fold( { it.size }, { null }) == 2 )
+        assert( Author.invoke( Name(""), Age(0) ).isLeft() )
+        assert( Author.invoke( Name(""), Age(0) ).fold( { it.size }, { null }) == 2 )
     }
 }
