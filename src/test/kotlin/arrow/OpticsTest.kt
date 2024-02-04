@@ -43,7 +43,7 @@ class OpticsTest {
 
     @Test fun copy() {
         val modifiedCustomer = customer.capitalizeCity()
-        assert( modifiedCustomer.address.city.name.first() == 'T')
+        assert( modifiedCustomer.address.city.name.first() == 'T' )
     }
 
     @Test fun optics() {
