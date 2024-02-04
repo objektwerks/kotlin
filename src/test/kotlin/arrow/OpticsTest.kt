@@ -30,10 +30,10 @@ fun Customer.capitalizeCity(): Customer =
         )
     )
 
-/* Compiler errors!
-fun Customer.capitalizeCityModify(): Customer = this.address.city.name.modify(this) { it.capitalize() }
-fun Customer.capitalizeCityCopy(): Customer = this.copy { this.address.city.name transform { it.capitalize() } } */
-
+/**
+ * Optics and lenses ( copy, get, set, modify ) don't work!
+ * Passing on optionals, traversals, prisms and isos.
+ */
 class OpticsTest {
     private val city = City(name = "tampa", country = "us")
     private val street = Street(number = 1, name = "stone")
@@ -45,8 +45,6 @@ class OpticsTest {
         assert( modifiedCustomer.address.city.name.first() == 'T' )
     }
 
-    @Test fun optics() {
-        // Optics and lenses ( copy, get, set, modify ) don't work!
-        // Passing on optionals, traversals, prisms and isos.
+    @Test fun get() {
     }
 }
