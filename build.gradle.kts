@@ -5,6 +5,7 @@ plugins {
     kotlin("plugin.serialization") version "2.0.0-Beta3"
     application
     id("com.adarshr.test-logger") version "4.0.0"
+    id("com.google.devtools.ksp") version "2.0.0-Beta3-1.0.17"
 }
 
 java {
@@ -50,7 +51,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     implementation("io.arrow-kt:arrow-optics:1.2.1")
-    implementation("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.8.10-1.0.9")
+    ksp("io.arrow-kt:arrow-optics-ksp-plugin:1.2.1")
 
     implementation("io.ktor:ktor-client-core:2.3.8")
     implementation("io.ktor:ktor-client-cio:2.3.8")
