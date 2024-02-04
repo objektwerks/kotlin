@@ -30,8 +30,9 @@ fun Customer.capitalizeCity(): Customer =
         )
     )
 
+/* Compiler errors!
 fun Customer.capitalizeCityModify(): Customer = this.address.city.name.modify(this) { it.capitalize() }
-fun Customer.capitalizeCityCopy(): Customer = this.copy { this.address.city.name transform { it.capitalize() } }
+fun Customer.capitalizeCityCopy(): Customer = this.copy { this.address.city.name transform { it.capitalize() } } */
 
 class OpticsTest {
     private val city = City(name = "tampa", country = "us")
