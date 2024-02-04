@@ -46,5 +46,6 @@ class OpticsTest {
     }
 
     @Test fun get() {
+        // Fail! Customer.name.get(customer)
     }
 }
