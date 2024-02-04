@@ -20,6 +20,12 @@ kotlin {
             languageVersion = "2.0"
         }
     }
+    sourceSets.main {
+        kotlin.srcDir("build/generated/ksp/main/kotlin")
+    }
+    sourceSets.test {
+        kotlin.srcDir("build/generated/ksp/test/kotlin")
+    }
 }
 
 tasks {
