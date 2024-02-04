@@ -49,6 +49,10 @@ class OpticsTest {
         // Fail, can't find name! Customer.name.get(customer)
     }
 
+    @Test fun set() {
+        // Fail, can't find address! Customer.address.set(customer, address)
+    }
+
     @Test fun modify() {
         // Fail, can't find age! Customer.age.modify(customer) { it + 1 }
     }
