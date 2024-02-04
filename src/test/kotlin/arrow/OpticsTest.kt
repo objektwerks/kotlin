@@ -31,8 +31,8 @@ fun Customer.capitalizeCity(): Customer =
     )
 
 /**
- * Optics and lenses ( copy, get, set, modify ) don't work!
- * Passing on optionals, traversals, prisms and isos.
+ * Lenses ( copy, get, set, modify ) don't work!
+ * For now, passing on optionals, traversals, prisms and isos.
  */
 class OpticsTest {
     private val city = City(name = "tampa", country = "us")
