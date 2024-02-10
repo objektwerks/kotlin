@@ -11,7 +11,7 @@ Kotlin
 
 Arrow
 -----
->Arrow has been a moving target since its inception. Consequently, not ***all*** features work as documented!
+>Arrow has been a moving target since its inception. Consequently, not ***all*** features work as documented.
 
 Apps
 ----
