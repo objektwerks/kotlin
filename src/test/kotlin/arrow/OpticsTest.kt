@@ -32,6 +32,8 @@ fun Customer.capitalizeCity(): Customer =
 
 /**
  * Lenses ( copy, get, set, modify ) don't work!
+ * Note: This could be a simple gradle configuration issue.
+ *
  * For now, passing on optionals, traversals, prisms and isos.
  */
 class OpticsTest {
