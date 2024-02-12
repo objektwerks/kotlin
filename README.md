@@ -21,7 +21,7 @@ Apps
 3. http.NowServer
 4. javafx.ChuckNorrisFxApp
 5. swing.ChuckNorrisApp
->The default app is: console.App See the Run section below.
+>The default app is: **console.App** See the Run section below.
 
 Gradle
 ------
