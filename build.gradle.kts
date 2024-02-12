@@ -49,6 +49,7 @@ dependencies {
     val kotlinVersion = "2.0.0-Beta3"
     val ktorVersion = "2.3.8"
     val exposedVersion = "0.47.0"
+    val arrowVersion = "1.2.1"
 
     implementation(platform(kotlin("bom")))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
@@ -70,10 +71,10 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
 
-    implementation("io.arrow-kt:arrow-core:1.2.1")
-    implementation("io.arrow-kt:arrow-fx-coroutines:1.2.1")
-    implementation("io.arrow-kt:arrow-optics:1.2.1")
-    ksp("io.arrow-kt:arrow-optics-ksp-plugin:1.2.1")
+    implementation("io.arrow-kt:arrow-core:$arrowVersion")
+    implementation("io.arrow-kt:arrow-fx-coroutines:$arrowVersion")
+    implementation("io.arrow-kt:arrow-optics:$arrowVersion")
+    ksp("io.arrow-kt:arrow-optics-ksp-plugin:$arrowVersion")
 
     implementation("com.sksamuel.hoplite:hoplite-core:2.7.5")
     implementation("com.sksamuel.hoplite:hoplite-yaml:2.7.5")
