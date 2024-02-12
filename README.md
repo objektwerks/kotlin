@@ -62,7 +62,6 @@ Run
 
 Logs
 ----
->See:
 1. build/kotlin.log
 2. build/kotlin.test.log
 
