@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "tripletail"
+group = "kotlin"
 version = "1.3-SNAPSHOT"
 
 plugins {
