@@ -47,6 +47,7 @@ repositories {
 
 dependencies {
     val kotlinVersion = "2.0.0-Beta3"
+    val ktorVersion = "2.3.8"
 
     implementation(platform(kotlin("bom")))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
@@ -61,10 +62,10 @@ dependencies {
     implementation("io.arrow-kt:arrow-optics:1.2.1")
     ksp("io.arrow-kt:arrow-optics-ksp-plugin:1.2.1")
 
-    implementation("io.ktor:ktor-client-core:2.3.8")
-    implementation("io.ktor:ktor-client-cio:2.3.8")
-    implementation("io.ktor:ktor-server-core:2.3.8")
-    implementation("io.ktor:ktor-server-netty:2.3.8")
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-client-cio:$ktorVersion")
+    implementation("io.ktor:ktor-server-core:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
 
     implementation("org.jetbrains.exposed:exposed-core:0.47.0")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.47.0")
