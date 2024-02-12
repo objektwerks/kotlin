@@ -48,6 +48,7 @@ repositories {
 dependencies {
     val kotlinVersion = "2.0.0-Beta3"
     val ktorVersion = "2.3.8"
+    val exposedVersion = "0.47.0"
 
     implementation(platform(kotlin("bom")))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
@@ -67,9 +68,9 @@ dependencies {
     implementation("io.ktor:ktor-server-core:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
 
-    implementation("org.jetbrains.exposed:exposed-core:0.47.0")
-    implementation("org.jetbrains.exposed:exposed-jdbc:0.47.0")
-    implementation("org.jetbrains.exposed:exposed-dao:0.47.0")
+    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
 
     implementation("io.arrow-kt:arrow-core:1.2.1")
     implementation("io.arrow-kt:arrow-fx-coroutines:1.2.1")
