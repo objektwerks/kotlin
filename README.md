@@ -55,7 +55,7 @@ Run
 >To run the default app ( **console.App** ):
 1. gradle run
 
->To selectively run any app within Intellij:
+>To selectively run an Intellij app:
 1. select app from **src** dir
 2. right click app
 3. select run ( named 'app' )
