@@ -1,1 +1,1 @@
-rootProject.name = "tripletail"
+rootProject.name = "kotlin"
