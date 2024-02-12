@@ -23,7 +23,7 @@ fun Customer.capitalizeCity(): Customer =
     )
 
 /**
- * Lenses ( copy, get, set, modify ) don't work!
+ * Lenses ( copy, get, set, modify ) ksp-optics plugin doesn't work!
  * Note: This could be a gradle configuration issue.
  *
  * For now, passing on optionals, traversals, prisms and isos.
