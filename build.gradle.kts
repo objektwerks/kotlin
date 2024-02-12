@@ -1,5 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+group = "tripletail"
+version = "1.3-SNAPSHOT"
+
 plugins {
     kotlin("jvm") version "2.0.0-Beta3"
     kotlin("plugin.serialization") version "2.0.0-Beta3"
@@ -33,9 +36,6 @@ tasks {
         kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
     }
 }
-
-group = "tripletail"
-version = "1.3-SNAPSHOT"
 
 application {
     mainClass.set("console.App")
