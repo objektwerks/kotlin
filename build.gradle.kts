@@ -46,11 +46,13 @@ repositories {
 }
 
 dependencies {
-    implementation(platform(kotlin("bom")))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.0.0-Beta3")
+    val kotlinVersion = "2.0.0-Beta3"
 
-    implementation("org.jetbrains.kotlin:kotlin-test:2.0.0-Beta3")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:2.0.0-Beta3")
+    implementation(platform(kotlin("bom")))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+
+    implementation("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
