@@ -84,3 +84,11 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:1.4.14")
 }
+
+dependencies {
+    add("kspCommonMainMetadata", "\"io.arrow-kt:arrow-optics-ksp-plugin:1.2.1")
+}
+kotlin.sourceSets.test { kotlin.srcDir("build/generated/ksp/metadata/test/kotlin/arrow") }
+tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().all {
+    if (name != "kspCommonMainKotlinMetadata") dependsOn("kspCommonMainKotlinMetadata")
+}
