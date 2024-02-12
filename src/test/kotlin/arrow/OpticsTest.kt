@@ -6,18 +6,10 @@ import java.util.*
 
 import kotlin.test.Test
 
-@optics data class Customer(val name: String, val age: Int, val address: Address) {
-    companion object
-}
-@optics data class Address(val street: Street, val city: City) {
-    companion object
-}
-@optics data class Street( val number: Int, val name: String) {
-    companion object
-}
-@optics data class City(val name: String, val country: String) {
-    companion object
-}
+@optics data class Customer(val name: String, val age: Int, val address: Address) { companion object }
+@optics data class Address(val street: Street, val city: City) { companion object }
+@optics data class Street( val number: Int, val name: String) { companion object }
+@optics data class City(val name: String, val country: String) { companion object }
 
 fun Customer.capitalizeCity(): Customer =
     this.copy(
