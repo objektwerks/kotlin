@@ -1,3 +1,4 @@
+import com.google.devtools.ksp.gradle.KspTaskMetadata
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "kotlin"
@@ -22,12 +23,9 @@ kotlin {
         languageSettings {
             languageVersion = "2.0"
         }
-    }
-    sourceSets.main {
-        kotlin.srcDir("build/generated/ksp/main/kotlin")
-    }
-    sourceSets.test {
-        kotlin.srcDir("build/generated/ksp/test/kotlin")
+        tasks.withType<KspTaskMetadata> {
+            kotlin.srcDir(destinationDirectory)
+        }
     }
 }
 
@@ -84,13 +82,3 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:1.4.14")
 }
-
-/* How does the Arrow Optics - KSP integration really work?
-dependencies {
-    add("kspCommonMainMetadata", "io.arrow-kt:arrow-optics-ksp-plugin:1.2.1")
-}
-kotlin.sourceSets.test { kotlin.srcDir("build/generated/ksp/metadata/test/kotlin/arrow") }
-tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().all {
-    if (name != "kspCommonMainKotlinMetadata") dependsOn("kspCommonMainKotlinMetadata")
-}
- */
