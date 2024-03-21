@@ -5,11 +5,11 @@ group = "kotlin"
 version = "1.3-SNAPSHOT"
 
 plugins {
-    kotlin("jvm") version "2.0.0-Beta4"
-    kotlin("plugin.serialization") version "2.0.0-Beta4"
+    kotlin("jvm") version "2.0.0-Beta5"
+    kotlin("plugin.serialization") version "2.0.0-Beta5"
     application
     id("com.adarshr.test-logger") version "4.0.0"
-    id("com.google.devtools.ksp") version "2.0.0-Beta4-1.0.19"
+    id("com.google.devtools.ksp") version "2.0.0-Beta5-1.0.19"
 }
 
 java {
@@ -31,7 +31,7 @@ kotlin {
 
 tasks {
     withType<KotlinCompile> {
-        kotlinOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
+        compilerOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
     }
 }
 
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    val kotlinVersion = "2.0.0-Beta4"
+    val kotlinVersion = "2.0.0-Beta5"
     val ktorVersion = "2.3.9"
     val exposedVersion = "0.48.0"
     val arrowVersion = "1.2.3"
