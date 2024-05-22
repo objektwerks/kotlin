@@ -29,8 +29,8 @@ class DateTimeTest {
         assert( Instant.parse("2020-12-01T22:20:40.475Z").toOption().isSome() )
         assert( LocalDateTime.parse("2020-12-01T22:20:40").toOption().isSome() )
         assert( LocalDate.parse("2020-12-01").toOption().isSome() )
-        assert( "12:01:03".toLocalTime().toOption().isSome() )
-        assert( "12:01:03.999".toLocalTime().toOption().isSome() )
+        assert( LocalTime.parse("12:01:03").toOption().isSome() )
+        assert( LocalTime.parse("12:01:03.999").toOption().isSome() )
 
         val past = Instant.parse("2020-01-01T00:00:00Z")
         val duration = now - past
