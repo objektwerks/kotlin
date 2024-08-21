@@ -29,12 +29,6 @@ kotlin {
     }
 }
 
-tasks {
-    withType<KotlinCompile> {
-        compilerOptions.freeCompilerArgs = listOf("-Xcontext-receivers")
-    }
-}
-
 application {
     mainClass.set("console.App")
 }
