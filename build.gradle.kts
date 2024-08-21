@@ -1,5 +1,4 @@
 import com.google.devtools.ksp.gradle.KspTaskMetadata
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "kotlin"
 version = "1.3-SNAPSHOT"
