@@ -23,7 +23,8 @@ sealed class AuthorError {
  * The constructor should be private, not internal.
  * See: https://youtrack.jetbrains.com/issue/KT-11914/Confusing-data-class-copy-with-private-constructor
  */
-data class Author internal constructor(val name: Name, val age: Age) {
+@ExposedCopyVisibility
+data class Author private constructor(val name: Name, val age: Age) {
     companion object {
         operator fun invoke(name: Name, age: Age): Either<NonEmptyList<AuthorError>, Author> = either {
             zipOrAccumulate(
