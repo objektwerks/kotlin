@@ -72,5 +72,5 @@ dependencies {
 
     implementation("com.h2database:h2:2.3.230")
 
-    implementation("ch.qos.logback:logback-classic:1.5.7")
+    implementation("ch.qos.logback:logback-classic:1.5.8")
 }
