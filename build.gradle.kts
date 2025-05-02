@@ -4,11 +4,11 @@ group = "kotlin"
 version = "1.3-SNAPSHOT"
 
 plugins {
-    kotlin("jvm") version "2.1.21-RC"
-    kotlin("plugin.serialization") version "2.1.21-RC"
+    kotlin("jvm") version "2.1.21-RC2"
+    kotlin("plugin.serialization") version "2.1.21-RC2"
     application
     id("com.adarshr.test-logger") version "4.0.0"
-    id("com.google.devtools.ksp") version "2.1.21-RC-2.0.0"
+    id("com.google.devtools.ksp") version "2.1.21-RC2-2.0.0"
 }
 
 java {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    val kotlinVersion = "2.1.21-RC"
+    val kotlinVersion = "2.1.21-RC2"
     val ktorVersion = "3.1.2"
     val exposedVersion = "0.61.0"
     val arrowVersion = "2.1.1"
