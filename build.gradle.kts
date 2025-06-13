@@ -8,7 +8,7 @@ plugins {
     kotlin("plugin.serialization") version "2.2.0-RC2"
     application
     id("com.adarshr.test-logger") version "4.0.0"
-    id("com.google.devtools.ksp") version "2.2.0-RC2-2.0.1"
+    id("com.google.devtools.ksp") version "2.2.0-RC2-2.0.2"
 }
 
 java {
