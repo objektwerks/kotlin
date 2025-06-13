@@ -41,7 +41,7 @@ dependencies {
     val ktorVersion = "3.2.0"
     val exposedVersion = "1.0.0-beta-2"
     val arrowVersion = "2.1.2"
-    val hopliteVersion = "2.9.0"
+    val hopliteVersion = "3.0.0.RC1"
 
     implementation(platform(kotlin("bom")))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
