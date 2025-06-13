@@ -38,7 +38,7 @@ repositories {
 
 dependencies {
     val kotlinVersion = "2.1.21"
-    val ktorVersion = "3.1.3"
+    val ktorVersion = "3.2.0"
     val exposedVersion = "1.0.0-beta-2"
     val arrowVersion = "2.1.2"
     val hopliteVersion = "2.9.0"
