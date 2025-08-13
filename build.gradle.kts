@@ -49,7 +49,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.8")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.4.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
