@@ -40,7 +40,7 @@ dependencies {
     val kotlinVersion = "2.3.0-RC3"
     val ktorVersion = "3.3.3"
     val exposedVersion = "1.0.0-rc-4"
-    val arrowVersion = "2.2.0"
+    val arrowVersion = "2.2.1"
     val hopliteVersion = "3.0.0.RC1"
 
     implementation(platform(kotlin("bom")))
