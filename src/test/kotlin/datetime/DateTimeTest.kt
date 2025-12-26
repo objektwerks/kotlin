@@ -6,6 +6,7 @@ import kotlin.time.Clock
 import kotlin.time.Instant
 
 import kotlinx.datetime.*
+import kotlinx.datetime.LocalDate
 
 import org.junit.Test
 
@@ -23,7 +24,7 @@ class DateTimeTest {
         assert( date.toOption().isSome() )
         assert( time.toOption().isSome() )
 
-        val knownDate = LocalDate(year = 2020, monthNumber = 1, dayOfMonth = 1)
+        val knownDate = LocalDate(year = 2020, month = 1, day = 1)
         assert( knownDate.toOption().isSome() )
 
         val knownTime = LocalTime(hour = 23, minute = 59, second = 59)
