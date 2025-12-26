@@ -9,10 +9,6 @@ Kotlin
 6. [JavaFX](https://openjfx.io/)
 7. [Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html)
 
-Arrow
------
->Arrow has been a moving target since its inception. Consequently, not ***all*** features work as documented.
-
 Apps
 ----
 >The following apps are available:
