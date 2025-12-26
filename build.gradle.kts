@@ -1,5 +1,3 @@
-import com.google.devtools.ksp.gradle.KspTaskMetadata
-
 group = "kotlin"
 version = "1.3-SNAPSHOT"
 
@@ -8,7 +6,7 @@ plugins {
     kotlin("plugin.serialization") version "2.3.0"
     application
     id("com.adarshr.test-logger") version "4.0.0"
-    id("com.google.devtools.ksp") version "2.3.3"
+    id("com.google.devtools.ksp") version "2.3.4"
 }
 
 java {
@@ -21,9 +19,6 @@ kotlin {
     sourceSets.all {
         languageSettings {
             languageVersion = "2.0"
-        }
-        tasks.withType<KspTaskMetadata> {
-            kotlin.srcDir(destinationDirectory)
         }
     }
 }
