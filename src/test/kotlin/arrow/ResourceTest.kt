@@ -1,6 +1,7 @@
 package arrow
 
 import arrow.fx.coroutines.resource
+import arrow.fx.coroutines.use
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
