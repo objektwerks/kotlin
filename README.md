@@ -38,9 +38,6 @@ Build
 >Alternatively use commandline gradle:
 1. gradle clean build
 
->To run the K2 compiler, use commandline gradlew:
-1. ./gradlew clean build -Pkotlin.experimental.tryK2=true
-
 Test
 ----
 >Use Intellij gradle to clean, build, run and view tests.
