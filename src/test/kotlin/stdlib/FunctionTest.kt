@@ -1,7 +1,5 @@
 package stdlib
 
-import arrow.core.curried
-
 import org.junit.Test
 
 data class Values(val items: List<String>)
@@ -77,9 +75,6 @@ class FunctionTest {
             { y: Int -> x + y } // Lambda!
         }
         assert( curriedAdd(3)(6) == 9 )
-
-        val curriedMultiply: (Int) -> (Int) -> Int = { x: Int, y: Int -> x * y }.curried() // Arrow KT!
-        assert( curriedMultiply(3)(6) == 18 )
     }
 
     @Test fun defaultValue() {
