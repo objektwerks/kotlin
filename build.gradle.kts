@@ -9,12 +9,6 @@ plugins {
     id("com.google.devtools.ksp") version "2.3.4"
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(25))
-    }
-}
-
 application {
     mainClass.set("console.App")
 }
