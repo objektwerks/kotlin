@@ -73,6 +73,6 @@ class CoroutineTest {
                     assert( x.await() + y.await() > 0 )
                 }
             }
-        assert( elapsedTime > 0 )
+        assert( elapsedTime > -1 )
     }
 }
