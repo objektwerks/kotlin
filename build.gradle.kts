@@ -1,5 +1,5 @@
 group = "kotlin"
-version = "1.3-SNAPSHOT"
+version = "1.4.0"
 
 plugins {
     kotlin("jvm") version "2.3.0"
