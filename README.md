@@ -32,7 +32,7 @@ Build
 >Use Intellij gradle to clean and build project.
 
 >Alternatively use commandline gradle:
-1. gradle clean build
+1. ```gradle clean build```
 
 Test
 ----
