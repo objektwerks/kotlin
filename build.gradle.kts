@@ -19,7 +19,7 @@ repositories {
 
 kotlin {
     compilerOptions {
-        freeCompilerArgs.add("-Xreturn-value-checker=check")
+        freeCompilerArgs.add("-Xreturn-value-checker=full")
     }
 }
 
