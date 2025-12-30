@@ -17,6 +17,12 @@ repositories {
     mavenCentral()
 }
 
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.add("-Xreturn-value-checker=check")
+    }
+}
+
 dependencies {
     val kotlinVersion = "2.3.0"
     val ktorVersion = "3.3.3"
