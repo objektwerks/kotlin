@@ -46,7 +46,7 @@ Test
 Run
 ---
 >To run the default app ( **console.App** ):
-1. gradle run
+1. ```gradle run```
 
 >To selectively run an Intellij app:
 1. select app from **src** dir
