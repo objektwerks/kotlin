@@ -19,6 +19,7 @@ repositories {
 
 kotlin {
     compilerOptions {
+        freeCompilerArgs.add("-Xexplicit-backing-fields")
         freeCompilerArgs.add("-Xreturn-value-checker=full")
     }
 }
