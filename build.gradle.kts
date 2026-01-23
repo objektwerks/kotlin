@@ -28,7 +28,7 @@ kotlin {
 
 dependencies {
     val kotlinVersion = "2.3.0"
-    val ktorVersion = "3.3.3"
+    val ktorVersion = "3.4.0"
     val exposedVersion = "0.61.0" // Don't upgrade!
     val arrowVersion = "2.2.1.1"
     val hopliteVersion = "3.0.0.RC1"
