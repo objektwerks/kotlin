@@ -2,8 +2,8 @@ group = "kotlin"
 version = "1.5.0"
 
 plugins {
-    kotlin("jvm") version "2.3.21-RC"
-    kotlin("plugin.serialization") version "2.3.21-RC"
+    kotlin("jvm") version "2.3.21-RC2"
+    kotlin("plugin.serialization") version "2.3.21-RC2"
     application
     id("com.adarshr.test-logger") version "4.0.0"
     id("com.google.devtools.ksp") version "2.3.6"
@@ -27,7 +27,7 @@ kotlin {
 }
 
 dependencies {
-    val kotlinVersion = "2.3.21-RC"
+    val kotlinVersion = "2.3.21-RC2"
     val ktorVersion = "3.4.2"
     val exposedVersion = "0.61.0" // Don't upgrade!
     val arrowVersion = "2.2.2.1"
